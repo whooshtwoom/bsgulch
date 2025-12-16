@@ -1,12 +1,12 @@
-# Outpost 21
+# Bluestone Gulch
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/compatibility-club-penguin.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/no-ragrets.svg)](http://forthebadge.com)
 
-[Website (we dont have one)](https://www.youtube.com/watch?v=oHg5SJYRHA0) - [Forums](hhttps://forums.chompstation13.net/index.php) - [Wiki](https://wiki.chompstation13.net/index.php?title=Main_Page) - [Discord](contact admin)
+[Website (we don't have one)](https://www.youtube.com/watch?v=oHg5SJYRHA0) - [Forums (when was the last time you actually used a forum?)](https://youtu.be/QmpXxMto50k?si=4a01B6LM9igmlXKB) - [Wiki](https://wiki.chompstation13.net/index.php?title=Main_Page) - [Discord(contact whooshboom on discord)]
 
-Going to make a Pull Request? Make sure you read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) first!
+Going to make a Pull Request? Make sure you commit upstream instead... because I'm not sure why you'd actually commit here.
 
-Outpost 21 was originaly a downnstream fork of Yawn-wider, the [original repo can be found here](https://github.com/Willburd/Outpost21). It is now downstream of CHOMPStation instead. CHOMPStation's original description follows: CHOMPStation was a fork of the Yawn-wider code branch which is a fork of the VOREStation code branch which is a fork of the Polaris code branch, itself a fork of the Baystation12 code branch, but we are now since separated from Yawn-wider code, while keeping some of their features, which is a fork of the VOREStation code branch which is a fork of the Polaris code branch, itself a fork of the Baystation12 code branch, for the game Space Station 13.
+Outpost 21 was originaly a downstream fork of Yawn-wider, the [original repo can be found here](https://github.com/Willburd/Outpost21). It is now downstream of CHOMPStation instead. CHOMPStation's original description follows: CHOMPStation was a fork of the Yawn-wider code branch which is a fork of the VOREStation code branch which is a fork of the Polaris code branch, itself a fork of the Baystation12 code branch, but we are now since separated from Yawn-wider code, while keeping some of their features, which is a fork of the VOREStation code branch which is a fork of the Polaris code branch, itself a fork of the Baystation12 code branch, for the game Space Station 13. We here at Bluestone decided that wasn't good enough, and said "WHY NOT ANOTHER FORK?" loudly, to the mirror.
 
 ![Render Nanomaps](https://github.com/VOREStation/VOREStation/workflows/Render%20Nanomaps/badge.svg)
 
