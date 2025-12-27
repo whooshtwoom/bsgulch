@@ -253,6 +253,9 @@
 /obj/item/juke_remote{
 	autolinkareajuke_onspawn = /area/djstation
 	},
+/obj/item/storage/pouch/ifak,
+/obj/item/storage/pouch/ifak,
+/obj/item/storage/pouch/ifak,
 /turf/simulated/floor/tiled/techmaint,
 /area/shuttle/trawler)
 "aax" = (
@@ -4691,6 +4694,22 @@
 /obj/item/tape_roll,
 /turf/simulated/floor/tiled/milspec,
 /area/janitor)
+"agU" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/corner/purple{
+	dir = 6
+	},
+/obj/item/radio/intercom{
+	dir = 4;
+	frequency = 1475;
+	name = "Station Intercom (Security)";
+	pixel_x = 21
+	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/hallway/main)
 "agV" = (
 /obj/structure/disposalpipe/down{
 	dir = 8
@@ -5050,7 +5069,7 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/structure/candybowl/engineering,
+/obj/item/toy/mistletoe,
 /turf/simulated/floor/tiled,
 /area/muriki/tramstation/cargeng)
 "ahr" = (
@@ -6484,10 +6503,11 @@
 	},
 /area/engineering/engine_room)
 "akj" = (
-/obj/structure/lattice,
-/obj/effect/mist,
-/turf/simulated/open/indoor/turfpack/muriki,
-/area/muriki/processor/hall)
+/obj/machinery/camera/motion/command{
+	c_tag = "COM - Terraformer Access Entry"
+	},
+/turf/simulated/floor/redgrid/off,
+/area/muriki/processor/euth)
 "akk" = (
 /turf/simulated/floor/outdoors/snow/turfpack/muriki,
 /area/mine/unexplored/muriki/mountainnorth)
@@ -8238,14 +8258,19 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/detectives_office)
 "ann" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/flesh{
-	dir = 6
-	},
-/turf/simulated/floor/redgrid/off/turfpack/muriki,
-/area/muriki/processor/euth)
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/obj/item/clothing/head/santa,
+/turf/simulated/floor/carpet/turcarpet,
+/area/hallway/secondary/entry/docking_lounge)
 "ano" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/freezer,
@@ -8824,7 +8849,7 @@
 "aoE" = (
 /obj/effect/floor_decal/milspec/color/purple/half,
 /obj/structure/table/standard,
-/obj/structure/candybowl/science,
+/obj/item/toy/mistletoe,
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/lab)
 "aoF" = (
@@ -11367,15 +11392,14 @@
 /turf/simulated/floor/gorefloor2/turfpack/muriki,
 /area/muriki/processor/hall)
 "avb" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/obj/machinery/light/small/emergency{
+/obj/structure/bed/chair/bay/shuttle{
 	dir = 8
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/muriki/processor/euth)
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/voidcraft/light/turfpack/muriki,
+/area/shuttle/beamtransit)
 "avc" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet,
@@ -11972,6 +11996,14 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/milspec,
 /area/bridge)
+"awi" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
+	},
+/obj/item/toy/mistletoe,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled,
+/area/quartermaster/mining)
 "awj" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -12101,13 +12133,64 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/heavyduty{
-	icon_state = "0-2"
-	},
 /obj/structure/cable/heavyduty,
 /obj/effect/step_trigger/dephase_shadekin,
 /turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
 /area/muriki/grounds/terraform)
+"awz" = (
+/obj/effect/step_trigger/dephase_shadekin,
+/obj/machinery/porta_turret/heavy/lmg,
+/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
+/area/muriki/grounds/terraform)
+"awA" = (
+/obj/effect/step_trigger/dephase_shadekin,
+/obj/structure/sign/secure_eshui_facility_highsec{
+	pixel_y = 32
+	},
+/turf/simulated/floor/outdoors/snow/turfpack/muriki,
+/area/muriki/grounds/terraform)
+"awB" = (
+/obj/effect/step_trigger/dephase_shadekin,
+/obj/machinery/porta_turret/heavy/sniper,
+/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
+/area/muriki/grounds/terraform)
+"awC" = (
+/obj/structure/sign/warning/internals_required,
+/turf/simulated/wall/durasteel,
+/area/muriki/processor/euth)
+"awD" = (
+/obj/machinery/light/small/emergency{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/muriki/processor/euth)
+"awE" = (
+/obj/effect/mine/claymore{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/muriki/processor/euth)
+"awF" = (
+/obj/structure/sign/warning/acid,
+/turf/simulated/wall/durasteel,
+/area/muriki/processor/euth)
+"awG" = (
+/obj/effect/step_trigger/dephase_shadekin,
+/obj/machinery/camera/motion/command{
+	c_tag = "EXT - Terraformer Access East";
+	dir = 4
+	},
+/turf/simulated/floor/outdoors/snow/turfpack/muriki,
+/area/muriki/grounds/terraform)
+"awH" = (
+/obj/machinery/light/small/emergency{
+	dir = 1
+	},
+/obj/structure/sign/warning/enzyme{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/muriki/processor/euth)
 "awI" = (
 /turf/simulated/wall,
 /area/mine/unexplored/muriki/mountainnorth)
@@ -12122,6 +12205,104 @@
 /obj/item/reagent_containers/spray/luminol,
 /turf/simulated/floor/tiled/freezer,
 /area/security/detectives_office)
+"awK" = (
+/obj/effect/step_trigger/dephase_shadekin,
+/obj/structure/sign/secure_eshui_facility_highsec{
+	pixel_x = -32
+	},
+/turf/simulated/floor/outdoors/snow/turfpack/muriki,
+/area/muriki/grounds/terraform)
+"awL" = (
+/obj/effect/mine/claymore,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/muriki/processor/euth)
+"awM" = (
+/turf/simulated/wall/durasteel/turfpack/muriki,
+/area/muriki/processor/euth)
+"awN" = (
+/obj/structure/sign/warning/secure_area,
+/turf/simulated/wall/durasteel/turfpack/muriki,
+/area/muriki/processor/euth)
+"awO" = (
+/obj/structure/sign/warning/lethal_turrets,
+/turf/simulated/wall/durasteel/turfpack/muriki,
+/area/muriki/processor/euth)
+"awP" = (
+/obj/structure/window/plastitanium{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awQ" = (
+/obj/effect/mine/claymore{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awR" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awS" = (
+/obj/machinery/door/blast/regular/open{
+	name = "High Security Lockdown";
+	id = "sensitive_lock"
+	},
+/obj/machinery/turretid/lethal{
+	check_all = 1;
+	name = "Euthanization Chamber Turret Control";
+	pixel_x = 32;
+	req_access = list(1)
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"awT" = (
+/obj/structure/window/plastitanium{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awU" = (
+/obj/structure/window/plastitanium{
+	dir = 4
+	},
+/obj/machinery/porta_turret/heavy,
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awV" = (
+/obj/machinery/door/airlock/external{
+	name = "Neural Trunk Access Duct";
+	req_one_access = list(53,52)
+	},
+/obj/structure/sign/christmas/wreath,
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"awW" = (
+/obj/structure/window/plastitanium{
+	dir = 8
+	},
+/obj/machinery/porta_turret/heavy,
+/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/area/muriki/processor/euth)
+"awX" = (
+/obj/machinery/power/rtg/advanced,
+/obj/item/stock_parts/micro_laser/hyper,
+/obj/item/stock_parts/capacitor/hyper,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk,
+/obj/structure/window/plastitanium{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/muriki/processor/euth)
+"awY" = (
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
 "awZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -12129,6 +12310,64 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
+"axa" = (
+/obj/structure/sign/secure_eshui_facility_highsec{
+	pixel_y = 32
+	},
+/obj/machinery/camera/motion/command{
+	c_tag = "COM - Terraformer Euthanizer Last Defense"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"axb" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"axc" = (
+/obj/machinery/power/rtg/advanced,
+/obj/item/stock_parts/micro_laser/hyper,
+/obj/item/stock_parts/capacitor/hyper,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/window/plastitanium{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/muriki/processor/euth)
+"axd" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/sign/christmas/wreath,
+/obj/machinery/door/airlock/vault{
+	name = "Euthanizer Core Access"
+	},
+/obj/effect/landmark/electrify_door/fifty,
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"axe" = (
+/obj/structure/cable/orange{
+	icon_state = "2-5"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"axf" = (
+/obj/machinery/camera/motion/command{
+	c_tag = "COM - Terraformer Euthanizer Access";
+	dir = 1
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
+"axg" = (
+/obj/structure/cable/orange{
+	icon_state = "2-9"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
+/area/muriki/processor/euth)
 "axi" = (
 /obj/machinery/alembic,
 /obj/structure/table/alien,
@@ -16102,12 +16341,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/scielev)
-"bIl" = (
-/obj/structure/cable/orange{
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "bIp" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/corner/red/full{
@@ -17134,13 +17367,6 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/security/brig/drunk)
-"bWj" = (
-/obj/machinery/camera/network/command{
-	c_tag = "COM - Terraformer Access Entry";
-	dir = 4
-	},
-/turf/simulated/floor/redgrid/off,
-/area/muriki/processor/euth)
 "bWn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
@@ -17942,19 +18168,6 @@
 /obj/structure/prop/rock/small/alt,
 /turf/simulated/floor/outdoors/ice/turfpack/muriki,
 /area/muriki/grounds/terraform)
-"clc" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/heavyduty{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/heavyduty,
-/obj/structure/cable/heavyduty{
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "cle" = (
 /obj/structure/fence/electric_sign{
 	dir = 4
@@ -18377,13 +18590,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology/quarantine_quarantine)
-"cqm" = (
-/obj/machinery/camera/network/command{
-	c_tag = "COM - Terraformer Euthanizer Access";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "cqn" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -21671,8 +21877,8 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/candybowl/security,
 /obj/structure/table/standard,
+/obj/item/toy/mistletoe,
 /turf/simulated/floor/tiled,
 /area/security/lobby)
 "dta" = (
@@ -22020,6 +22226,9 @@
 	},
 /obj/effect/floor_decal/milspec/color/purple/half{
 	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/otherlab)
@@ -22878,6 +23087,10 @@
 	name = "\improper EMERGENCY";
 	pixel_y = 32
 	},
+/obj/structure/table/standard,
+/obj/item/radio/phone{
+	name = "Very wet, static-filled phone"
+	},
 /turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
 /area/muriki/processor/euth)
 "dNk" = (
@@ -23340,16 +23553,6 @@
 	},
 /turf/simulated/floor/flesh/turfpack/muriki,
 /area/muriki/processor/hall)
-"dWd" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/outside{
-	c_tag = "EXT - Terraformer Access East";
-	dir = 4
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "dWr" = (
 /obj/machinery/camera/network/engine{
 	c_tag = "ENG - Tesla Chamber North"
@@ -23788,13 +23991,6 @@
 	ignore_mapgen = 1
 	},
 /area/mine/unexplored/muriki/mountainnorth)
-"edd" = (
-/obj/machinery/porta_turret/ai_defense,
-/obj/structure/cable/orange{
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "edf" = (
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 9
@@ -24680,11 +24876,14 @@
 /turf/simulated/floor/tiled/kafel_full/white,
 /area/muriki/research/showers)
 "esv" = (
-/obj/structure/table/standard,
-/obj/item/radio/phone{
-	name = "Very wet, static-filled phone"
+/obj/structure/cable/orange{
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
+/obj/structure/sign/christmas/wreath,
+/obj/machinery/door/airlock/vault{
+	name = "Euthanizer Core Access"
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
 /area/muriki/processor/euth)
 "esN" = (
 /obj/structure/table/gamblingtable,
@@ -24739,8 +24938,8 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/obj/structure/candybowl/medical,
 /obj/structure/table/standard,
+/obj/item/toy/mistletoe,
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "etA" = (
@@ -27079,10 +27278,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/hos)
-"ffI" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/muriki/processor/euth)
 "ffL" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
@@ -27505,7 +27700,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/security_starboard)
 "fmM" = (
-/obj/machinery/light/small/emergency,
+/obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
 /turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
 /area/muriki/processor/euth)
 "fmN" = (
@@ -28596,8 +28795,9 @@
 /turf/simulated/floor/tiled/steel,
 /area/hallway/primary/central_two)
 "fGR" = (
-/obj/structure/cable/orange{
-	icon_state = "6-9"
+/obj/structure/prop/machine/core/starts_on{
+	name = "Bluespace Inhibitor";
+	desc = "An E-Shui proprietary machine that de-phases Shadekin that enter its area of effect. It's unclear how it works, or why it smells vaguely floral..."
 	},
 /turf/simulated/floor/redgrid/off,
 /area/muriki/processor/euth)
@@ -29867,7 +30067,13 @@
 /turf/simulated/floor/tiled/old_tile/white,
 /area/medical/laundry)
 "gcg" = (
-/turf/simulated/wall/r_wall,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/redgrid/off/turfpack/muriki,
 /area/muriki/processor/euth)
 "gcw" = (
 /obj/structure/bed/chair{
@@ -29970,15 +30176,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/medical/virology/quarantine_quarantine)
-"geB" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/obj/structure/sign/warning/acid{
-	pixel_y = 32
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "geM" = (
 /obj/structure/cliff{
 	dir = 9
@@ -31890,9 +32087,6 @@
 /turf/simulated/floor/outdoors/snow/turfpack/muriki,
 /area/muriki/grounds/tramborder)
 "gLp" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/flesh{
 	dir = 10
 	},
@@ -32038,9 +32232,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/delivery)
 "gPg" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/flesh{
 	dir = 4
 	},
@@ -33195,9 +33386,6 @@
 /turf/simulated/floor/tiled/milspec,
 /area/storage/tech)
 "hfw" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
 /obj/machinery/light/small/emergency{
 	dir = 8
 	},
@@ -33946,12 +34134,6 @@
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/carpet/turcarpet,
 /area/hallway/secondary/entry/docking_lounge)
-"hqN" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "hqY" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -34335,13 +34517,6 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/research/testingrange)
-"hxf" = (
-/obj/structure/cable/heavyduty,
-/obj/structure/cable/heavyduty{
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "hxj" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -35104,9 +35279,6 @@
 /turf/simulated/floor/plating,
 /area/muriki/processor/gland/airmix)
 "hHl" = (
-/obj/structure/cable/orange{
-	icon_state = "6-8"
-	},
 /obj/structure/sign/warning/internals_required{
 	pixel_y = 32
 	},
@@ -35221,12 +35393,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/muriki/arriveelev)
-"hIQ" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "hIS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -35520,12 +35686,6 @@
 	},
 /turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
 /area/muriki/grounds/tramborder)
-"hNv" = (
-/obj/structure/cable/orange{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "hNw" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/structure/sign/painting/public{
@@ -37179,8 +37339,11 @@
 /area/quartermaster/qm)
 "iku" = (
 /obj/effect/step_trigger/dephase_shadekin,
-/turf/simulated/wall/r_wall,
-/area/muriki/processor/euth)
+/obj/machinery/camera/motion/command{
+	c_tag = "EXT - Terraformer Access South"
+	},
+/turf/simulated/floor/outdoors/snow/turfpack/muriki,
+/area/muriki/grounds/terraform)
 "ikC" = (
 /turf/simulated/wall,
 /area/muriki/bathroom/sanitorium)
@@ -39888,8 +40051,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/muriki/cybstorage)
 "iZQ" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
+/obj/machinery/light/small/emergency{
+	dir = 4
 	},
 /turf/simulated/floor/redgrid/off/turfpack/muriki,
 /area/muriki/processor/euth)
@@ -41035,11 +41198,8 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "jsm" = (
-/obj/structure/cable/orange{
-	icon_state = "6-9"
-	},
-/obj/effect/step_trigger/dephase_shadekin,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/item/clothing/suit/caution,
+/turf/simulated/floor/redgrid/off,
 /area/muriki/processor/euth)
 "jss" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -41634,7 +41794,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
 "jxv" = (
-/obj/structure/table/standard,
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/lab)
 "jxy" = (
@@ -44231,6 +44393,7 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 6
 	},
+/obj/item/healthanalyzer,
 /turf/simulated/floor/tiled/old_tile/white,
 /area/security/security_aid_station)
 "klb" = (
@@ -45051,13 +45214,6 @@
 /obj/effect/floor_decal/flesh,
 /turf/simulated/floor/flesh/turfpack/muriki,
 /area/muriki/processor/pools/cropbig)
-"kxG" = (
-/obj/structure/cable/orange,
-/obj/structure/cable/heavyduty{
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "kxL" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/lightgrey/bordercorner,
@@ -46378,9 +46534,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/muriki/tramstation/cargeng)
 "kSV" = (
-/obj/structure/cable/orange{
-	icon_state = "1-4"
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/muriki/processor/euth)
@@ -46965,13 +47118,6 @@
 /obj/fiftyspawner/glass,
 /turf/simulated/floor/tiled,
 /area/storage/tools)
-"lcC" = (
-/obj/structure/cable/orange{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/muriki/processor/euth)
 "lcK" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -48460,6 +48606,7 @@
 /area/maintenance/disposal)
 "lzG" = (
 /obj/effect/floor_decal/spline/plain,
+/obj/structure/loot_pile/christmas_tree,
 /turf/simulated/floor/tiled/techfloor{
 	color = "#eacd7c"
 	},
@@ -48975,9 +49122,6 @@
 /turf/simulated/open,
 /area/maintenance/wastedisposal)
 "lGf" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
 /obj/machinery/light/small/emergency{
 	dir = 8
 	},
@@ -49395,8 +49539,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/security/armor)
 "lOw" = (
-/obj/machinery/light/small/emergency{
-	dir = 1
+/obj/machinery/door/airlock/highsecurity/red{
+	name = "Euthanizer Access";
+	req_one_access = list(53,52)
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/sign/christmas/wreath{
+	dir = 4
 	},
 /turf/simulated/floor/redgrid/off,
 /area/muriki/processor/euth)
@@ -52018,13 +52167,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/bridge/hallway)
-"mCt" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/flesh,
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "mCw" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -52632,7 +52774,6 @@
 /area/rnd/hallway/main)
 "mMA" = (
 /obj/structure/table/standard,
-/obj/item/healthanalyzer,
 /obj/effect/floor_decal/corner/blue/full{
 	dir = 4
 	},
@@ -52645,6 +52786,10 @@
 	pixel_y = -32;
 	dir = 1
 	},
+/obj/item/storage/pouch/ifak,
+/obj/item/storage/pouch/ifak,
+/obj/item/storage/pouch/ifak,
+/obj/item/storage/pouch/ifak,
 /turf/simulated/floor/tiled/old_tile/white,
 /area/security/security_aid_station)
 "mMH" = (
@@ -52865,7 +53010,7 @@
 /area/security/brig/observation)
 "mRP" = (
 /obj/structure/closet/secure_closet{
-	req_one_access = list(7)
+	req_one_access = list(7,47)
 	},
 /obj/effect/floor_decal/corner/purple{
 	dir = 10
@@ -53238,12 +53383,6 @@
 "mWW" = (
 /turf/simulated/floor/maglev,
 /area/muriki/tramstation/waste)
-"mWZ" = (
-/obj/machinery/camera/network/command{
-	c_tag = "COM - Terraformer Access Entry South"
-	},
-/turf/simulated/floor/redgrid/off,
-/area/muriki/processor/euth)
 "mXa" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/structure/sign/yessmoking_1{
@@ -53819,13 +53958,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
-"nfI" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/heavyduty,
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "nfN" = (
 /obj/machinery/vending/assist{
 	dir = 8;
@@ -54012,9 +54144,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/tactical)
 "nif" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/flesh{
 	dir = 1
 	},
@@ -55189,12 +55318,6 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/otherlab)
-"nzn" = (
-/obj/structure/sign/warning/biohazard{
-	icon_state = "bio-danger"
-	},
-/turf/simulated/wall/r_wall,
-/area/muriki/processor/euth)
 "nzo" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -55341,13 +55464,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
-"nCd" = (
-/obj/machinery/porta_turret/ai_defense,
-/obj/structure/cable/orange{
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "nCe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -55459,9 +55575,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/cargomid)
 "nCD" = (
-/obj/structure/closet/secure_closet{
-	req_one_access = list(7)
-	},
 /obj/effect/floor_decal/corner/purple{
 	dir = 10
 	},
@@ -55469,6 +55582,9 @@
 	pixel_y = -32
 	},
 /obj/structure/cable/green,
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/telesci)
 "nCK" = (
@@ -55921,7 +56037,7 @@
 /area/engineering/engine_room)
 "nLl" = (
 /turf/simulated/wall/durasteel,
-/area/muriki/processor/hall)
+/area/muriki/processor/euth)
 "nLm" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -59600,9 +59716,6 @@
 /turf/simulated/floor/tiled,
 /area/engineering/corepower)
 "oVd" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/blast/regular/open{
 	name = "High Security Lockdown";
 	id = "sensitive_lock"
@@ -59723,7 +59836,10 @@
 	req_one_access = list(53,52)
 	},
 /obj/structure/cable/orange{
-	icon_state = "1-2"
+	icon_state = "1-6"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-10"
 	},
 /turf/simulated/floor/redgrid/off/turfpack/muriki,
 /area/muriki/processor/euth)
@@ -60165,7 +60281,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/camera/network/command{
+/obj/machinery/camera/motion/command{
 	c_tag = "COM - Terraformer Euthanizer";
 	dir = 1
 	},
@@ -60519,12 +60635,6 @@
 "pom" = (
 /turf/simulated/wall,
 /area/quartermaster/qm)
-"poB" = (
-/obj/structure/sign/warning/biohazard{
-	icon_state = "bio-danger"
-	},
-/turf/simulated/wall/durasteel,
-/area/muriki/processor/hall)
 "poD" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
@@ -63435,6 +63545,16 @@
 	dir = 8
 	},
 /obj/structure/table/woodentable,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
+/obj/item/clothing/head/santa/green,
 /turf/simulated/floor/carpet/turcarpet,
 /area/hallway/secondary/entry/docking_lounge)
 "qjX" = (
@@ -63466,15 +63586,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
-"qkg" = (
-/obj/structure/cable/orange{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/heavyduty{
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/redgrid/off,
-/area/muriki/processor/euth)
 "qks" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -64594,6 +64705,9 @@
 	network = list("Research","Miscellaneous Reseach");
 	dir = 8
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/main)
 "qCA" = (
@@ -65277,10 +65391,6 @@
 	},
 /turf/simulated/floor,
 /area/maintenance/engi_engine)
-"qMY" = (
-/obj/effect/step_trigger/dephase_shadekin,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/muriki/processor/euth)
 "qND" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -66354,20 +66464,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/engineering_hallway)
-"reD" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/highsecurity/red{
-	name = "Euthanizer Access";
-	req_one_access = list(53,52)
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/sign/christmas/wreath{
-	dir = 4
-	},
-/turf/simulated/floor/redgrid/off,
-/area/muriki/processor/euth)
 "reZ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -68802,6 +68898,9 @@
 /obj/effect/floor_decal/corner/purple/full{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/main)
 "rUi" = (
@@ -69372,6 +69471,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/research/testingrange)
 "sca" = (
@@ -69828,12 +69930,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/muriki/arriveelev)
-"sin" = (
-/obj/structure/cable/orange{
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "sio" = (
 /obj/effect/floor_decal/milspec/color/red/half{
 	dir = 4
@@ -70173,6 +70269,7 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
+/obj/item/lightreplacer,
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/lab)
 "spu" = (
@@ -70261,9 +70358,6 @@
 /turf/simulated/floor/outdoors/snow/turfpack/muriki,
 /area/muriki/grounds/civ)
 "sqN" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/flesh{
 	dir = 4
@@ -70625,9 +70719,6 @@
 /turf/simulated/floor/tiled/kafel_full/white,
 /area/muriki/bathroom/sciupper)
 "swA" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/flesh{
 	dir = 1
 	},
@@ -72705,9 +72796,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/bar)
 "tcU" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/airlock/vault{
 	name = "Neural Trunk Access Duct"
 	},
@@ -74005,15 +74093,6 @@
 	},
 /turf/simulated/wall,
 /area/maintenance/arrivals)
-"txX" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/outside{
-	c_tag = "EXT - Terraformer Access South"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "tyd" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 1
@@ -75961,9 +76040,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/auxstore)
 "ubX" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/flesh{
 	dir = 1
 	},
@@ -76387,6 +76463,9 @@
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/main)
 "uhd" = (
@@ -76495,7 +76574,6 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/flora/tree/pine/xmas/presents,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "uit" = (
@@ -76750,11 +76828,6 @@
 /obj/effect/landmark/event_spawn/dronepod_landing,
 /turf/simulated/floor/tiled/milspec,
 /area/security/brig/drunk)
-"ump" = (
-/obj/item/clothing/suit/caution,
-/obj/effect/step_trigger/dephase_shadekin,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/muriki/processor/euth)
 "umq" = (
 /obj/structure/closet{
 	name = "Evidence Closet"
@@ -77583,8 +77656,8 @@
 	pixel_y = -32;
 	pixel_x = -6
 	},
-/obj/structure/candybowl/cargo,
 /obj/structure/table/standard,
+/obj/item/toy/mistletoe,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "uzo" = (
@@ -78612,6 +78685,9 @@
 	pixel_x = -28;
 	pixel_y = -28;
 	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/main)
@@ -80346,7 +80422,8 @@
 	name = "Kitchen Shutters Control";
 	pixel_x = -25;
 	pixel_y = -24;
-	req_access = list(28)
+	req_access = list(28);
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/green{
 	dir = 10
@@ -81771,10 +81848,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
 "vLQ" = (
+/obj/structure/table/standard,
 /obj/effect/landmark{
 	name = "nukeitem"
 	},
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
 /area/muriki/processor/euth)
 "vLR" = (
@@ -82136,14 +82213,10 @@
 /turf/simulated/wall/plastitanium,
 /area/muriki/bathroom/sanitorium)
 "vRJ" = (
-/obj/structure/cable/orange{
-	icon_state = "4-9"
+/obj/structure/sign/warning/biohazard{
+	icon_state = "bio-danger"
 	},
-/obj/structure/prop/machine/core/starts_on{
-	name = "Bluespace Inhibitor";
-	desc = "An E-Shui proprietary machine that de-phases Shadekin that enter its area of effect. It's unclear how it works, or why it smells vaguely floral..."
-	},
-/turf/simulated/floor/redgrid/off,
+/turf/simulated/wall/durasteel,
 /area/muriki/processor/euth)
 "vRP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -83102,9 +83175,7 @@
 	req_access = null;
 	req_one_access = list(19,52)
 	},
-/obj/machinery/lockdown_console{
-	linked_jokes = list("Sensitive Area Lockdown" = "It locks down AI Core, Telecoms, and The Terraformer","Bridge Lockdown" = "It locks down the bridge, congrats, you have trapped yourself.","Captain Office Lockdown" = "It locks the captain in their office. Finally, naptime can be achieved.","Medbay Emergency Lockdown Control" = "It locks down the medbay, except for the main entrance.","Medbay Entrance Quarantine Shutters Control" = "A specialized lock to allow patients into the main entrance during a medical lockdown.","Virology Emergency Lockdown Control" = "It locks down the sniffle-zone.","Security Lockdown" = "It locks down security, typically a good idea.","Prison Lockdown" = "It locks down the brigs, to prevent escapes.","Brig Observation Shutters" = "It locks down the windows looking into the brigs","Security Forced Check-in" = "It locks down the hallway to force newcomers to the station to get cleared through security","Engineering Lockdown" = "It locks down engineering. Finally, a way to contain Taaa.","Atmospherics Lockdown" = "It locks down atmospherics, for when it explodes.","Chemical Refinery Lockdown" = "It locks down the chemical refinery, for when someone is about to mix 5k units of oxygen and potassium.","Science Lockdown" = "It locks down science, but probably not for long.","Phoronics Emergency Lockdown" = "It locks down phoronics, but its probably too little too late.","Cargo Lockdown" = "It locks down Cargonia... or more aptly, opens it when they shut themselves in.","Kitchen Shutters Control" = "It kindof locks down the kitchen. Like the chef deserves.");
-	linked_lockdowns = list("Sensitive Area Lockdown" = "sensitive_lock","Bridge Lockdown" = "bridge blast","Captain Office Lockdown" = "cap_office","Medbay Emergency Lockdown Control" = "medbayquar","Medbay Entrance Quarantine Shutters Control" = "medbayrecquar","Security Lockdown" = "security_lockdown","Prison Lockdown" = "Secure Gate","Brig Observation Shutters" = "brigobs","Security Forced Check-in" = "seccheck","Engineering Lockdown" = "englockdown","Atmospherics Lockdown" = "atmoslockdown","Chemical Refinery Lockdown" = "refine_lock","Science Lockdown" = "Scilock","Phoronics Emergency Lockdown" = "phoronic_lockdown","Virology Emergency Lockdown Control" = "virologyquar","Cargo Lockdown" = "cargolock","Kitchen Shutters Control" = "kitchen");
+/obj/machinery/lockdown_console/outpost21{
 	pixel_y = -28
 	},
 /obj/effect/floor_decal/corner/white{
@@ -84514,15 +84585,6 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
-"wxR" = (
-/obj/structure/cable/orange{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/heavyduty{
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/outdoors/snow/gravsnow/turfpack/muriki,
-/area/muriki/grounds/terraform)
 "wyb" = (
 /obj/machinery/power/tesla_coil/pre_mapped,
 /obj/structure/railing{
@@ -85483,12 +85545,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/muriki/crewstairwell)
-"wPf" = (
-/obj/structure/cable/orange{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/techfloor/grid/turfpack/muriki,
-/area/muriki/processor/euth)
 "wPq" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -86189,7 +86245,6 @@
 /obj/item/ammo_magazine/mg42,
 /obj/item/ammo_magazine/mg42,
 /obj/item/ammo_magazine/mg42,
-/obj/item/gun/energy/gun/burst/mg42,
 /obj/item/gun/projectile/automatic/mg42,
 /turf/simulated/floor/tiled/milspec/raised,
 /area/security/tactical)
@@ -88025,13 +88080,14 @@
 /turf/simulated/floor/outdoors/snow/turfpack/muriki,
 /area/mine/explored/muriki/mountainnorth)
 "xCs" = (
-/obj/structure/table/rack/shelf,
-/obj/item/lightreplacer,
 /obj/effect/floor_decal/milspec/color/purple/half{
 	dir = 1
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/rnd/lab)
@@ -88156,8 +88212,6 @@
 	},
 /obj/structure/table/glass,
 /obj/item/walkpod,
-/obj/item/toy/mistletoe,
-/obj/item/toy/mistletoe,
 /turf/simulated/floor/wood,
 /area/hallway/secondary/entry/docking_lounge)
 "xEF" = (
@@ -88491,10 +88545,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/exam_room)
-"xLU" = (
-/obj/structure/sign/warning/internals_required,
-/turf/simulated/wall/r_wall,
-/area/muriki/processor/euth)
 "xLW" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -88671,9 +88721,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/security/armor)
 "xPi" = (
-/obj/structure/cable/orange{
-	icon_state = "1-4"
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/flesh,
 /turf/simulated/floor/plating,
@@ -92131,7 +92178,7 @@ eJe
 nyl
 nyl
 ajF
-akj
+ajF
 ajF
 ixt
 dsy
@@ -96124,7 +96171,7 @@ klO
 wjC
 wjC
 yiH
-qAN
+awi
 amM
 npU
 oMD
@@ -96351,8 +96398,8 @@ ajv
 aMu
 nyl
 nyl
-ixt
-ixt
+nyl
+nyl
 nyl
 auU
 auU
@@ -96512,20 +96559,20 @@ aMu
 ajv
 ajv
 aMu
-gcg
-gcg
-gcg
-gcg
-gcg
+awM
+awM
+awM
+awM
+awM
 auZ
 auZ
 auZ
-auZ
-auU
-auW
-auW
-auW
-auW
+awM
+awM
+awM
+awM
+awM
+awM
 auU
 auU
 auW
@@ -96673,21 +96720,21 @@ aMu
 ajv
 ajv
 ajv
-gcg
-gcg
-gcg
-gcg
-gcg
-gcg
-gcg
+awM
+awM
+awM
+awM
+awM
+awM
+awM
 auZ
 auZ
-auZ
-auU
-auU
-auW
-auW
-auW
+awM
+awX
+awP
+awU
+awP
+awM
 auU
 aAQ
 auX
@@ -96834,22 +96881,22 @@ kES
 aMu
 ajv
 ajz
-gcg
-gcg
-gcg
+awM
+awM
+awM
 gye
 aMa
 aMa
-gcg
-gcg
-gcg
-gcg
-gcg
-auZ
-auU
-auU
-auU
-auU
+awM
+awM
+awM
+awM
+awM
+qPs
+suD
+suD
+awQ
+awM
 auU
 auW
 auW
@@ -96996,22 +97043,22 @@ nyl
 aMu
 ajv
 ajv
-gcg
-gcg
-gcg
+awM
+awM
+awM
 bWn
 kpS
 ngU
-gcg
-gcg
+awM
+awM
 dMP
 fmM
+awM
 gcg
-gcg
-auU
-gtF
-gtF
-auU
+lpG
+lpG
+awR
+awM
 auU
 auY
 auU
@@ -97158,23 +97205,23 @@ nyl
 aMu
 ajv
 ajv
-gcg
-gcg
+awM
+awM
 sxP
 fuA
 fZV
 iTN
-gcg
-gcg
-lpG
-lpG
+awM
+awM
+kSV
+axe
 esv
-gcg
-auU
-auU
-auU
-aAQ
-auU
+awY
+lpG
+awM
+awM
+awN
+auW
 auW
 auW
 aAQ
@@ -97320,8 +97367,8 @@ aAQ
 aMu
 ajv
 ajv
-gcg
-gcg
+awM
+awM
 fLG
 lEn
 jII
@@ -97329,14 +97376,14 @@ aqf
 fJb
 xTB
 oXp
-iZQ
-ann
+axf
+awM
+axa
+suD
+awV
+awS
 tYP
-iZQ
-iZQ
-iZQ
-avb
-iZQ
+suD
 iZQ
 kSV
 nyl
@@ -97482,22 +97529,22 @@ wmx
 aMu
 ajv
 ajv
-gcg
-gcg
+awM
+awM
 ecA
 paL
 rEl
 pfO
-gcg
-gcg
+awM
+awM
+kSV
+axg
+axd
+axb
 lpG
-lpG
-qew
-gcg
-auU
-auU
-auU
-aAQ
+awM
+awM
+awO
 auW
 aAQ
 nif
@@ -97644,25 +97691,25 @@ nyl
 ezP
 sdC
 bqf
-gcg
-gcg
-gcg
+awM
+awM
+awM
 sFk
 hwy
 uQn
-gcg
-ffI
+awM
+awN
 vLQ
-cqm
+awR
+awM
 gcg
-gcg
-auZ
-auZ
-gtF
-auU
+lpG
+lpG
+awR
+awM
 auW
 auW
-qPs
+suD
 nyl
 nyl
 nyl
@@ -97806,32 +97853,32 @@ nyl
 ixt
 ixt
 nyl
-gcg
-gcg
-gcg
+awM
+awM
+awM
 gye
 aMa
 aMa
-gcg
-gcg
-gcg
-gcg
-gcg
-auZ
-auZ
-ykH
-gtF
+awM
+awM
+awM
+awM
+awM
+qPs
+suD
+suD
+awQ
+awM
 auU
 ava
-auW
-mCt
+qew
 aAQ
 nyl
-sin
+lpG
 sqN
-hIQ
+lpG
 hfw
-hNv
+lpG
 suD
 nyl
 eJe
@@ -97969,27 +98016,27 @@ ixt
 nyl
 nyl
 nyl
-gcg
-gcg
-gcg
-gcg
-gcg
-gcg
-gcg
+awM
+awM
+awM
+awM
+awM
+awM
+awM
 eJe
 auZ
-auZ
-ykH
-ykH
-auZ
-auU
-auU
+awM
+axc
+awT
+awW
+awT
+awM
 auW
-auW
-lcC
+auU
+kSV
 lGf
-iZQ
-bIl
+suD
+lpG
 aAQ
 nyl
 aAQ
@@ -98132,31 +98179,31 @@ nyl
 nyl
 nyl
 nyl
-gcg
-gcg
-gcg
-gcg
-gcg
+awM
+awM
+awM
+awM
+awM
 eJe
 eJe
 nyl
-auU
-auU
-auU
-auU
-auU
-auW
+awM
+awM
+awM
+awM
+awM
+awM
 auW
 aAQ
+ixt
 nyl
 nyl
 nyl
 nyl
 nyl
 nyl
-nyl
-wPf
-iZQ
+lpG
+suD
 gPg
 xPi
 aAQ
@@ -98308,9 +98355,9 @@ auW
 auW
 auW
 auY
-nyl
-nyl
-eJe
+auW
+ixt
+dwQ
 eJe
 eJe
 eJe
@@ -98481,7 +98528,7 @@ ykH
 eJe
 nyl
 ixt
-nyl
+aAQ
 gLp
 aAQ
 eJe
@@ -99131,11 +99178,11 @@ ixt
 nyl
 nLl
 hHl
-bWj
-nLl
+ecA
+awE
 nLl
 jms
-cnb
+awz
 cnb
 aqT
 aqT
@@ -99291,15 +99338,15 @@ nyl
 nyl
 eJe
 eJe
-poB
-ecA
+vRJ
+akj
 fGR
 ecA
+awD
 nLl
-nLl
-cnb
+awA
 aqT
-edd
+aqT
 aqT
 aqT
 aqT
@@ -99454,14 +99501,14 @@ eJe
 eJe
 jms
 nLl
-nLl
+awL
 ecA
 jsm
-ump
+ecA
+awC
 iku
-iku
-gcg
-wxR
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -99617,13 +99664,13 @@ jms
 jms
 jms
 nLl
-nLl
-qMY
-fGR
+awH
 ecA
 ecA
-gcg
-txX
+sJg
+cnb
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -99780,12 +99827,12 @@ jms
 jms
 jms
 nLl
-iku
+awF
 lOw
 vRJ
-ecA
-sJg
-wuq
+cnb
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -99940,14 +99987,14 @@ jms
 jms
 jms
 jms
+awz
+awK
+awG
 cnb
 cnb
-iku
-mWZ
-qkg
-ecA
-xLU
-wuq
+awB
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -100104,12 +100151,12 @@ jms
 cnb
 cnb
 aqT
-gcg
-gcg
-reD
-nzn
-gcg
-geB
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -100265,13 +100312,13 @@ jms
 cnb
 cnb
 aqT
-nCd
-kxG
-dWd
-clc
-hqN
-hqN
-hxf
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
 aqT
 aqT
 bVH
@@ -100430,7 +100477,7 @@ aqT
 aqT
 aqT
 aqT
-wuq
+aqT
 aqT
 aqT
 aqT
@@ -100592,7 +100639,7 @@ aqT
 aqT
 aqT
 aqT
-wuq
+aqT
 aqT
 aqT
 aqT
@@ -100754,7 +100801,7 @@ aqT
 aqT
 aqT
 aqT
-wuq
+aqT
 aqT
 aqT
 aqT
@@ -100908,15 +100955,15 @@ tYv
 aUp
 ejB
 awy
-hqN
-hqN
-hqN
-hqN
-hqN
-hqN
-hqN
-hqN
-nfI
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
+aqT
 aqT
 aqT
 aqT
@@ -116288,7 +116335,7 @@ buE
 gie
 acc
 sIn
-acc
+avb
 waN
 udM
 cso
@@ -136568,7 +136615,7 @@ rTX
 jIn
 sVJ
 sLE
-hHZ
+ann
 hHZ
 hqJ
 nBo
@@ -141236,7 +141283,7 @@ akO
 fbJ
 rUc
 qCv
-bLX
+agU
 eXa
 uga
 eXa

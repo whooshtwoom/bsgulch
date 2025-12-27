@@ -2740,6 +2740,14 @@
 /obj/effect/landmark/start/xenobot,
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/xenobiology/xenoflora)
+"afW" = (
+/obj/machinery/power/grounding_rod/pre_mapped,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/floor/outdoors/snow/roofing/turfpack/muriki,
+/area/muriki/skyline/west)
 "agj" = (
 /obj/machinery/gibber/autogibber{
 	emagged = 1
@@ -4340,10 +4348,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/chapel_morgue)
-"aTS" = (
-/obj/effect/step_trigger/dephase_shadekin,
-/turf/simulated/floor/outdoors/snow/roofing/turfpack/muriki,
-/area/muriki/skyline/west)
 "aUb" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1381;
@@ -11967,6 +11971,7 @@
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Roof Access"
 	},
+/obj/structure/closet/emcloset,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/research/roof_eva)
 "eCr" = (
@@ -13791,7 +13796,6 @@
 /area/maintenance/gravgen)
 "fxy" = (
 /obj/structure/railing,
-/obj/effect/step_trigger/dephase_shadekin,
 /obj/structure/prop/machine/core/starts_on{
 	name = "Bluespace Inhibitor";
 	desc = "An E-Shui proprietary machine that de-phases Shadekin that enter its area of effect. It's unclear how it works, or why it smells vaguely floral..."
@@ -23813,6 +23817,9 @@
 /obj/effect/floor_decal/corner/purple/full{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/upper)
 "kyk" = (
@@ -24427,7 +24434,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/step_trigger/dephase_shadekin,
 /obj/structure/prop/machine/core/starts_on{
 	name = "Bluespace Inhibitor";
 	desc = "An E-Shui proprietary machine that de-phases Shadekin that enter its area of effect. It's unclear how it works, or why it smells vaguely floral..."
@@ -25384,6 +25390,9 @@
 /obj/effect/floor_decal/corner/purple/full{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/upper)
 "lnt" = (
@@ -25609,12 +25618,7 @@
 /area/rnd/research/roof_eva)
 "lss" = (
 /obj/structure/table/rack,
-/obj/item/rig/hazmat/equipped,
 /obj/structure/window/reinforced,
-/obj/item/rig/medical/equipped{
-	req_one_access = list(5);
-	req_access = null
-	},
 /obj/machinery/door/window/brigdoor/eastright{
 	name = "Medical Rescue Suit Storage";
 	req_access = null;
@@ -25624,6 +25628,16 @@
 	dir = 10
 	},
 /obj/structure/disposalpipe/segment,
+/obj/item/rig/medical/equipped{
+	req_one_access = list(5);
+	req_access = null;
+	pixel_x = 5
+	},
+/obj/item/rig/hazmat/equipped{
+	req_one_access = list(5);
+	req_access = null;
+	pixel_x = -7
+	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/evastore)
 "ltk" = (
@@ -31046,13 +31060,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/muriki/civup)
-"ohE" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/simulated/floor/outdoors/snow/roofing/turfpack/muriki,
-/area/muriki/skyline/west)
 "ohM" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/cable/green{
@@ -33090,6 +33097,9 @@
 /area/hydroponics/publicgarden)
 "peF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/research/roof_eva)
 "pfj" = (
@@ -33742,13 +33752,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/rnd/rdoffice)
-"pvv" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/floor/outdoors/snow/roofing/turfpack/muriki,
-/area/muriki/skyline/west)
 "pvw" = (
 /obj/machinery/camera/network/engineering{
 	c_tag = "ENG - Elevator Gravity Assist - North"
@@ -42059,6 +42062,9 @@
 /area/muriki/rooftop/cargo)
 "twV" = (
 /obj/effect/floor_decal/corner/purple/full,
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/hallway/upper)
 "twX" = (
@@ -42826,12 +42832,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/chapel_hallway)
-"tPd" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/floor/outdoors/snow/roofing/turfpack/muriki,
-/area/muriki/skyline/west)
 "tPp" = (
 /obj/structure/sign/directions/outpost/gen{
 	dir = 4;
@@ -45395,6 +45395,9 @@
 	dir = 4;
 	pixel_x = -30
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research/phoronics)
 "uYh" = (
@@ -45997,6 +46000,9 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 10
 	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/xenobiology/xenoflora)
 "voo" = (
@@ -46566,6 +46572,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 6
+	},
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research/phoronics/burn)
@@ -51497,6 +51506,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/cut_corners/yellow,
+/obj/structure/closet/secure_closet{
+	req_one_access = list(7,47)
+	},
 /turf/simulated/floor/tiled/steel,
 /area/rnd/research/phoronics/bombrange)
 "yeA" = (
@@ -51620,7 +51632,6 @@
 /obj/machinery/requests_console/preset/cmo{
 	pixel_y = 30
 	},
-/obj/item/key/heavyarmor_medic,
 /obj/item/toy/figure/cmo,
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
@@ -55876,7 +55887,7 @@ aeL
 aeL
 aeL
 aeL
-aeL
+aeK
 vKq
 wqX
 bpJ
@@ -56689,7 +56700,7 @@ aeK
 aeK
 aeK
 aeK
-aeL
+aeK
 aeK
 aeK
 aeK
@@ -57005,7 +57016,7 @@ cgR
 cgR
 cgR
 cgR
-wlx
+cgR
 wlx
 aeK
 aeK
@@ -58472,7 +58483,7 @@ wlx
 cgR
 cgR
 cgR
-aeL
+cgR
 aeL
 aeL
 aeL
@@ -58958,7 +58969,7 @@ cgR
 cgR
 qMg
 qMg
-qMg
+cgR
 cgR
 aeP
 aeK
@@ -61085,10 +61096,10 @@ dWV
 dWV
 dWV
 dWV
-aTS
-aTS
-tPd
-pvv
+hoH
+run
+aaV
+ttw
 ttw
 ttw
 ttw
@@ -61246,11 +61257,11 @@ dWV
 dWV
 dWV
 dWV
-aTS
-aTS
 hoH
-hoH
+eqt
 run
+aaV
+ttw
 ttw
 ttw
 ttw
@@ -61408,11 +61419,11 @@ dWV
 dWV
 dWV
 kLN
-aTS
-hoH
-eqt
-hoH
-run
+lGd
+lGd
+afW
+aaV
+ttw
 ttw
 ttw
 ttw
@@ -61570,11 +61581,11 @@ dWV
 dWV
 aaV
 aaV
-sMo
-hoH
-hoH
-wTh
-run
+aaV
+aaV
+aaV
+aaV
+ttw
 ttw
 ttw
 ttw
@@ -61732,11 +61743,11 @@ dWV
 aaV
 aaV
 ttw
-nPk
-lGd
-lGd
-lGd
-ohE
+ttw
+ttw
+ttw
+ttw
+ttw
 ttw
 ttw
 ttw
