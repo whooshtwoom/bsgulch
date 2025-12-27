@@ -8,13 +8,37 @@
 // packs_unsim/turfpacks_unsim_walls
 // packs_unsim/turfpacks_unsim_special
 
-// MURIKI ATMOS
+// MURIKI ATMOS (LEGACY, TO CREATE LESS HEADACHES WHEN LOADING OUTPOST MAPS. BIG BROTHER DOES NOT ENDORSE ANY USAGE OF MURIKI IN BLUESTONE MAPS.)
 #define TURFPACK_PACKNAME muriki
 #define TURFPACK_TEMP MURIKI_AVG_TEMP
 #define TURFPACK_O2 MURIKI_MOL_O2
 #define TURFPACK_N2 MURIKI_MOL_N2
 #define TURFPACK_PHORON 0
 #define TURFPACK_CO2 MURIKI_MOL_CO2
+
+#include "packs_sim/turfpacks_sim_tiled.dm"
+#include "packs_sim/turfpacks_sim_outdoors.dm"
+#include "packs_sim/turfpacks_sim_walls.dm"
+#include "packs_sim/turfpacks_sim_special.dm"
+#include "packs_unsim/turfpacks_unsim_tiled.dm"
+#include "packs_unsim/turfpacks_unsim_outdoors.dm"
+#include "packs_unsim/turfpacks_unsim_walls.dm"
+#include "packs_unsim/turfpacks_unsim_special.dm"
+
+#undef TURFPACK_PACKNAME
+#undef TURFPACK_TEMP
+#undef TURFPACK_O2
+#undef TURFPACK_N2
+#undef TURFPACK_PHORON
+#undef TURFPACK_CO2
+
+// SIF ATMOS
+#define TURFPACK_PACKNAME sif
+#define TURFPACK_TEMP SIF_AVERAGE_TEMP
+#define TURFPACK_O2 SIF_MOL_O2
+#define TURFPACK_N2 SIF_MOL_N2
+#define TURFPACK_PHORON 0
+#define TURFPACK_CO2 SIF_MOL_CO2
 
 #include "packs_sim/turfpacks_sim_tiled.dm"
 #include "packs_sim/turfpacks_sim_outdoors.dm"

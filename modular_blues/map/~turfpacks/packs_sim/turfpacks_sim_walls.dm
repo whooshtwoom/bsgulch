@@ -660,3 +660,15 @@
 	nitrogen = TURFPACK_N2
 	phoron = TURFPACK_PHORON
 	carbon_dioxide = TURFPACK_CO2
+/turf/simulated/wall/bluestone_specific/bluestone_rock/TURFPACK_PACKNAME //BluesADD - wall turfs for Bluestone Gulch.
+	temperature = TURFPACK_TEMP
+	oxygen = TURFPACK_O2
+	nitrogen = TURFPACK_N2
+	phoron = TURFPACK_PHORON
+	carbon_dioxide = TURFPACK_CO2
+/turf/simulated/wall/bluestone_specific/bluestone_rock/impervious/TURFPACK_PACKNAME //BluesADD - wall turfs for Bluestone Gulch.
+	temperature = TURFPACK_TEMP
+	oxygen = TURFPACK_O2
+	nitrogen = TURFPACK_N2
+	phoron = TURFPACK_PHORON
+	carbon_dioxide = TURFPACK_CO2
