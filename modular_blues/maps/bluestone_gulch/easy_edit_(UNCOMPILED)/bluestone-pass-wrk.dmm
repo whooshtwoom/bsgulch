@@ -473,7 +473,7 @@
 /turf/simulated/floor/tiled/dark/turfpack/station,
 /area/tcomm/tcomfoyer)
 "aqV" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/surface/north)
 "arO" = (
 /obj/structure/catwalk,
@@ -483,7 +483,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/Deck2_Star_Corridor)
 "arW" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -586,7 +586,7 @@
 "awk" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -750,7 +750,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -859,7 +859,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -894,7 +894,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -1074,7 +1074,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/space)
 "aKH" = (
 /obj/machinery/portable_atmospherics/canister/phoron,
@@ -1346,7 +1346,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -1406,7 +1406,7 @@
 /obj/structure/disposalpipe/broken{
 	dir = 4
 	},
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/space)
 "aUT" = (
 /obj/machinery/vending/snack{
@@ -2247,7 +2247,7 @@
 	},
 /area/tcomm/chamber)
 "bxC" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -2361,7 +2361,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -2449,7 +2449,7 @@
 /turf/simulated/floor/wood/alt/turfpack/station,
 /area/space)
 "bCl" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/space)
 "bCp" = (
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -2641,7 +2641,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 1
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -2745,12 +2745,12 @@
 /area/tcomm/tcomfoyer)
 "bMD" = (
 /obj/effect/floor_decal/spline/asteroid/east,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -2758,7 +2758,7 @@
 /turf/simulated/floor/outdoors/rocks/cetus,
 /area/space)
 "bMZ" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -2783,7 +2783,7 @@
 	},
 /area/engineering/Mech_Bay)
 "bNI" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -3467,7 +3467,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -3643,7 +3643,7 @@
 /area/engineering/atmos)
 "coA" = (
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -3860,7 +3860,7 @@
 	},
 /area/ai_monitored/aihall)
 "cwc" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -4459,7 +4459,7 @@
 /turf/simulated/floor/glass/reinforced/turfpack/station,
 /area/engineering/engine_monitoring)
 "cON" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -4623,7 +4623,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/Deck2_Star_Corridor)
 "cTY" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -4711,7 +4711,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 1
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -4888,7 +4888,7 @@
 /turf/space,
 /area/space)
 "ddy" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -4958,7 +4958,7 @@
 /turf/simulated/floor/tiled/white/turfpack/station,
 /area/medical/Reception)
 "dgj" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -5453,7 +5453,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -5959,7 +5959,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 1
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -6228,7 +6228,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 10
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -6272,7 +6272,7 @@
 /area/dummy)
 "dVL" = (
 /obj/effect/floor_decal/spline/asteroid/south,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -6597,7 +6597,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -6678,12 +6678,12 @@
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -6858,12 +6858,12 @@
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -7347,7 +7347,7 @@
 /turf/space,
 /area/space)
 "eDn" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -7420,12 +7420,12 @@
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -7871,7 +7871,7 @@
 /turf/simulated/floor/tiled/milspec/raised/turfpack/station,
 /area/ai_monitored/aihall)
 "eSM" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -8497,7 +8497,7 @@
 /turf/simulated/floor/tiled/monotile/turfpack/station,
 /area/dummy)
 "fll" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/surface/north)
 "flt" = (
 /obj/effect/floor_decal/corner/yellow,
@@ -9615,7 +9615,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/space)
 "fTs" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -10795,7 +10795,7 @@
 /turf/simulated/floor/tiled/steel/turfpack/station,
 /area/engineering/atmos)
 "gHg" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -11035,7 +11035,7 @@
 /turf/simulated/floor/tiled/monotile/turfpack/station,
 /area/dummy)
 "gNz" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -11753,7 +11753,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -12080,7 +12080,7 @@
 /area/rnd/Xenobotany_Lab)
 "hyY" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -12317,7 +12317,7 @@
 /turf/simulated/floor/tiled/steel/turfpack/station,
 /area/medical/Psych_Room_1)
 "hIk" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -12526,7 +12526,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -12627,7 +12627,7 @@
 /turf/simulated/floor/tiled/white/turfpack/station,
 /area/medical/Autoresleeving)
 "hTT" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -12785,7 +12785,7 @@
 /turf/simulated/floor/tiled/steel_grid/turfpack/station,
 /area/maintenance/substation/medical)
 "hZV" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -13792,7 +13792,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -14204,7 +14204,7 @@
 /area/space)
 "iWr" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -14463,7 +14463,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -14528,7 +14528,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -14583,7 +14583,7 @@
 /area/space)
 "jml" = (
 /obj/effect/floor_decal/spline/asteroid/east,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -14616,7 +14616,7 @@
 /area/engineering/cetus/meteor/enginewaste)
 "jnV" = (
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -15159,7 +15159,7 @@
 /turf/simulated/floor/tiled/techfloor/turfpack/station,
 /area/space)
 "jJB" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -15544,7 +15544,7 @@
 /turf/simulated/floor/tiled/techfloor/turfpack/station,
 /area/dummy)
 "jZn" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/sif,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/sif,
 /area/space)
 "jZO" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
@@ -16920,7 +16920,7 @@
 /area/crew_quarters/heads/sc/chief)
 "lbq" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -16958,7 +16958,7 @@
 /turf/simulated/floor/tiled/eris/white/turfpack/station,
 /area/space)
 "lcI" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -17306,7 +17306,7 @@
 /turf/simulated/floor/tiled/old_cargo/blue/turfpack/station,
 /area/medical/Treatment_Hall)
 "lqI" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -17558,7 +17558,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -18001,7 +18001,7 @@
 /turf/simulated/floor/carpet/green/turfpack/station,
 /area/space)
 "lLm" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -18531,7 +18531,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/engineering/cetus/meteor/engineroom)
 "mhG" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/maintenance/Deck2_Star_Corridor)
 "mhO" = (
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -18627,7 +18627,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -19085,7 +19085,7 @@
 	},
 /area/engineering/cetus/meteor/enginewaste)
 "mCz" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -20038,7 +20038,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -20146,7 +20146,7 @@
 	},
 /area/tcomm/chamber)
 "nik" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/maintenance/Deck2_Port_Corridor)
 "nix" = (
 /turf/simulated/wall/r_wall,
@@ -20448,7 +20448,7 @@
 	},
 /area/maintenance/substation/research)
 "nvN" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -20538,7 +20538,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -20586,7 +20586,7 @@
 	},
 /area/maintenance/Deck2_Port_Corridor)
 "nBq" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -20775,7 +20775,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -21075,7 +21075,7 @@
 /turf/simulated/floor/redgrid,
 /area/ai_upload)
 "nUH" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/sif,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/sif,
 /area/maintenance/Deck2_Port_Corridor)
 "nVj" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5{
@@ -21249,7 +21249,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4
 	},
 /obj/structure/railing/grey{
@@ -21381,7 +21381,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/engineering/cetus/meteor/engineroom)
 "oey" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /turf/simulated/floor/snow/snow2,
@@ -21524,7 +21524,7 @@
 /area/dummy)
 "ojU" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -21975,7 +21975,7 @@
 "ouq" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -22745,7 +22745,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/engineering/engine_monitoring)
 "oNs" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -23209,7 +23209,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -23737,7 +23737,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -24000,7 +24000,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -24375,7 +24375,7 @@
 "pII" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -24624,7 +24624,7 @@
 /turf/simulated/floor/wood/alt/parquet,
 /area/dummy)
 "pRe" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/maintenance/Deck2_Port_Corridor)
 "pRk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
@@ -24970,7 +24970,7 @@
 	},
 /area/engineering/atmos)
 "qea" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /turf/simulated/floor/outdoors/snow/sif,
@@ -25293,11 +25293,11 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/substation/tcomms)
 "qqH" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/station,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/dummy)
 "qqK" = (
 /obj/effect/floor_decal/spline/asteroid/south,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -25691,7 +25691,7 @@
 	},
 /area/engineering/Central_Engineering_Post)
 "qGB" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -25745,7 +25745,7 @@
 /turf/simulated/floor/tiled/kafel_full/white/turfpack/station,
 /area/crew_quarters/sauna)
 "qJO" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -25880,7 +25880,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -26020,7 +26020,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -26046,7 +26046,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/tcomm/tcomfoyer)
 "qTw" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
@@ -26501,7 +26501,7 @@
 /area/medical/Autoresleeving)
 "rfA" = (
 /obj/effect/floor_decal/spline/asteroid/south,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -26706,7 +26706,7 @@
 /turf/simulated/wall/r_wall,
 /area/dummy)
 "rqi" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -26831,7 +26831,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/space)
 "ruc" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -26984,7 +26984,7 @@
 /turf/simulated/floor/tiled/steel/turfpack/station,
 /area/dummy)
 "rzW" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/dummy)
 "rAb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -27169,7 +27169,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -27195,7 +27195,7 @@
 "rGi" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -27259,7 +27259,7 @@
 	},
 /area/engineering/Central_Engineering_Post)
 "rIi" = (
-/turf/simulated/wall/bspass/bluestone/turfpack/sif,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/sif,
 /area/surface/north)
 "rIR" = (
 /obj/effect/floor_decal/corner/black/border,
@@ -27357,7 +27357,7 @@
 /area/medical/Reception)
 "rKM" = (
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -27958,7 +27958,7 @@
 /area/engineering/auxiliary_engineering)
 "rZB" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -28056,7 +28056,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -28178,7 +28178,7 @@
 	},
 /area/space)
 "skX" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -28423,7 +28423,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/engineering/cetus/meteor/engineroom)
 "stC" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -28599,7 +28599,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -29041,7 +29041,7 @@
 /turf/simulated/wall/r_wall,
 /area/rnd/Xenobotany_Lab)
 "sTw" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -29105,7 +29105,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -29166,7 +29166,7 @@
 /turf/simulated/floor/tiled/old_cargo/turfpack/station,
 /area/medical/Treatment_Hall)
 "sWo" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -29253,7 +29253,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -29261,7 +29261,7 @@
 /turf/simulated/floor/outdoors/rocks/cetus,
 /area/space)
 "sYb" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/space)
 "sYd" = (
 /obj/effect/floor_decal/techfloor{
@@ -29363,7 +29363,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -29380,7 +29380,7 @@
 /turf/simulated/floor/tiled/steel/turfpack/station,
 /area/dummy)
 "tbX" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/maintenance/substation/tcomms)
 "tcr" = (
 /obj/turbolift_map_holder{
@@ -29820,7 +29820,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -30745,7 +30745,7 @@
 	},
 /area/tcomm/chamber)
 "tZb" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -30791,7 +30791,7 @@
 /turf/simulated/floor/reinforced/n20,
 /area/engineering/atmos)
 "uak" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /turf/simulated/floor/grass2/sif/turfpack/sif,
@@ -31028,7 +31028,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4
 	},
 /turf/simulated/floor/snow/snow2,
@@ -31324,7 +31324,7 @@
 /turf/simulated/floor/tiled/old_cargo/blue/turfpack/station,
 /area/surface/north)
 "ush" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -31700,7 +31700,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -31775,7 +31775,7 @@
 /turf/simulated/floor/tiled/old_cargo/turfpack/station,
 /area/medical/Treatment_Hall)
 "uHl" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -32153,7 +32153,7 @@
 /area/space)
 "uVw" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -32469,7 +32469,7 @@
 "vhT" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -32737,7 +32737,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/space)
 "vum" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -32987,7 +32987,7 @@
 /turf/simulated/floor/tiled/neutral/turfpack/station,
 /area/rnd/research)
 "vCi" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
@@ -33114,7 +33114,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/catwalk,
@@ -33124,7 +33124,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /turf/simulated/floor/outdoors/snow/sif,
@@ -33389,7 +33389,7 @@
 /area/dummy)
 "vTY" = (
 /obj/effect/floor_decal/spline/asteroid/north,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	color = "#777777";
 	name = "retaining wall"
 	},
@@ -33597,7 +33597,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/engineering/cetus/meteor/engineroom)
 "wbU" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -33745,12 +33745,12 @@
 /area/space)
 "wik" = (
 /obj/effect/floor_decal/spline/asteroid/west,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
@@ -33857,7 +33857,7 @@
 /area/maintenance/Deck2_Port_Corridor)
 "wmb" = (
 /obj/effect/floor_decal/spline/asteroid/east,
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 8;
 	color = "#777777";
 	name = "retaining wall"
@@ -34566,7 +34566,7 @@
 /turf/simulated/floor/tiled/steel/turfpack/station,
 /area/medical/Virology)
 "wJP" = (
-/turf/simulated/wall/bspass/bluestone,
+/turf/simulated/bluestone_specific/bluestone_floor/turfpack/station,
 /area/maintenance/Deck2_Star_Corridor)
 "wKj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -34875,12 +34875,12 @@
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1;
 	color = "#777777";
 	name = "retaining wall"
@@ -35197,7 +35197,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/rnd/Xenobotany_Isolation_Chamber)
 "xmW" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -35398,7 +35398,7 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -36424,7 +36424,7 @@
 	},
 /area/tcomm/chamber)
 "yeQ" = (
-/obj/structure/railing/overhang/grey{
+/obj/structure/railing/grey{
 	dir = 4;
 	color = "#777777";
 	name = "retaining wall"
