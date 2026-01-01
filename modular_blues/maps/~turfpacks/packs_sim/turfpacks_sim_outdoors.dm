@@ -468,19 +468,19 @@
 	nitrogen = TURFPACK_N2
 	phoron = TURFPACK_PHORON
 	carbon_dioxide = TURFPACK_CO2
-/turf/simulated/floor/outdoors/bluestone_specific/heavy_snow/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
+/turf/simulated/floor/outdoors/bluestone_specific/heavy_snow/turfpack/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
 	temperature = TURFPACK_TEMP
 	oxygen = TURFPACK_O2
 	nitrogen = TURFPACK_N2
 	phoron = TURFPACK_PHORON
 	carbon_dioxide = TURFPACK_CO2
-/turf/simulated/floor/outdoors/bluestone_specific/flowered_grass/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
+/turf/simulated/floor/outdoors/bluestone_specific/flowered_grass/turfpack/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
 	temperature = TURFPACK_TEMP
 	oxygen = TURFPACK_O2
 	nitrogen = TURFPACK_N2
 	phoron = TURFPACK_PHORON
 	carbon_dioxide = TURFPACK_CO2
-/turf/simulated/floor/outdoors/bluestone_specific/bluestone_floor/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
+/turf/simulated/floor/outdoors/bluestone_specific/bluestone_floor/turfpack/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
 	temperature = TURFPACK_TEMP
 	oxygen = TURFPACK_O2
 	nitrogen = TURFPACK_N2

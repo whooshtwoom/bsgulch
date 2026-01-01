@@ -1,4 +1,8 @@
 //Make sure to mirror any changes over to unsimulated\floor_types.dm, please.
+
+/*
+	Bluestone Gulch Turfs (yeah, I know this isn't integrated well- counterpoint, the tree is a fuckin' mess.)
+*/
 //INDOORS
 /turf/simulated/floor/bluestone_specific
 	icon = 'modular_blues/icons/turf/bluestone_tiles.dmi'
@@ -6,7 +10,7 @@
 	name = "bluestone"
 	desc = "You can never scream at a mapper too much."
 
-/turf/simulated/bluestone_specific/bluestone_floor
+/turf/simulated/floor/bluestone_specific/bluestone_floor
 	name = "bluestone gravel"
 	desc = "Ruled #2 in 'best materials to build a planetary outpost on top of' by Vir Construction Weekly."
 	gender = PLURAL //WOKENESS OVERLOAD!!!

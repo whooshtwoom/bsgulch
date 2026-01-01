@@ -984,7 +984,7 @@
 	nitrogen = TURFPACK_N2
 	phoron = TURFPACK_PHORON
 	carbon_dioxide = TURFPACK_CO2
-/turf/unsimulated/bluestone_specific/bluestone_floor/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
+/turf/unsimulated/bluestone_specific/bluestone_floor/turfpack/TURFPACK_PACKNAME //BluesADD - floor turfs for Bluestone Gulch.
 	temperature = TURFPACK_TEMP
 	oxygen = TURFPACK_O2
 	nitrogen = TURFPACK_N2

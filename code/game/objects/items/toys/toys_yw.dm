@@ -1,3 +1,5 @@
+//BluesREMOVE - Sneep snoop.. Snipping out custom items.
+/*
 /obj/item/toy/plushie/teshari/strix
 	name = "Strix Hades"
 	desc = "This is Strix Hades the plushie Avali. Very soft, with a pompom on the tail. The toy is made well, as if alive. Looks like he is sleeping. Shhh!"
@@ -50,6 +52,7 @@
 	if(src && !M.stat && in_range(M,src))
 		to_chat(M, "You cannot rename Eili! You hug her anyway.")
 		return 1
+*/
 
 /obj/item/toy/plushie/teshari/_yw
 	name = "lifelike teshari plush (Brown)" // Outpost 21 edit - loadout support

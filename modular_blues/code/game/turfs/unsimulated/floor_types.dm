@@ -1,17 +1,21 @@
 //This file should be basically a carbon copy of simulated/floor_types.dm, unsure why the hell we have to redefine it ALL..
+
+/*
+	Bluestone Gulch Turfs (yeah, I know this isn't integrated well- counterpoint, the tree is a fuckin' mess.)
+*/
 //INDOORS
 /turf/unsimulated/floor/bluestone_specific
 	icon = 'modular_blues/icons/turf/bluestone_tiles.dmi'
-	icon_state = "base"
+	icon_state = "noname"
 	name = "bluestone"
 	desc = "You can never scream at a mapper too much."
 
-/turf/unsimulated/bluestone_specific/bluestone_floor
+/turf/unsimulated/floor/bluestone_specific/bluestone_floor
 	name = "bluestone gravel"
 	desc = "Ruled #2 in 'best materials to build a planetary outpost on top of' by Vir Construction Weekly."
 	gender = PLURAL
 	icon_state = "bluestone_floor"
-	can_dirty = FALSE
+//  can_dirty = FALSE ...iunno why this isn't defined for unsimulated turfs.
 
 //OUTDOORS
 /turf/unsimulated/floor/outdoors/bluestone_specific

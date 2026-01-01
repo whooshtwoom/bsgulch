@@ -32,8 +32,6 @@
 	var/self_deleting = FALSE
 	var/list/progressive_tape = null
 
-/obj/item/rectape/anna_lore
-	name = "old tape"
 
 /obj/item/rectape/proc/add_custom_entry(min,sec,log)
 	timestamp += (min * 60) + sec
@@ -47,6 +45,11 @@
 	if(!progressive_tape)
 		progressive_tape = list()
 	progressive_tape += log
+
+//BluesREMOVE - We hath no Anna to lore.
+/*
+/obj/item/rectape/anna_lore
+	name = "old tape"
 
 /obj/item/rectape/anna_lore/Initialize(mapload)
 	. = ..()
@@ -797,3 +800,4 @@
 			add_progressive("You let them die.")
 			if(prob(20))
 				add_progressive("You failed them all.")
+*/
