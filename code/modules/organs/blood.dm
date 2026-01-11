@@ -150,6 +150,7 @@ BLOOD_VOLUME_SURVIVE = 40
 				update_icons_body()
 			eye_blurry = max(eye_blurry,6)
 			Paralyse(3)
+			Sleeping(3)
 			adjustToxLoss(3 * dmg_coef)
 			adjustOxyLoss(75 * dmg_coef) // 15 more than dexp fixes (also more than dex+dexp+tricord)
 
@@ -320,10 +321,7 @@ BLOOD_VOLUME_SURVIVE = 40
 	if(!B.data["viruses"])
 		B.data["viruses"] = list()
 
-	for(var/datum/disease/D in GetSpreadableViruses())
-		B.data["viruses"] |= D.Copy()
-
-	for(var/datum/disease/D in GetDormantDiseases())
+	for(var/datum/disease/D in GetViruses())
 		B.data["viruses"] |= D.Copy()
 
 	if(!B.data["resistances"])
@@ -367,7 +365,7 @@ BLOOD_VOLUME_SURVIVE = 40
 	var/list/sniffles = injected.data["viruses"]
 	for(var/ID in sniffles)
 		var/datum/disease/D = ID
-		if(D.spread_flags & (DISEASE_SPREAD_SPECIAL | DISEASE_SPREAD_NON_CONTAGIOUS)) // You can't put non-contagius diseases in blood, but just in case
+		if(D.spread_flags & (DISEASE_SPREAD_SPECIAL | DISEASE_SPREAD_NON_CONTAGIOUS)) // Special/Non-Contagious stay in the blood, but they won't spread
 			continue
 		ContractDisease(D)
 	if (injected.data["resistances"] && prob(5))
