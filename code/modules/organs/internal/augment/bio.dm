@@ -6,6 +6,7 @@
 	icon_state = "augment_hybrid"
 	dead_icon = "augment_hybrid_dead"
 
+	robotic = ORGAN_ASSISTED
 	target_parent_classes = list(ORGAN_FLESH)
 
 /* Jensen Shades. Your vision can be augmented.
@@ -22,6 +23,8 @@
 	w_class = ITEMSIZE_TINY
 
 	organ_tag = O_AUG_EYES
+
+	robotic = ORGAN_ROBOT
 
 	parent_organ = BP_HEAD
 
@@ -80,8 +83,6 @@
 	organ_tag = O_AUG_PELVIC
 
 	parent_organ = BP_GROIN
-
-	robotic = ORGAN_ASSISTED //'chunk of meat'
 
 	target_parent_classes = list(ORGAN_FLESH, ORGAN_ROBOT)
 

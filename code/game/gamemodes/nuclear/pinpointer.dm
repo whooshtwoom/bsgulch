@@ -12,10 +12,6 @@
 	var/obj/item/disk/nuclear/the_disk = null
 	var/active = 0
 
-	///TODO: Clear up click code entirely. This is used exclusively for attack_self
-	var/nuclear = FALSE
-	var/shuttle = FALSE
-
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
@@ -24,18 +20,13 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/pinpointer/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(nuclear || shuttle)
-		return
+/obj/item/pinpointer/attack_self()
 	if(!active)
-		active = TRUE
+		active = 1
 		START_PROCESSING(SSobj, src)
 		to_chat(usr, span_notice("You activate the pinpointer"))
 	else
-		active = FALSE
+		active = 0
 		STOP_PROCESSING(SSobj, src)
 		icon_state = "pinoff"
 		to_chat(usr, span_notice("You deactivate the pinpointer"))
@@ -194,10 +185,7 @@
 	var/mode = 0	//Mode 0 locates disk, mode 1 locates the shuttle
 	var/obj/machinery/computer/shuttle_control/multi/syndicate/home = null
 
-/obj/item/pinpointer/nukeop/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/pinpointer/nukeop/attack_self(mob/user as mob)
 	if(!active)
 		active = 1
 		START_PROCESSING(SSobj, src)
@@ -283,10 +271,7 @@
 	var/shuttle_comp_id = null
 	var/obj/machinery/computer/shuttle_control/our_shuttle = null
 
-/obj/item/pinpointer/shuttle/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/pinpointer/shuttle/attack_self(mob/user as mob)
 	if(!active)
 		active = TRUE
 		START_PROCESSING(SSobj, src)

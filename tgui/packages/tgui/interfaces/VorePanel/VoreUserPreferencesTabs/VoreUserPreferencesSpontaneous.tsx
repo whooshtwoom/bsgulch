@@ -1,13 +1,13 @@
 import { Section, Stack } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
-import type { LocalPrefs } from '../types';
+import type { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VorePanelElements/VoreUserPreferenceItem';
 
 export const VoreUserPreferencesSpontaneous = (props: {
   can_be_drop_prey: BooleanLike;
   can_be_drop_pred: BooleanLike;
-  preferences: LocalPrefs;
+  preferences: localPrefs;
 }) => {
   const { can_be_drop_prey, can_be_drop_pred, preferences } = props;
 

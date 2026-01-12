@@ -40,9 +40,6 @@
 ///////////////////Options for using captured souls///////////////////////////////////////
 
 /obj/item/soulstone/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if (!in_range(src, user))
 		return
 	user.set_machine(src)

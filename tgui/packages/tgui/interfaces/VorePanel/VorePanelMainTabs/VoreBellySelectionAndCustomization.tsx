@@ -14,16 +14,16 @@ import type { BooleanLike } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { digestModeToColor } from '../constants';
-import type { BellyData, HostMob, SelectedData } from '../types';
+import type { bellyData, hostMob, selectedData } from '../types';
 import { VorePanelEditToggle } from '../VorePanelElements/VorePanelCommonElements';
 import { VoreSelectedBelly } from './VoreSelectedBelly';
 
 export const VoreBellySelectionAndCustomization = (props: {
   activeVoreTab?: number;
-  our_bellies: BellyData[];
-  selected: SelectedData | null;
+  our_bellies: bellyData[];
+  selected: selectedData | null;
   show_pictures: BooleanLike;
-  host_mobtype: HostMob;
+  host_mobtype: hostMob;
   icon_overflow: BooleanLike;
   vore_words: Record<string, string[]>;
   toggleEditMode: React.Dispatch<React.SetStateAction<boolean>>;
@@ -31,7 +31,6 @@ export const VoreBellySelectionAndCustomization = (props: {
   persist_edit_mode: BooleanLike;
   minBellyName: number;
   maxBellyName: number;
-  presets: string;
 }) => {
   const { act } = useBackend();
 
@@ -48,7 +47,6 @@ export const VoreBellySelectionAndCustomization = (props: {
     persist_edit_mode,
     minBellyName,
     maxBellyName,
-    presets,
   } = props;
 
   const [showSearch, setShowSearch] = useState(false);
@@ -58,7 +56,7 @@ export const VoreBellySelectionAndCustomization = (props: {
 
   const bellySearch = createSearch(
     searchedBellies,
-    (belly: BellyData) => belly.name,
+    (belly: bellyData) => belly.name,
   );
 
   const belliesToDisplay = our_bellies.filter(bellySearch);
@@ -193,7 +191,6 @@ export const VoreBellySelectionAndCustomization = (props: {
               host_mobtype={host_mobtype}
               icon_overflow={icon_overflow}
               editMode={editMode}
-              presets={presets}
             />
           </Section>
         )}

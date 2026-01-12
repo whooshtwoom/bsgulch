@@ -7,7 +7,6 @@
 
 	secured = 1
 	wires = WIRE_RECEIVE
-	special_handling = TRUE
 
 /obj/item/assembly/igniter/activate()
 	if(!..())
@@ -33,10 +32,7 @@
 	return TRUE
 
 
-/obj/item/assembly/igniter/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/assembly/igniter/attack_self(var/mob/user)
 	activate()
 	add_fingerprint(user)
 

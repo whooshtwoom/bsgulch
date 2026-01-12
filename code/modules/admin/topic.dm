@@ -950,7 +950,6 @@
 
 		//so they black out before warping
 		M.Paralyse(5)
-		M.Sleeping(5)
 		sleep(5)
 		if(!M)	return
 
@@ -1005,7 +1004,6 @@
 			M.drop_from_inventory(I)
 
 		M.Paralyse(5)
-		M.Sleeping(5)
 		sleep(5)
 		M.loc = pick(GLOB.tdome1)
 		spawn(50)
@@ -1031,7 +1029,6 @@
 			M.drop_from_inventory(I)
 
 		M.Paralyse(5)
-		M.Sleeping(5)
 		sleep(5)
 		M.loc = pick(GLOB.tdome2)
 		spawn(50)
@@ -1054,7 +1051,6 @@
 			return
 
 		M.Paralyse(5)
-		M.Sleeping(5)
 		sleep(5)
 		M.loc = pick(GLOB.tdomeadmin)
 		spawn(50)
@@ -1084,7 +1080,6 @@
 			observer.equip_to_slot_or_del(new /obj/item/clothing/under/suit_jacket(observer), slot_w_uniform)
 			observer.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(observer), slot_shoes)
 		M.Paralyse(5)
-		M.Sleeping(5)
 		sleep(5)
 		M.loc = pick(GLOB.tdomeobserve)
 		spawn(50)

@@ -20,9 +20,6 @@
 	var/obj/item/radio/headset/mmi_radio/radio = null//Let's give it a radio.
 	var/mob/living/body_backup = null //add reforming
 
-	///Var for attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/mmi/Initialize(mapload)
 	. = ..()
 	radio = new(src)//Spawns a radio inside the MMI.
@@ -101,12 +98,7 @@
 	..()
 
 //TODO: ORGAN REMOVAL UPDATE. Make the brain remain in the MMI so it doesn't lose organ data.
-/obj/item/mmi/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
+/obj/item/mmi/attack_self(mob/user as mob)
 	if(!brainmob)
 		to_chat(user, span_warning("You upend the MMI, but there's nothing in it."))
 	else if(locked)
@@ -195,9 +187,6 @@
 	mecha = null//This does not appear to be used outside of reference in mecha.dm.
 	var/ghost_query_type = null
 	var/datum/ghost_query/Q //This is used so we can unregister ourself.
-	special_handling = TRUE
-	///Var for attack_self chain
-	var/is_digital_robot = FALSE
 
 /obj/item/mmi/digital/Initialize(mapload)
 	. = ..()
@@ -237,12 +226,7 @@
 		H.mind.transfer_to(brainmob)
 	return
 
-/obj/item/mmi/digital/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(is_digital_robot)
-		return FALSE
+/obj/item/mmi/digital/attack_self(mob/user as mob)
 	if(brainmob && !brainmob.key && searching == 0)
 		//Start the process of searching for a new user.
 		to_chat(user, span_blue("You carefully locate the manual activation switch and start the [src]'s boot process."))
@@ -304,7 +288,6 @@
 	w_class = ITEMSIZE_NORMAL
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 3, TECH_DATA = 4)
 	ghost_query_type = /datum/ghost_query/drone_brain
-	is_digital_robot = TRUE
 
 /obj/item/mmi/digital/robot/Initialize(mapload)
 	. = ..()

@@ -14,8 +14,6 @@
 	gps_tag = "COM0"
 	emped = 0
 
-	special_handling = TRUE
-
 /obj/item/gps/advanced/Initialize(mapload)
 	. = ..()
 	add_overlay("working")
@@ -29,10 +27,7 @@
 		cut_overlay("emp")
 		add_overlay("working")
 
-/obj/item/gps/advanced/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/gps/advanced/attack_self(mob/user as mob)
 
 	var/obj/item/gps/advanced/t = ""
 	if(emped)

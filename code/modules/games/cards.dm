@@ -305,9 +305,6 @@
 	..()
 
 /obj/item/deck/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	shuffle(user)
 
 
@@ -391,10 +388,7 @@
 	pickup_sound = 'sound/items/pickup/paper.ogg'
 
 
-/obj/item/pack/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/pack/attack_self(var/mob/user as mob)
 	user.visible_message(span_danger("[user] rips open \the [src]!"))
 	var/obj/item/hand/H = new()
 
@@ -457,10 +451,7 @@
 	if(!cards.len)
 		qdel(src)
 
-/obj/item/hand/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/hand/attack_self(var/mob/user as mob)
 	concealed = !concealed
 	update_icon()
 	user.visible_message(span_notice("\The [user] [concealed ? "conceals" : "reveals"] their hand."))

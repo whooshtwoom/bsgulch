@@ -8,9 +8,9 @@ import {
   Stack,
 } from 'tgui-core/components';
 import { abilitiy_usable } from '../functions';
-import type { Abilities, abilitySizeChange } from '../types';
+import type { abilities, abilitySizeChange } from '../types';
 
-export const VoreAbilities = (props: { abilities: Abilities }) => {
+export const VoreAbilities = (props: { abilities: abilities }) => {
   const { abilities } = props;
 
   const { nutrition, size_change } = abilities;

@@ -1,10 +1,10 @@
 import { useBackend } from 'tgui/backend';
 import { Button } from 'tgui-core/components';
 
-import type { PreferenceData } from '../types';
+import type { preferenceData } from '../types';
 
 export const VoreUserPreferenceItem = (props: {
-  spec: PreferenceData;
+  spec: preferenceData;
   [rest: string]: any;
 }) => {
   const { act } = useBackend();

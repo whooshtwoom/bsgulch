@@ -116,10 +116,7 @@
 								"a bottle", "a boat", "a spaceship",
 								"Nanotrasen logo", "a geometric-looking letter S", "a dodecahedron")
 
-/obj/item/firework_star/aesthetic/configurable/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/firework_star/aesthetic/configurable/attack_self(var/mob/user)
 	var/choice = tgui_alert(user, "What setting do you want to adjust?", "Firework Star", list("Color", "Shape", "Nothing"))
 	if(src.loc != user)
 		return

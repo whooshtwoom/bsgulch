@@ -6,7 +6,7 @@
 		if(H.species.trashcan == 1)
 			playsound(src,'sound/items/eatfood.ogg', rand(10,50), 1)
 			user.drop_item()
-			H.vore_selected.nom_atom(src)
+			forceMove(H.vore_selected)
 			balloon_alert(H, "you can taste the flavor of garbage. Wait what?")
 			return
 
@@ -15,7 +15,7 @@
 		if(R.module.type == /obj/item/robot_module/robot/janitor) // You can now feed the trash borg yay.
 			playsound(src,'sound/items/eatfood.ogg', rand(10,50), 1)
 			user.drop_item()
-			R.vore_selected.nom_atom(src)
+			forceMove(R.vore_selected)
 			R.balloon_alert_visible("[user] feeds [R] with [src]!", "you feed [R] \the [src]!")
 			return
 	..()

@@ -19,9 +19,6 @@
 /obj/item/shockpaddles/standalone/rig/checked_use(var/charge_amt)
 	return 1
 
-/obj/item/shockpaddles/standalone/rig/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/shockpaddles/standalone/rig/attack_self()
 	use_on_synthetic = !use_on_synthetic
 	to_chat(usr, span_notice("You switch the [src] to [use_on_synthetic ? "FBP" : "organic"] compatibility."))

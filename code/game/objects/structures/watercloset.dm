@@ -322,7 +322,18 @@
 		slot_l_hand_str = 'icons/mob/items/lefthand.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand.dmi',
 	)
-	honk_sound = 'sound/voice/quack.ogg'
+	honk_sound = 'sound/voice/quack.ogg' //VOREStation edit
+	var/honk_text = 0
+
+/obj/item/bikehorn/rubberducky/attack_self(mob/user)
+	if(spam_flag == 0)
+		spam_flag = 1
+		playsound(src, honk_sound, 50, 1)
+		if(honk_text)
+			audible_message(span_maroon("[honk_text]"))
+		src.add_fingerprint(user)
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
+	return
 
 //Admin spawn duckies
 
@@ -334,24 +345,21 @@
 	item_state = "rubberducky_red"
 	honk_sound = 'sound/effects/adminhelp.ogg'
 	var/honk_count = 0
-	special_handling = TRUE
 
 /obj/item/bikehorn/rubberducky/red/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(honk_count >= 3)
 		var/turf/epicenter = get_turf(src)
 		explosion(epicenter, 0, 0, 1, 3)
 		qdel(src)
 		return
-	else if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
+	else if(spam_flag == 0)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
+		src.add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
-		honk_count++
+		honk_count ++
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
 	return
 
 /obj/item/bikehorn/rubberducky/blue
@@ -361,20 +369,18 @@
 	icon_state = "rubberducky_blue"
 	item_state = "rubberducky_blue"
 	honk_sound = 'sound/effects/bubbles.ogg'
-	special_handling = TRUE
+	var/honk_count = 0
 
 /obj/item/bikehorn/rubberducky/blue/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
-		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
-		if(honk_text)
-			audible_message(span_maroon("[honk_text]"))
+	if(spam_flag == 0)
 		var/turf/simulated/whereweare = get_turf(src)
 		whereweare.wet_floor(2)
+		spam_flag = 1
+		playsound(src, honk_sound, 50, 1)
+		if(honk_text)
+			audible_message(span_maroon("[honk_text]"))
+		src.add_fingerprint(user)
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
 	return
 
 /obj/item/bikehorn/rubberducky/pink
@@ -384,24 +390,23 @@
 	icon_state = "rubberducky_pink"
 	item_state = "rubberducky_pink"
 	honk_sound = 'sound/vore/sunesound/pred/insertion_01.ogg'
-	special_handling = TRUE
+	var/honk_count = 0
 
 /obj/item/bikehorn/rubberducky/pink/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
+	if(spam_flag == 0)
 		if(!user.devourable)
 			to_chat(user, span_vnotice("You can't bring yourself to squeeze it..."))
 			return
-		cooldown = (world.time + 2 SECONDS)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
+		src.add_fingerprint(user)
 		user.drop_item()
 		user.forceMove(src)
 		to_chat(user, span_vnotice("You have been swallowed alive by the rubber ducky. Your entire body compacted up and squeezed into the tiny space that makes up the oddly realistic and not at all rubbery stomach. The walls themselves are kneading over you, grinding some sort of fluids into your trapped body. You can even hear the sound of bodily functions echoing around you..."))
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
+	return
 
 /obj/item/bikehorn/rubberducky/pink/container_resist(var/mob/living/escapee)
 	if(isdisposalpacket(loc))
@@ -417,26 +422,23 @@
 	icon_state = "rubberducky_grey"
 	item_state = "rubberducky_grey"
 	honk_sound = 'sound/effects/ghost.ogg'
-	special_handling = TRUE
+	var/honk_count = 0
 
 /obj/item/bikehorn/rubberducky/grey/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
-		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
-		if(honk_text)
-			audible_message(span_maroon("[honk_text]"))
+	if(spam_flag == 0)
 		for(var/obj/machinery/light/L in GLOB.machines)
 			if(L.z != user.z || get_dist(user,L) > 10)
 				continue
 			else
 				L.flicker(10)
+		spam_flag = 1
+		playsound(src, honk_sound, 50, 1)
+		if(honk_text)
+			audible_message(span_maroon("[honk_text]"))
+		src.add_fingerprint(user)
 		user.drop_item()
 		var/turf/T = locate(rand(1, 140), rand(1, 140), user.z)
-		forceMove(T)
+		src.forceMove(T)
 	return
 
 /obj/item/bikehorn/rubberducky/green
@@ -446,6 +448,7 @@
 	icon_state = "rubberducky_green"
 	item_state = "rubberducky_green"
 	honk_sound = 'sound/arcade/mana.ogg'
+	var/honk_count = 0
 	var/list/flora = list(/obj/structure/flora/ausbushes,
 						/obj/structure/flora/ausbushes/reedbush,
 						/obj/structure/flora/ausbushes/leafybush,
@@ -462,21 +465,18 @@
 						/obj/structure/flora/ausbushes/ppflowers,
 						/obj/structure/flora/ausbushes/sparsegrass,
 						/obj/structure/flora/ausbushes/fullgrass)
-	special_handling = TRUE
 
 /obj/item/bikehorn/rubberducky/green/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
-		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
-		if(honk_text)
-			audible_message(span_maroon("[honk_text]"))
+	if(spam_flag == 0)
 		var/turf/simulated/whereweare = get_turf(src)
 		var/obj/P = pick(flora)
 		new P(whereweare)
+		spam_flag = 1
+		playsound(src, honk_sound, 50, 1)
+		if(honk_text)
+			audible_message(span_maroon("[honk_text]"))
+		src.add_fingerprint(user)
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
 	return
 
 /obj/item/bikehorn/rubberducky/white
@@ -486,19 +486,16 @@
 	icon_state = "rubberducky_white"
 	item_state = "rubberducky_white"
 	honk_sound = 'sound/effects/lightningshock.ogg'
-	special_handling = TRUE
+	var/honk_count = 0
 
 /obj/item/bikehorn/rubberducky/white/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
+	if(spam_flag == 0)
+		lightning_strike(get_turf(src), 1)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
-		lightning_strike(get_turf(src), 1)
+		src.add_fingerprint(user)
 		qdel(src)
 	return
 
@@ -518,16 +515,11 @@
 	icon_state = "rubberducky_gold"
 	item_state = "rubberducky_gold"
 	honk_sound = 'sound/voice/quack_reverb.ogg'
-	special_handling = TRUE
 
 /obj/item/bikehorn/rubberducky/gold/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
+	if(spam_flag == 0)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
 		if(isliving(user))
@@ -545,20 +537,16 @@
 	item_state = "rubberducky_viking"
 	honk_sound = 'sound/voice/scream_jelly_m1.ogg'
 	honk_text = "DUK ROH DAH!"
-	special_handling = TRUE
 
 /obj/item/bikehorn/rubberducky/viking/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
+	if(spam_flag == 0)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
 		user.drop_item()
 		user.throw_at_random(FALSE,9,2)
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
 	return
 
 /obj/item/bikehorn/rubberducky/galaxy
@@ -568,16 +556,11 @@
 	icon_state = "rubberducky_galaxy"
 	item_state = "rubberducky_galaxy"
 	honk_sound = 'sound/effects/teleport.ogg'
-	special_handling = TRUE
 
 /obj/item/bikehorn/rubberducky/galaxy/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(cooldown <= world.time)
-		cooldown = (world.time + 2 SECONDS)
+	if(spam_flag == 0)
+		spam_flag = 1
 		playsound(src, honk_sound, 50, 1)
-		add_fingerprint(user)
 		if(honk_text)
 			audible_message(span_maroon("[honk_text]"))
 		var/list/possible_orbiters = list()
@@ -587,6 +570,7 @@
 			possible_orbiters += M
 		var/atom/movable/selected_orbiter = pick(possible_orbiters)
 		selected_orbiter.orbit(user,32,TRUE,20,36)
+		addtimer(VARSET_CALLBACK(src, spam_flag, 0), 20, TIMER_DELETE_ME)
 	return
 
 //////////////////////////////SINKS//////////////////////////////

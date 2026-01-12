@@ -75,15 +75,12 @@
 	else if(loc == L) // at least they're holding it
 		to_chat(L, span_warning("Turn on the [src] first."))
 
-/obj/item/walkpod/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(!istype(user) || loc != user)
+/obj/item/walkpod/attack_self(mob/living/L)
+	if(!istype(L) || loc != L)
 		return
 	if(!listener)
-		set_listener(user)
-	tgui_interact(user)
+		set_listener(L)
+	tgui_interact(L)
 
 // Process ticks to ensure our listener remains valid and we do music-ing
 /obj/item/walkpod/process()

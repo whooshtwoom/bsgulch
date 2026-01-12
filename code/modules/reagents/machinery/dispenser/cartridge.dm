@@ -53,10 +53,8 @@
 		name = initial(name)
 
 /obj/item/reagent_containers/chem_disp_cartridge/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(is_open_container())
+	..()
+	if (is_open_container())
 		to_chat(user, span_notice("You put the cap on \the [src]."))
 		flags ^= OPENCONTAINER
 	else

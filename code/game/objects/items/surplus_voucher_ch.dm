@@ -11,9 +11,6 @@
 	name = "Reward Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to reward valued employees! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/com/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/com/proc/spawn_item(var/turf/T)
@@ -52,9 +49,6 @@
 	name = "Engineering Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to resupply engineering with tools! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/eng/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/eng/proc/spawn_item(var/turf/T)
@@ -79,9 +73,6 @@
 	name = "Medical Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to resupply medical with chemicals and kits! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/med/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/med/proc/spawn_item(var/turf/T)
@@ -112,9 +103,6 @@
 	name = "Science Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to supply science with a variety of miscellaneous items! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/sci/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/sci/proc/spawn_item(var/turf/T)
@@ -145,9 +133,6 @@
 	name = "Security Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to resupply security with gear... and donuts! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/sec/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/sec/proc/spawn_item(var/turf/T)
@@ -171,9 +156,6 @@
 	name = "Service Surplus Voucher"
 	desc = "A surplus voucher! This one is meant to generally resupply service employees! Activate it for your surplus delivery!"
 /obj/item/surplus_voucher/ser/attack_self(mob/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/ser/proc/spawn_item(var/turf/T)

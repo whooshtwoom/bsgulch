@@ -26,7 +26,6 @@
 /obj/effect/mine/lube{
 	camo_net = 1
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alien/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -93,6 +92,10 @@
 	oxygen = 0;
 	phoron = 21.8366
 	},
+/area/submap/outpost21/structure_generic/alienshipa)
+"aM" = (
+/obj/structure/meteorite,
+/turf/simulated/shuttle/floor/alienplating/vacuum,
 /area/submap/outpost21/structure_generic/alienshipa)
 "aP" = (
 /obj/machinery/chemical_dispenser/ert/specialops/abductor{
@@ -248,7 +251,6 @@
 	name = "alien airlock";
 	req_one_access = list(801)
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -318,7 +320,6 @@
 	name = "alien airlock";
 	req_one_access = list(803)
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -357,7 +358,6 @@
 	name = "bridge";
 	req_one_access = list(802)
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -400,6 +400,7 @@
 	},
 /area/submap/outpost21/structure_generic/alienshipa)
 "yT" = (
+/obj/structure/meteorite,
 /mob/living/simple_mob/mechanical/cyber_horror/vox,
 /turf/simulated/shuttle/floor/alienplating/vacuum,
 /area/submap/outpost21/structure_generic/alienshipa)
@@ -434,7 +435,6 @@
 /obj/machinery/door/airlock/alien/blue/public{
 	name = "alien airlock"
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alien/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -481,6 +481,7 @@
 	},
 /area/submap/outpost21/structure_generic/alienshipa)
 "Gg" = (
+/obj/structure/fans/hardlight/colorable/abductor,
 /obj/machinery/door/airlock/alien/blue{
 	name = "Exterior";
 	req_one_access = list(801)
@@ -488,7 +489,6 @@
 /obj/effect/mine/dnascramble{
 	camo_net = 1
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -514,13 +514,13 @@
 	name = "alien airlock";
 	req_one_access = list(803)
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alien/blue{
 	oxygen = 0;
 	phoron = 21.8366
 	},
 /area/submap/outpost21/structure_generic/alienshipa)
 "JE" = (
+/obj/structure/fans/hardlight/colorable/abductor,
 /obj/machinery/door/airlock/alien/blue{
 	name = "Exterior";
 	req_one_access = list(801)
@@ -528,7 +528,6 @@
 /obj/effect/mine/frag{
 	camo_net = 1
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -588,8 +587,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
-/obj/structure/grille/rustic,
 /turf/simulated/shuttle/floor/alienplating/vacuum,
 /area/submap/outpost21/structure_generic/alienshipa)
 "NI" = (
@@ -600,8 +597,6 @@
 	dir = 4
 	},
 /obj/structure/window/phoronreinforced,
-/obj/structure/fans/hardlight/colorable/abductor,
-/obj/structure/grille/rustic,
 /turf/simulated/shuttle/floor/alienplating/vacuum,
 /area/submap/outpost21/structure_generic/alienshipa)
 "Ov" = (
@@ -662,6 +657,10 @@
 	phoron = 21.8366
 	},
 /area/submap/outpost21/structure_generic/alienshipa)
+"Rd" = (
+/obj/structure/meteorite,
+/turf/simulated/shuttle/plating/airless,
+/area/submap/outpost21/structure_generic/alienshipa)
 "RB" = (
 /obj/structure/loot_pile/surface/alien/medical,
 /turf/simulated/shuttle/floor/alienplating/blue{
@@ -682,7 +681,6 @@
 /obj/machinery/door/airlock/alien/blue/public{
 	name = "alien airlock"
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
 /turf/simulated/shuttle/floor/alienplating/blue{
 	oxygen = 0;
 	phoron = 21.8366
@@ -753,8 +751,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
-/obj/structure/fans/hardlight/colorable/abductor,
-/obj/structure/grille/rustic,
 /turf/simulated/shuttle/floor/alienplating/vacuum,
 /area/submap/outpost21/structure_generic/alienshipa)
 "ZB" = (
@@ -1476,13 +1472,13 @@ fX
 qv
 zk
 zk
-kK
+qv
 qv
 kK
 pE
 kK
 qv
-kK
+qv
 zk
 zk
 qv
@@ -1632,20 +1628,20 @@ zk
 qv
 CA
 ac
-kK
 qv
 qv
 qv
 qv
 qv
-kK
+qv
+qv
 CA
 ac
 qv
 Yb
 yT
 Yb
-Fh
+Rd
 Yb
 Fh
 aa
@@ -1746,11 +1742,11 @@ qv
 zk
 zk
 qv
-Yb
+aM
 Yb
 ft
 Yb
-Fh
+Rd
 Iu
 qv
 Iv

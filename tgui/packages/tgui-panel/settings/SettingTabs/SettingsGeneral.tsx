@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'tgui/backend';
 import {
   Box,
   Button,
@@ -11,17 +12,26 @@ import {
   Stack,
 } from 'tgui-core/components';
 import { capitalize } from 'tgui-core/string';
-import { chatRenderer } from '../../chat/renderer';
-import { FONTS, THEMES } from '../constants';
-import { resetPaneSplitters, setEditPaneSplitters } from '../scaling';
-import { useSettings } from '../use-settings';
 
-export function SettingsGeneral(props) {
-  const { settings, updateSettings } = useSettings();
+import { rebuildChat } from '../../chat/actions';
+import { THEMES } from '../../themes';
+import { updateSettings } from '../actions';
+import { FONTS } from '../constants';
+import { selectSettings } from '../selectors';
+
+export const SettingsGeneral = (props) => {
+  const {
+    theme,
+    fontFamily,
+    fontSize,
+    lineHeight,
+    showReconnectWarning,
+    prependTimestamps,
+    interleave,
+    interleaveColor,
+  } = useSelector(selectSettings);
+  const dispatch = useDispatch();
   const [freeFont, setFreeFont] = useState(false);
-
-  const [editingPanes, setEditingPanes] = useState(false);
-
   return (
     <Section>
       <LabeledList>
@@ -29,47 +39,26 @@ export function SettingsGeneral(props) {
           {THEMES.map((THEME) => (
             <Button
               key={THEME}
-              selected={settings.theme === THEME}
+              selected={theme === THEME}
               color="transparent"
               onClick={() =>
-                updateSettings({
-                  theme: THEME,
-                })
+                dispatch(
+                  updateSettings({
+                    theme: THEME,
+                  }),
+                )
               }
             >
               {capitalize(THEME)}
             </Button>
           ))}
         </LabeledList.Item>
-        <LabeledList.Item label="UI sizes">
-          <Stack>
-            <Stack.Item>
-              <Button
-                onClick={() =>
-                  setEditingPanes((val) => {
-                    setEditPaneSplitters(!val);
-                    return !val;
-                  })
-                }
-                color={editingPanes ? 'red' : undefined}
-                icon={editingPanes ? 'save' : undefined}
-              >
-                {editingPanes ? 'Save' : 'Adjust UI Sizes'}
-              </Button>
-            </Stack.Item>
-            <Stack.Item>
-              <Button onClick={resetPaneSplitters} icon="refresh" color="red">
-                Reset
-              </Button>
-            </Stack.Item>
-          </Stack>
-        </LabeledList.Item>
         <LabeledList.Item label="Font style">
           <Stack.Item>
             {!freeFont ? (
               <Collapsible
-                title={settings.fontFamily}
-                width="100%"
+                title={fontFamily}
+                width={'100%'}
                 buttons={
                   <Button
                     icon={freeFont ? 'lock-open' : 'lock'}
@@ -86,12 +75,14 @@ export function SettingsGeneral(props) {
                   <Button
                     key={FONT}
                     fontFamily={FONT}
-                    selected={settings.fontFamily === FONT}
+                    selected={fontFamily === FONT}
                     color="transparent"
                     onClick={() =>
-                      updateSettings({
-                        fontFamily: FONT,
-                      })
+                      dispatch(
+                        updateSettings({
+                          fontFamily: FONT,
+                        }),
+                      )
                     }
                   >
                     {FONT}
@@ -101,12 +92,14 @@ export function SettingsGeneral(props) {
             ) : (
               <Stack>
                 <Input
-                  fluid
-                  value={settings.fontFamily}
-                  onBlur={(value) =>
-                    updateSettings({
-                      fontFamily: value,
-                    })
+                  width={'100%'}
+                  value={fontFamily}
+                  onChange={(value) =>
+                    dispatch(
+                      updateSettings({
+                        fontFamily: value,
+                      }),
+                    )
                   }
                 />
                 <Button
@@ -132,10 +125,12 @@ export function SettingsGeneral(props) {
                 stepPixelSize={20}
                 minValue={8}
                 maxValue={32}
-                value={settings.fontSize}
+                value={fontSize}
                 unit="px"
                 format={(value) => value.toFixed()}
-                onChange={(e, value) => updateSettings({ fontSize: value })}
+                onChange={(e, value) =>
+                  dispatch(updateSettings({ fontSize: value }))
+                }
               />
             </Stack.Item>
           </Stack>
@@ -147,71 +142,76 @@ export function SettingsGeneral(props) {
             step={0.01}
             minValue={0.8}
             maxValue={5}
-            value={settings.lineHeight}
+            value={lineHeight}
             format={(value) => value.toFixed(2)}
             onChange={(e, value) =>
-              updateSettings({
-                lineHeight: value,
-              })
+              dispatch(
+                updateSettings({
+                  lineHeight: value,
+                }),
+              )
             }
           />
-        </LabeledList.Item>{' '}
+        </LabeledList.Item>
         <LabeledList.Item label="Enable disconnection/afk warning">
           <Button.Checkbox
-            checked={settings.showReconnectWarning}
+            checked={showReconnectWarning}
             tooltip="Unchecking this will disable the red afk/reconnection warning bar at the bottom of the chat."
             mr="5px"
             onClick={() =>
-              updateSettings({
-                showReconnectWarning: !settings.showReconnectWarning,
-              })
+              dispatch(
+                updateSettings({
+                  showReconnectWarning: !showReconnectWarning,
+                }),
+              )
             }
           />
         </LabeledList.Item>
         <LabeledList.Item label="Interleave messages">
           <Button.Checkbox
-            checked={settings.interleave}
+            checked={interleave}
             tooltip="Enabling this will interleave messages."
             mr="5px"
             onClick={() =>
-              updateSettings({
-                interleave: !settings.interleave,
-              })
+              dispatch(
+                updateSettings({
+                  interleave: !interleave,
+                }),
+              )
             }
           />
           <Box inline>
-            <ColorBox mr={1} color={settings.interleaveColor} />
+            <ColorBox mr={1} color={interleaveColor} />
             <Input
               width="5em"
               monospace
               placeholder="#ffffff"
-              value={settings.interleaveColor}
+              value={interleaveColor}
               onBlur={(value) =>
-                updateSettings({
-                  interleaveColor: value,
-                })
+                dispatch(
+                  updateSettings({
+                    interleaveColor: value,
+                  }),
+                )
               }
             />
           </Box>
         </LabeledList.Item>
         <LabeledList.Item label="Enable chat timestamps">
           <Button.Checkbox
-            checked={settings.prependTimestamps}
+            checked={prependTimestamps}
             tooltip="Enabling this will prepend timestamps to all messages."
             mr="5px"
             onClick={() =>
-              updateSettings({
-                prependTimestamps: !settings.prependTimestamps,
-              })
+              dispatch(
+                updateSettings({
+                  prependTimestamps: !prependTimestamps,
+                }),
+              )
             }
           />
           <Box inline>
-            <Button
-              icon="check"
-              onClick={() =>
-                chatRenderer.rebuildChat(settings.visibleMessageLimit)
-              }
-            >
+            <Button icon="check" onClick={() => dispatch(rebuildChat())}>
               Apply now
             </Button>
             <Box inline fontSize="0.9em" ml={1} color="label">
@@ -222,4 +222,4 @@ export function SettingsGeneral(props) {
       </LabeledList>
     </Section>
   );
-}
+};

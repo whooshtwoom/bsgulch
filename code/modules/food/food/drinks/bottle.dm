@@ -13,7 +13,6 @@
 	var/obj/item/reagent_containers/glass/rag/rag = null
 	var/rag_underlay = "rag"
 	var/violent_throw = FALSE
-	special_handling = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/on_reagent_change() return // To suppress price updating. Bottles have their own price tags.
 
@@ -41,7 +40,7 @@
 		violent_throw = TRUE
 		throw_source = get_turf(thrower)
 
-/obj/item/reagent_containers/food/drinks/bottle/throw_impact(atom/hit_atom)
+/obj/item/reagent_containers/food/drinks/bottle/throw_impact(atom/hit_atom, var/speed)
 	..()
 
 	if(isGlass && violent_throw)
@@ -121,14 +120,11 @@
 		return
 	..()
 
-/obj/item/reagent_containers/food/drinks/bottle/attack_self(mob/user, special_pass)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/reagent_containers/food/drinks/bottle/attack_self(mob/user)
 	if(rag)
 		remove_rag(user)
 	else
-		..(user, TRUE)
+		..()
 
 /obj/item/reagent_containers/food/drinks/bottle/proc/insert_rag(obj/item/reagent_containers/glass/rag/R, mob/user)
 	if(!isGlass || rag) return

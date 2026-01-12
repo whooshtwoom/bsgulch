@@ -87,9 +87,6 @@
 
 
 /obj/item/robotic_multibelt/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(!cyborg_integrated_tools || !LAZYLEN(cyborg_integrated_tools))
 		to_chat(user, "Your multibelt is empty!")
 		return
@@ -109,6 +106,8 @@
 		return
 	cut_overlays()
 	assume_selected_item(integrated_tools_by_name[choice])
+
+	..()
 
 /obj/item/robotic_multibelt/proc/assume_selected_item(obj/item/chosen_item)
 	if(!chosen_item)
@@ -198,9 +197,6 @@
 	icon_state = "toolkit_engiborg_multitool"
 	toolspeed = 0.5
 
-/obj/item/multitool/cyborg/update_icon()
-	icon_state = "toolkit_engiborg_multitool"
-
 /obj/item/multitool/ai_detector/cyborg
 	name = "AI detector multitool"
 	toolspeed = 0.5
@@ -220,12 +216,8 @@
 	matter = null
 	uses_charge = 1
 	charge_costs = list(1)
-	custom_handling = TRUE
 
 /obj/item/stack/cable_coil/cyborg/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	set_colour(user)
 
 /obj/item/stack/cable_coil/cyborg/proc/set_colour(mob/user)
@@ -565,9 +557,6 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-	///Var for attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/storage/internal/gripper
 	max_w_class = ITEMSIZE_HUGE
 	max_storage_space = ITEMSIZE_COST_HUGE
@@ -670,11 +659,6 @@
 			photo_images["[pocket_to_check.name]" + "[pocket_content.name]"] = pocket_image
 
 /obj/item/gripper/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
 	var/busy = is_in_use()
 	if(busy)
 		to_chat(user, span_danger("[busy]"))
@@ -1110,14 +1094,9 @@
 
 	can_hold = list(EXOSUIT_GRIPPER)
 
-	special_handling = TRUE
-
 /obj/item/gripper/no_use //Used when you want to hold and put items in other things, but not able to 'use' the item
 
-/obj/item/gripper/no_use/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/gripper/no_use/attack_self(mob/user as mob)
 	return
 
 /obj/item/gripper/no_use/loader //This is used to disallow building with metal.

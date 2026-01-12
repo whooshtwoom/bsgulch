@@ -1366,8 +1366,7 @@
 		playsound(src, teleport_sound, vol = 100, vary = 1, preference = /datum/preference/toggle/eating_noises, volume_channel = VOLUME_CHANNEL_VORE)
 		visible_message(span_warning("The dog gobbles up \the [I]!"))
 		if(dog.client)
-			var/mob/thrower = I.throwing?.get_thrower()
-			to_chat(dog, span_notice("[thrower ? "\The [thrower]" : "Someone"] feeds \the [I] to you!"))
+			to_chat(dog, span_notice("[I.thrower ? "\The [I.thrower]" : "Someone"] feeds \the [I] to you!"))
 		qdel(I)
 		GLOB.items_digested_roundstat++
 
@@ -1439,7 +1438,7 @@
 		START_PROCESSING(SSturfs, src)
 		we_process = TRUE
 
-/turf/simulated/floor/water/digestive_enzymes/hitby(atom/movable/source, datum/thrownthing/throwingdatum)
+/turf/simulated/floor/water/digestive_enzymes/hitby(atom/movable/source)
 	if(digest_stuff(source) && !we_process)
 		START_PROCESSING(SSturfs, src)
 		we_process = TRUE
@@ -1571,7 +1570,7 @@
 	if(!we_process)
 		START_PROCESSING(SSturfs, src)
 
-/turf/simulated/floor/flesh/mover/hitby(atom/movable/source, datum/thrownthing/throwingdatum)
+/turf/simulated/floor/flesh/mover/hitby(atom/movable/source)
 	if(!we_process)
 		START_PROCESSING(SSturfs, src)
 

@@ -119,10 +119,7 @@
 		to_chat(user, span_warning("\The [src] flashes an error light. You might need to reconfigure it."))
 		return
 
-/obj/item/closet_painter/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/closet_painter/attack_self(var/mob/user)
 	var/choice = tgui_alert(user, "Do you wish to change the regular closet color or the secure closet color?", "Color Selection", list("Regular Closet Colour","Cancel","Secure Closet Colour"))
 	if(choice == "Regular Closet Colour")
 		choose_colour()

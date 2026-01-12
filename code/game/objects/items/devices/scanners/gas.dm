@@ -17,9 +17,6 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-	///Var for attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/analyzer/atmosanalyze(var/mob/user)
 	var/air = user.return_air()
 	if (!air)
@@ -27,12 +24,7 @@
 
 	return atmosanalyzer_scan(src, air, user)
 
-/obj/item/analyzer/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
+/obj/item/analyzer/attack_self(mob/user as mob)
 	if (user.stat)
 		return
 	if (!user.IsAdvancedToolUser())

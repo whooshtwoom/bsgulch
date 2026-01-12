@@ -51,9 +51,6 @@
 	/// Yems.
 	food_can_insert_micro = TRUE
 
-	///Var for attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/reagent_containers/food/snacks/Initialize(mapload)
 	. = ..()
 	if(nutriment_amt)
@@ -77,7 +74,7 @@
 					do_nom = TRUE
 
 			if(do_nom)
-				eater.vore_selected.nom_atom(micro)
+				micro.forceMove(eater.vore_selected)
 				food_inserted_micros -= micro
 
 	if(!reagents.total_volume)
@@ -115,12 +112,7 @@
 		//CHOMPAdd End
 		qdel(src)
 
-/obj/item/reagent_containers/food/snacks/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
+/obj/item/reagent_containers/food/snacks/attack_self(mob/user as mob)
 	if(package && !user.incapacitated())
 		unpackage(user)
 
@@ -1325,17 +1317,13 @@
 	desc = "The food of choice for the veteran. Do <B>NOT</B> overconsume."
 	filling_color = "#6D6D00"
 	heated_reagents = list(REAGENT_ID_DOCTORSDELIGHT = 5, REAGENT_ID_HYPERZINE = 0.75, REAGENT_ID_SYNAPTIZINE = 0.25)
-	var/has_been_heated = FALSE
-	special_handling = TRUE
+	var/has_been_heated = 0
 
 /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(has_been_heated)
 		to_chat(user, span_notice("The heating chemicals have already been spent."))
 		return
-	has_been_heated = TRUE
+	has_been_heated = 1
 	user.visible_message(span_notice("[user] crushes \the [src] package."), "You crush \the [src] package and feel a comfortable heat build up. Now just to wait for it to be ready.")
 	spawn(200)
 		if(!QDELETED(src))
@@ -2038,16 +2026,12 @@
 	var/wrapped = 0
 	var/monkey_type = "Monkey"
 	var/is_soaked = FALSE // Outpost 21 edit(port) - Soaking monkeycube boxes with water, prevent timer spam
-	special_handling = TRUE
 
 /obj/item/reagent_containers/food/snacks/monkeycube/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_PROTEIN, 10)
 
-/obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user as mob)
 	if(wrapped)
 		Unwrap(user)
 
@@ -2094,7 +2078,7 @@
 
 	var/mob/living/Pred = M
 	if(Pred.can_be_drop_pred && Pred.food_vore && Pred.vore_selected)
-		Pred.vore_selected.nom_atom(Prey)
+		Prey.forceMove(Pred.vore_selected)
 	//CHOMPEdit End
 	*/ // Outpost 21 edit end
 
@@ -4299,10 +4283,8 @@
 		return
 	..()
 
-/obj/item/pizzabox/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/pizzabox/attack_self( mob/user as mob )
+
 	if( boxes.len > 0 )
 		return
 
@@ -4313,7 +4295,7 @@
 
 	update_icon()
 
-/obj/item/pizzabox/attackby(obj/item/I, mob/user)
+/obj/item/pizzabox/attackby( obj/item/I as obj, mob/user as mob )
 	if( istype(I, /obj/item/pizzabox/) )
 		var/obj/item/pizzabox/box = I
 

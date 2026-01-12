@@ -9,7 +9,7 @@ import {
 import type { BooleanLike } from 'tgui-core/react';
 
 import { noSelectionName } from '../constants';
-import type { Abilities, DropdownEntry, SoulcatcherData } from '../types';
+import type { abilities, DropdownEntry, soulcatcherData } from '../types';
 import { VorePanelEditToggle } from '../VorePanelElements/VorePanelCommonElements';
 import { VorePanelEditTextTabs } from '../VorePanelElements/VorePaneldEditTextTabs';
 import { VorePanelEditDropdown } from '../VorePanelElements/VorePanelEditDropdown';
@@ -22,13 +22,13 @@ import { SoulOptions } from '../VoreSoulcatcherSettings/SoulOptions';
 import { VoreAbilities } from './VoreAbilities';
 
 export const VoreSoulcatcher = (props: {
-  soulcatcher: SoulcatcherData | null;
+  soulcatcher: soulcatcherData | null;
   our_bellies: Required<{ name: string; ref: string }[]> & {
     map(
       arg0: (belly: { name: string; ref: string }) => DropdownEntry,
     ): DropdownEntry[];
   };
-  abilities: Abilities;
+  abilities: abilities;
   toggleEditMode: React.Dispatch<React.SetStateAction<boolean>>;
   editMode: boolean;
   persist_edit_mode: BooleanLike;
@@ -52,7 +52,7 @@ export const VoreSoulcatcher = (props: {
     <Section scrollable fill>
       <Stack vertical fill>
         {soulcatcher && (
-          <Stack.Item grow>
+          <Stack.Item>
             <VoreSoulcatcherSection
               soulcatcher={soulcatcher}
               overlayBellies={locationNames}
@@ -71,7 +71,7 @@ export const VoreSoulcatcher = (props: {
 };
 
 const VoreSoulcatcherSection = (props: {
-  soulcatcher: SoulcatcherData;
+  soulcatcher: soulcatcherData;
   overlayBellies: DropdownEntry[];
   toggleEditMode: React.Dispatch<React.SetStateAction<boolean>>;
   editMode: boolean;
@@ -136,7 +136,7 @@ const VoreSoulcatcherSection = (props: {
       }
     >
       {!!active && (
-        <Stack fill vertical>
+        <Stack vertical>
           <Stack.Item>
             <LabeledList>
               <LabeledList.Item label="Captured Souls">
@@ -206,11 +206,11 @@ const VoreSoulcatcherSection = (props: {
             </LabeledList>
           </Stack.Item>
           <Stack.Divider />
-          <Stack.Item grow>
+          <Stack.Item>
             <VorePanelEditTextTabs
               noHighlight
               editMode={editMode}
-              messsageOptionsLeft={sc_message_data.possible_messages}
+              messsageOptions={sc_message_data.possible_messages}
               activeTab={sc_message_data.sc_subtab}
               tabAction="change_sc_message_option"
               tooltip={sc_message_data.tooltip}

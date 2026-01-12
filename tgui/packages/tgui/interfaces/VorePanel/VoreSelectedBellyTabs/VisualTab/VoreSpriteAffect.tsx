@@ -1,7 +1,7 @@
 import { Box, LabeledList, Stack } from 'tgui-core/components';
-import { capitalize } from 'tgui-core/string';
+
 import { spriteToTooltip } from '../../constants';
-import type { BellyVisualData, HostMob } from '../../types';
+import type { bellyVisualData, hostMob } from '../../types';
 import { VorePanelEditCheckboxes } from '../../VorePanelElements/VorePanelEditCheckboxes';
 import { VorePanelEditColor } from '../../VorePanelElements/VorePanelEditColor';
 import { VorePanelEditDropdown } from '../../VorePanelElements/VorePanelEditDropdown';
@@ -11,11 +11,10 @@ import { VoreSelectedMobTypeBellyButtons } from './VoreSelectedMobTypeBellyButto
 
 export const VoreSpriteAffects = (props: {
   editMode: boolean;
-  bellyVisualData: BellyVisualData;
-  hostMobtype: HostMob;
-  presets: string;
+  bellyVisualData: bellyVisualData;
+  hostMobtype: hostMob;
 }) => {
-  const { editMode, bellyVisualData, hostMobtype, presets } = props;
+  const { editMode, bellyVisualData, hostMobtype } = props;
   const {
     vore_sprite_flags,
     absorbed_voresprite,
@@ -106,7 +105,7 @@ export const VoreSpriteAffects = (props: {
                     subAction="b_belly_sprite_to_affect"
                     editMode={editMode}
                     options={belly_sprite_options}
-                    entry={capitalize(belly_sprite_to_affect)}
+                    entry={belly_sprite_to_affect}
                     tooltip="Set the belly sprite to effect."
                   />
                 </LabeledList.Item>
@@ -144,11 +143,11 @@ export const VoreSpriteAffects = (props: {
                         </Stack.Item>
                         <VorePanelEditColor
                           editMode={editMode}
-                          action="set_attribute"
+                          action="liq_set_attribute"
                           subAction="b_undergarment_color"
+                          value_of={null}
                           back_color={undergarment_color}
                           tooltip="Select your undergarment color."
-                          presets={presets}
                         />
                       </Stack>
                     </LabeledList.Item>

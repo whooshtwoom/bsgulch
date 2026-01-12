@@ -1,13 +1,13 @@
 import { Box, LabeledList, Section } from 'tgui-core/components';
 
 import { robotBellyOptions } from '../../constants';
-import type { HostMob, SiliconeBellyControls } from '../../types';
+import type { hostMob, siliconeBellyControls } from '../../types';
 import { VorePanelEditDropdown } from '../../VorePanelElements/VorePanelEditDropdown';
 
 export const VoreSelectedMobTypeBellyButtons = (props: {
   editMode: boolean;
-  bellyControl: SiliconeBellyControls;
-  host_mobtype: HostMob;
+  bellyControl: siliconeBellyControls;
+  host_mobtype: hostMob;
 }) => {
   const { editMode, bellyControl, host_mobtype } = props;
   const {

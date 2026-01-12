@@ -98,9 +98,6 @@
 	var/high_color = "#0099FF"			// Color the shield will be when at max health.  A light blue.
 	var/low_color = "#FF0000"			// Color the shield will drift towards as health is lowered.  Deep red.
 
-	///Var for attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/shield_projector/Initialize(mapload)
 	START_PROCESSING(SSobj, src)
 	AddComponent(/datum/component/recursive_move)
@@ -189,12 +186,7 @@
 	for(var/obj/effect/directional_shield/S in active_shields)
 		S.update_color(new_color)
 
-/obj/item/shield_projector/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
+/obj/item/shield_projector/attack_self(var/mob/living/user)
 	if(active)
 		if(always_on)
 			to_chat(user, span_warning("You can't seem to deactivate \the [src]."))
@@ -370,7 +362,6 @@
 
 	var/obj/mecha/my_mecha = null
 	var/obj/item/mecha_parts/mecha_equipment/combat_shield/my_tool = null
-	special_handling = TRUE
 
 /obj/item/shield_projector/line/exosuit/process()
 	..()
@@ -387,10 +378,7 @@
 	else
 		my_tool.set_ready_state(TRUE)
 
-/obj/item/shield_projector/line/exosuit/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/shield_projector/line/exosuit/attack_self(var/mob/living/user)
 	if(active)
 		if(always_on)
 			to_chat(user, span_warning("You can't seem to deactivate \the [src]."))

@@ -40,10 +40,7 @@
 
 	return data
 
-/obj/item/destTagger/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/destTagger/attack_self(mob/user as mob)
 	tgui_interact(user)
 
 /obj/item/destTagger/tgui_act(action, params, datum/tgui/ui)

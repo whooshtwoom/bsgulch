@@ -351,9 +351,6 @@
 
 
 /obj/item/taperecorder/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(recording || playing)
 		stop()
 	else
@@ -399,9 +396,6 @@
 	ruin()
 
 /obj/item/rectape/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(!ruined)
 		to_chat(user, span_notice("You pull out all the tape!"))
 		ruin()

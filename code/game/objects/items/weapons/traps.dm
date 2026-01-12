@@ -34,10 +34,8 @@
 /obj/item/beartrap/proc/can_use(mob/user)
 	return (user.IsAdvancedToolUser() && !issilicon(user) && !user.stat && !user.restrained())
 
-/obj/item/beartrap/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/beartrap/attack_self(mob/user as mob)
+	..()
 	if(!deployed && can_use(user))
 		user.visible_message(
 			span_danger("[user] starts to deploy \the [src]."),
@@ -229,10 +227,8 @@
 	else
 		..()
 
-/obj/item/material/barbedwire/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/material/barbedwire/attack_self(mob/user as mob)
+	..()
 	if(!anchored && can_use(user))
 		user.visible_message(
 			span_danger("[user] starts to deploy \the [src]."),

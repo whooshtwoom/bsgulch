@@ -31,10 +31,7 @@
 	colour = pick("red","purple","jade","black")
 	name = "[colour] lipstick"
 
-/obj/item/lipstick/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/lipstick/attack_self(mob/user as mob)
 	to_chat(user, span_notice("You twist \the [src] [open ? "closed" : "open"]."))
 	open = !open
 	if(open)
@@ -79,9 +76,6 @@
 	icon_state = "purplecomb"
 
 /obj/item/haircomb/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	var/text = "person"
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
@@ -110,10 +104,7 @@
 	. = ..()
 	M = new(src, null)
 
-/obj/item/makeover/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/makeover/attack_self(mob/living/carbon/user as mob)
 	if(ishuman(user))
 		to_chat(user, span_notice("You flip open \the [src] and begin to adjust your appearance."))
 		M.tgui_interact(user)

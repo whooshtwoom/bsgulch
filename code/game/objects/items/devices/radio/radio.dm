@@ -44,11 +44,6 @@
 	var/datum/radio_frequency/radio_connection
 	var/list/datum/radio_frequency/secure_radio_connections
 
-	///If we're a syndicate beacon or not.
-	var/beacon = FALSE
-	var/electric_pack = FALSE
-	var/uplink = FALSE
-
 /obj/item/radio/proc/set_frequency(new_frequency)
 	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
@@ -120,12 +115,7 @@
 /obj/item/radio/proc/recalculateChannels()
 	return
 
-/obj/item/radio/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(beacon || electric_pack || uplink)
-		return
+/obj/item/radio/attack_self(mob/user as mob)
 	interact(user)
 
 /obj/item/radio/interact(mob/user)
@@ -144,7 +134,7 @@
 		ui.open()
 
 /obj/item/radio/tgui_data(mob/user)
-	var/data = list()
+	var/data[0]
 
 	data["rawfreq"] = frequency
 	data["listening"] = listening
@@ -164,9 +154,6 @@
 
 	if(syndie)
 		data["useSyndMode"] = 1
-	else
-		data["useSyndMode"] = 0
-
 
 	data["minFrequency"] = PUBLIC_LOW_FREQ
 	data["maxFrequency"] = PUBLIC_HIGH_FREQ

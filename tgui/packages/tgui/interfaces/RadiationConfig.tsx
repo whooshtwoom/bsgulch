@@ -16,7 +16,10 @@ type Data = {
 export const RadiationConfig = (props) => {
   const { act, data } = useBackend<Data>();
 
-  const { radiation_color, glowing } = data;
+  const {
+    radiation_color,
+    glowing,
+  } = data;
   return (
     <Window width={220} height={125} theme="nuclear">
       <Window.Content>
@@ -52,5 +55,5 @@ export const RadiationConfig = (props) => {
         </Stack>
       </Window.Content>
     </Window>
-  );
-};
+    );
+  };

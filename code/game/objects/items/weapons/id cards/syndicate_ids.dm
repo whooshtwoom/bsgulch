@@ -33,10 +33,7 @@
 		if(player_is_antag(user.mind) || registered_user == user)
 			to_chat(user, span_notice("The microscanner activates as you pass it over the ID, copying its access."))
 
-/obj/item/card/id/syndicate/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/card/id/syndicate/attack_self(mob/user as mob)
 	// We use the fact that registered_name is not unset should the owner be vaporized, to ensure the id doesn't magically become unlocked.
 	if(!registered_user && register_user(user))
 		to_chat(user, span_notice("The microscanner marks you as its owner, preventing others from accessing its internals."))
@@ -47,7 +44,9 @@
 			if("Edit")
 				agentcard_module.tgui_interact(user)
 			if("Show")
-				..(user, TRUE)
+				..()
+	else
+		..()
 
 
 /obj/item/card/id/syndicate/proc/register_user(var/mob/user)

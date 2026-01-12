@@ -185,10 +185,7 @@
 	advice = pick(advice_list)
 	pisces = "[stars] [prediction] [advice]"
 
-/obj/item/entrepreneur/horoscope/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/entrepreneur/horoscope/attack_self(var/mob/user)
 	var/zodiac = tgui_input_list(user, "Which of todays zodiacs do you want to read?", "Zodiac", zodiacs)
 	if(zodiac)
 		switch(zodiac)
@@ -292,10 +289,7 @@
 	icon = 'icons/obj/entrepreneur.dmi'
 	icon_state = "dumbbell"
 
-/obj/item/entrepreneur/dumbbell/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/entrepreneur/dumbbell/attack_self(var/mob/user)
 	var/mob/living/M = user
 	if(M.nutrition <= 100)
 		to_chat(user, span_notice("You are too hungry to exercise right now."))
@@ -318,10 +312,7 @@
 	var/turf/last_used = 0
 	var/emf_change = 0
 
-/obj/item/entrepreneur/emf/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/entrepreneur/emf/attack_self(var/mob/user)
 	if(!last_used)
 		emf = rand(1,100)
 		last_used = get_turf(user)

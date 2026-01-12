@@ -31,12 +31,8 @@
 	tint = TINT_HEAVY
 	drop_sound = 'sound/items/drop/helm.ogg'
 	pickup_sound = 'sound/items/pickup/helm.ogg'
-	special_handling = TRUE
 
-/obj/item/clothing/head/welding/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/head/welding/attack_self()
 	toggle()
 
 
@@ -130,7 +126,6 @@
 	icon_state = "cake0"
 	var/onfire = 0
 	body_parts_covered = HEAD
-	special_handling = TRUE
 
 /obj/item/clothing/head/cakehat/process()
 	if(!onfire)
@@ -146,10 +141,7 @@
 	if (istype(location, /turf))
 		location.hotspot_expose(700, 1)
 
-/obj/item/clothing/head/cakehat/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/head/cakehat/attack_self(mob/user as mob)
 	onfire = !(onfire)
 	if (onfire)
 		force = 3
@@ -171,12 +163,8 @@
 	desc = "Perfect for those cold winter nights."
 	icon_state = "ushankadown"
 	flags_inv = HIDEEARS
-	special_handling = TRUE
 
-/obj/item/clothing/head/ushanka/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))
 		src.icon_state = "[icon_state]up"
 		to_chat(user, "You raise the ear flaps on the ushanka.")

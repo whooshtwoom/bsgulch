@@ -56,9 +56,6 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-	///For attack_self chain
-	var/special_handling = FALSE
-
 /obj/item/lightreplacer/Initialize(mapload)
 	. = ..()
 	failmsg = "The [name]'s refill light blinks red."
@@ -132,11 +129,6 @@
 		to_chat(user, span_notice("You fill \the [src] with lights from \the [S]."))
 
 /obj/item/lightreplacer/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
 	/* // This would probably be a bit OP. If you want it though, uncomment the code.
 	if(isrobot(user))
 		var/mob/living/silicon/robot/R = user
@@ -258,9 +250,6 @@
 			. += "It is currently coloring lights."
 
 /obj/item/lightpainter/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 
 	if(!resetmode)
 		resetmode = 1

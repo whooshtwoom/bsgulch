@@ -38,10 +38,7 @@
 	else
 		..()
 
-/obj/item/plastique/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/plastique/attack_self(mob/user as mob)
 	var/newtime = tgui_input_number(user, "Please set the timer.", "Timer", 10, 60000, 10)
 	if(user.get_active_hand() == src)
 		newtime = CLAMP(newtime, 10, 60000)
@@ -68,7 +65,7 @@
 			message_admins("[key_name(user, user.client)](<A href='byond://?_src_=holder;[HrefToken()];adminmoreinfo=\ref[user]'>?</A>) planted [src.name] on [target.name] at ([target.x],[target.y],[target.z] - <A href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[target.x];Y=[target.y];Z=[target.z]'>JMP</a>) with [timer] second fuse",0,1)
 			log_game("[key_name(user)] planted [src.name] on [target.name] at ([target.x],[target.y],[target.z]) with [timer] second fuse")
 
-		target.add_overlay(image_overlay)
+		target.add_overlay(image_overlay, TRUE)
 		to_chat(user, "Bomb has been planted. Timer counting down from [timer].")
 		spawn(timer*10)
 			explode(get_turf(target))
@@ -90,7 +87,7 @@
 		else
 			target.ex_act(1)
 	if(target)
-		target.cut_overlay(image_overlay)
+		target.cut_overlay(image_overlay, TRUE)
 	qdel(src)
 
 /obj/item/plastique/attack(mob/M as mob, mob/user as mob, def_zone)

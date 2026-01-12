@@ -34,6 +34,9 @@
 			WARNING("[src]([src.type]) starts with more reagents than it has total volume")
 		starts_with = null // it should gc, since it's just strings and numbers
 
+/obj/item/reagent_containers/attack_self(mob/user as mob)
+	return
+
 /obj/item/reagent_containers/afterattack(obj/target, mob/user, flag)
 	return
 

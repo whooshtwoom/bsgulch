@@ -92,9 +92,6 @@
 	result = 10
 
 /obj/item/dice/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	rollDice(user, 0)
 
 /obj/item/dice/proc/rollDice(mob/user, silent = FALSE)
@@ -197,12 +194,8 @@
 	can_hold = list(
 		/obj/item/dice,
 		)
-	special_handling = TRUE
 
 /obj/item/storage/dicecup/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	user.visible_message(span_notice("[user] shakes [src]."), \
 							span_notice("You shake [src]."), \
 							span_notice("You hear dice rolling."))

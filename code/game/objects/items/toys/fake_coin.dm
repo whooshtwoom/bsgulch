@@ -106,10 +106,7 @@
 	desc = "Shiny green " + MAT_VERDANTIUM + ", pressed into a coin. It almost seems to glimmer under starlight."
 	icon_state = "coin_verdantium"
 
-/obj/item/fake_coin/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/fake_coin/attack_self(mob/user as mob)
 	var/result = rand(1, sides)
 	var/comment = ""
 	if(result == 1)

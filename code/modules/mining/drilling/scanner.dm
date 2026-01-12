@@ -10,10 +10,7 @@
 	var/range = 2
 	var/exact = FALSE
 
-/obj/item/mining_scanner/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/mining_scanner/attack_self(mob/user as mob)
 	to_chat(user, span_notice("You begin sweeping \the [src] about, scanning for metal deposits."))
 	playsound(src, 'sound/items/goggles_charge.ogg', 50, 1, -6)
 

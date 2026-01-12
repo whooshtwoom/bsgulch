@@ -5,7 +5,6 @@
 
 	var/anomaly_type = /obj/effect/anomaly
 	var/worth = 250 // Pricey... Should be hard-ish to obtain.
-	special_handling = TRUE
 
 /obj/item/assembly/signaler/anomaly/Initialize(mapload)
 	. = ..()
@@ -22,9 +21,6 @@
 	return TRUE
 
 /obj/item/assembly/signaler/anomaly/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	return
 
 /obj/item/assembly/signaler/anomaly/attackby(obj/item/W, mob/user, params)
@@ -94,9 +90,3 @@
 	desc = "The neutralized core of a pyroclastic anomaly. It feels warm to the touch. It'd probably be valuable for research."
 	icon_state = "pyro_core"
 	anomaly_type = /obj/effect/anomaly/pyro
-
-/obj/item/assembly/signaler/anomaly/weather
-	name = "\improper weather anomaly core"
-	desc = "The neutralized core of a weather anomaly. The sound of thunder can be heard in the distance. It'd probably be valuable for research."
-	icon_state = "weather_core"
-	anomaly_type = /obj/effect/anomaly/weather

@@ -16,8 +16,6 @@
 	var/list/grenades = new/list()
 	var/max_grenades = 5 //holds this + one in the chamber
 	matter = list(MAT_STEEL = 2000)
-	special_handling = TRUE
-	var/underslung = FALSE
 
 //revolves the magazine, allowing players to choose between multiple grenade types
 /obj/item/gun/launcher/grenade/proc/pump(mob/user)
@@ -68,11 +66,6 @@
 		to_chat(user, span_warning("[src] is empty."))
 
 /obj/item/gun/launcher/grenade/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(underslung)
-		return FALSE
 	pump(user)
 
 /obj/item/gun/launcher/grenade/attackby(obj/item/I, mob/user)
@@ -105,7 +98,9 @@
 	w_class = ITEMSIZE_NORMAL
 	force = 5
 	max_grenades = 0
-	underslung = TRUE
+
+/obj/item/gun/launcher/grenade/underslung/attack_self()
+	return
 
 //load and unload directly into chambered
 /obj/item/gun/launcher/grenade/underslung/load(obj/item/grenade/G, mob/user)

@@ -114,10 +114,7 @@
 	return ..()
 
 // On-click handling. Turns on the computer if it's off and opens the GUI.
-/obj/item/modular_computer/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/modular_computer/attack_self(var/mob/user)
 	if(enabled && screen_on)
 		if(isliving(user) && HAS_TRAIT(user, TRAIT_UNLUCKY) && prob(5))
 			var/mob/living/unlucky_soul = user

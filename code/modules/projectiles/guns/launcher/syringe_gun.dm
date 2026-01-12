@@ -28,9 +28,6 @@
 		update_icon()
 
 /obj/item/syringe_cartridge/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(syringe)
 		to_chat(user, span_notice("You remove [syringe] from [src]."))
 		playsound(src, 'sound/weapons/empty.ogg', 50, 1)
@@ -45,20 +42,18 @@
 	icon_state = icon_flight
 	underlays.Cut()
 
-/obj/item/syringe_cartridge/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/syringe_cartridge/throw_impact(atom/hit_atom, var/speed)
 	..() //handles embedding for us. Should have a decent chance if thrown fast enough
 	if(syringe)
 		//check speed to see if we hit hard enough to trigger the rapid injection
 		//incidentally, this means syringe_cartridges can be used with the pneumatic launcher
-		if(throwingdatum?.speed >= 10 && isliving(hit_atom))
+		if(speed >= 10 && isliving(hit_atom))
 			var/mob/living/L = hit_atom
 			//unfortuately we don't know where the dart will actually hit, since that's done by the parent.
 			if(L.can_inject() && syringe.reagents)
 				var/contained = syringe.reagents.get_reagents()
 				var/trans = syringe.reagents.trans_to_mob(L, 15, CHEM_BLOOD)
-				var/mob/thrower = throwingdatum?.get_thrower()
-				if(thrower)
-					add_attack_logs(thrower,L,"Shot with [src.name] containing [contained], trasferred [trans] units")
+				add_attack_logs(thrower,L,"Shot with [src.name] containing [contained], trasferred [trans] units")
 
 		syringe.break_syringe(iscarbon(hit_atom)? hit_atom : null)
 		syringe.update_icon()
@@ -86,8 +81,6 @@
 	var/max_darts = 1
 	var/obj/item/syringe_cartridge/next
 
-	special_handling = TRUE
-
 /obj/item/gun/launcher/syringe/consume_next_projectile()
 	if(next)
 		next.prime()
@@ -99,10 +92,7 @@
 	darts -= next
 	next = null
 
-/obj/item/gun/launcher/syringe/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/gun/launcher/syringe/attack_self(mob/living/user as mob)
 	if(next)
 		user.visible_message("[user] unlatches and carefully relaxes the bolt on [src].", span_warning("You unlatch and carefully relax the bolt on [src], unloading the spring."))
 		next = null

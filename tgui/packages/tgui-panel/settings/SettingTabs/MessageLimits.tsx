@@ -1,11 +1,20 @@
-import { useAtomValue } from 'jotai';
+import { useDispatch, useSelector } from 'tgui/backend';
 import { Box, LabeledList, NumberInput, Section } from 'tgui-core/components';
-import { gameAtom } from '../../game/atoms';
-import { useSettings } from '../use-settings';
+
+import { useGame } from '../../game';
+import { updateSettings } from '../actions';
+import { selectSettings } from '../selectors';
 
 export const MessageLimits = (props) => {
-  const game = useAtomValue(gameAtom);
-  const { settings, updateSettings } = useSettings();
+  const dispatch = useDispatch();
+  const game = useGame();
+  const {
+    visibleMessageLimit,
+    persistentMessageLimit,
+    combineMessageLimit,
+    combineIntervalLimit,
+    saveInterval,
+  } = useSelector(selectSettings);
   return (
     <Section>
       <LabeledList>
@@ -17,16 +26,18 @@ export const MessageLimits = (props) => {
             stepPixelSize={2}
             minValue={500}
             maxValue={10000}
-            value={settings.visibleMessageLimit}
+            value={visibleMessageLimit}
             format={(value) => value.toFixed()}
             onChange={(value) =>
-              updateSettings({
-                visibleMessageLimit: value,
-              })
+              dispatch(
+                updateSettings({
+                  visibleMessageLimit: value,
+                }),
+              )
             }
           />
           &nbsp;
-          {settings.visibleMessageLimit >= 5000 && (
+          {visibleMessageLimit >= 5000 && (
             <Box inline fontSize="0.9em" color="red">
               Impacts performance!
             </Box>
@@ -40,16 +51,18 @@ export const MessageLimits = (props) => {
             stepPixelSize={2}
             minValue={0}
             maxValue={10000}
-            value={settings.persistentMessageLimit}
+            value={persistentMessageLimit}
             format={(value) => value.toFixed()}
             onChange={(value) =>
-              updateSettings({
-                persistentMessageLimit: value,
-              })
+              dispatch(
+                updateSettings({
+                  persistentMessageLimit: value,
+                }),
+              )
             }
           />
           &nbsp;
-          {settings.persistentMessageLimit >= 2500 && (
+          {persistentMessageLimit >= 2500 && (
             <Box inline fontSize="0.9em" color="red">
               Delays initialization!
             </Box>
@@ -63,12 +76,14 @@ export const MessageLimits = (props) => {
             stepPixelSize={10}
             minValue={0}
             maxValue={10}
-            value={settings.combineMessageLimit}
+            value={combineMessageLimit}
             format={(value) => value.toFixed()}
             onChange={(value) =>
-              updateSettings({
-                combineMessageLimit: value,
-              })
+              dispatch(
+                updateSettings({
+                  combineMessageLimit: value,
+                }),
+              )
             }
           />
         </LabeledList.Item>
@@ -80,13 +95,15 @@ export const MessageLimits = (props) => {
             stepPixelSize={10}
             minValue={0}
             maxValue={10}
-            value={settings.combineIntervalLimit}
+            value={combineIntervalLimit}
             unit="s"
             format={(value) => value.toFixed()}
             onChange={(value) =>
-              updateSettings({
-                combineIntervalLimit: value,
-              })
+              dispatch(
+                updateSettings({
+                  combineIntervalLimit: value,
+                }),
+              )
             }
           />
         </LabeledList.Item>
@@ -99,17 +116,19 @@ export const MessageLimits = (props) => {
               stepPixelSize={5}
               minValue={1}
               maxValue={10}
-              value={settings.saveInterval}
+              value={saveInterval}
               unit="s"
               format={(value) => value.toFixed()}
               onChange={(value) =>
-                updateSettings({
-                  saveInterval: value,
-                })
+                dispatch(
+                  updateSettings({
+                    saveInterval: value,
+                  }),
+                )
               }
             />
             &nbsp;
-            {settings.saveInterval <= 3 && (
+            {saveInterval <= 3 && (
               <Box inline fontSize="0.9em" color="red">
                 Warning, experimental! Might crash!
               </Box>

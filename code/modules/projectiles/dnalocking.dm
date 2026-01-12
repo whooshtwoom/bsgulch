@@ -13,7 +13,6 @@
 	var/exploding = 0
 
 /obj/item/dnalockingchip/Destroy(force, ...)
-	stored_dna.Cut()
 	. = ..()
 
 /obj/item/gun/proc/get_dna(mob/user)
@@ -22,22 +21,17 @@
 
 		if(attached_lock.stored_dna && (M.dna.unique_enzymes in attached_lock.stored_dna))
 			to_chat(M, span_warning("\The [src] buzzes and displays a symbol showing the gun already contains your DNA."))
-			return FALSE
-		else if(ishuman(M))
-			var/mob/living/carbon/human/human = user
-			if(human.species.flags & NO_DNA)
-				to_chat(human, span_warning("\The [src] buzzes and displays an NO DNA DETECTED symbol."))
-				return FALSE
+			return 0
 		else
 			attached_lock.stored_dna += M.dna.unique_enzymes
 			to_chat(M, span_notice("\The [src] pings and a needle flicks out from the grip, taking a DNA sample from you."))
 			if(!attached_lock.controller_dna)
 				attached_lock.controller_dna = M.dna.unique_enzymes
 				to_chat(M, span_notice("\The [src] processes the dna sample and pings, acknowledging you as the primary controller."))
-			return TRUE
+			return 1
 	else
 		to_chat(M, span_warning("\The [src] buzzes and displays a locked symbol. It is not allowing DNA samples at this time."))
-		return FALSE
+		return 0
 
 /obj/item/gun/verb/give_dna()
 	set name = "Give DNA"
@@ -50,18 +44,18 @@
 	if(!attached_lock.controller_lock)
 		if(!authorized_user(M))
 			to_chat(M, span_warning("\The [src] buzzes and displays an invalid user symbol."))
-			return FALSE
+			return 0
 		else
 			attached_lock.stored_dna -= user.dna.unique_enzymes
 			to_chat(M, span_notice("\The [src] beeps and clears the DNA it has stored."))
 			if(M.dna.unique_enzymes == attached_lock.controller_dna)
 				to_chat(M, span_notice("\The [src] beeps and removes you as the primary controller."))
 				if(attached_lock.controller_lock)
-					attached_lock.controller_lock = FALSE
-			return TRUE
+					attached_lock.controller_lock = 0
+			return 1
 	else
 		to_chat(M, span_warning("\The [src] buzzes and displays a locked symbol. It is not allowing DNA modifcation at this time."))
-		return FALSE
+		return 0
 
 /obj/item/gun/verb/remove_dna()
 	set name = "Remove DNA"
@@ -73,10 +67,10 @@
 	var/mob/living/M = user
 	if(authorized_user(M) && user.dna.unique_enzymes == attached_lock.controller_dna)
 		if(!attached_lock.controller_lock)
-			attached_lock.controller_lock = TRUE
+			attached_lock.controller_lock = 1
 			to_chat(M, span_notice("\The [src] beeps and displays a locked symbol, informing you it will no longer allow DNA samples."))
 		else
-			attached_lock.controller_lock = FALSE
+			attached_lock.controller_lock = 0
 			to_chat(M, span_notice("\The [src] beeps and displays an unlocked symbol, informing you it will now allow DNA samples."))
 	else
 		to_chat(M, span_warning("\The [src] buzzes and displays an invalid user symbol."))
@@ -89,7 +83,7 @@
 
 /obj/item/gun/proc/authorized_user(mob/user)
 	if(!attached_lock.stored_dna || !attached_lock.stored_dna.len)
-		return TRUE
+		return 1
 	if(!(user.dna.unique_enzymes in attached_lock.stored_dna))
-		return FALSE
-	return TRUE
+		return 0
+	return 1

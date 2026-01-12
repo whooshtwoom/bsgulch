@@ -46,13 +46,10 @@
 	var/last_repopulation_time = 0
 	var/repopulation_delay = 600 //Anti spam.
 
-/obj/item/ano_scanner/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/ano_scanner/attack_self(var/mob/living/user)
 	interact(user)
 
-/obj/item/ano_scanner/interact(mob/user)
+/obj/item/ano_scanner/interact(var/mob/living/user)
 	if(world.time - last_scan_time >= scan_delay)
 		last_scan_time = world.time
 
@@ -157,10 +154,7 @@
 
 			to_chat(user, span_notice("[icon2html(src, user.client)] [src] pings [pick("madly","wildly","excitedly","crazily")]!"))
 
-/obj/item/depth_scanner/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/depth_scanner/attack_self(var/mob/living/user)
 	tgui_interact(user)
 
 /obj/item/depth_scanner/tgui_state(mob/user)
@@ -283,9 +277,6 @@
 			icon_state = "pinoff"
 
 /obj/item/beacon_locator/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	return tgui_interact(user)
 
 /obj/item/beacon_locator/tgui_state(mob/user)
@@ -345,10 +336,7 @@
 	anomaly_scanner = new/obj/item/ano_scanner(src)
 	depth_scanner = new/obj/item/depth_scanner(src)
 
-/obj/item/xenoarch_multi_tool/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/xenoarch_multi_tool/attack_self(var/mob/living/user)
 	depth_scanner.tgui_interact(user)
 
 /obj/item/xenoarch_multi_tool/verb/swap_settings()

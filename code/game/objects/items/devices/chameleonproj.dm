@@ -29,9 +29,6 @@
 	..()
 
 /obj/item/chameleon/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	toggle(user)
 
 /obj/item/chameleon/afterattack(atom/target, mob/user, proximity)

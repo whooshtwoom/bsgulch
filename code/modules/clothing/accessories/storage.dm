@@ -10,7 +10,6 @@
 	w_class = ITEMSIZE_NORMAL
 	on_rolled = list("down" = "none")
 	var/hide_on_roll = FALSE
-	special_handling = TRUE
 
 /obj/item/clothing/accessory/storage/Initialize(mapload)
 	. = ..()
@@ -39,9 +38,6 @@
 	return hold.attackby(W, user)
 
 /obj/item/clothing/accessory/storage/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	to_chat(user, span_notice("You empty [src]."))
 	var/turf/T = get_turf(src)
 	hold.hide_from(user)

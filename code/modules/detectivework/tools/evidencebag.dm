@@ -9,7 +9,6 @@
 	w_class = ITEMSIZE_SMALL
 	var/obj/item/stored_item = null
 
-
 /obj/item/evidencebag/MouseDrop(var/obj/item/I)
 	if (!ishuman(usr))
 		return
@@ -73,11 +72,8 @@
 	return
 
 
-/obj/item/evidencebag/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(LAZYLEN(contents))
+/obj/item/evidencebag/attack_self(mob/user as mob)
+	if(contents.len)
 		var/obj/item/I = contents[1]
 		user.visible_message("[user] takes [I] out of [src]", "You take [I] out of [src].",\
 		"You hear someone rustle around in a plastic bag, and remove something.")

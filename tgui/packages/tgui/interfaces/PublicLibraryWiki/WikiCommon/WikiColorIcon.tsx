@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { getIconFromRefMap } from 'tgui/events/handlers/assets';
 import { Box, Icon } from 'tgui-core/components';
 
 export const getImage = async (url: string): Promise<HTMLImageElement> => {
@@ -7,9 +6,6 @@ export const getImage = async (url: string): Promise<HTMLImageElement> => {
     const image = new Image();
     image.onload = () => {
       resolve(image);
-    };
-    image.onerror = (event) => {
-      reject(event);
     };
     image.src = url;
   });
@@ -69,6 +65,7 @@ export const CanvasBackedImage = (props: {
       onError={() => setLoadFailed(true)}
       style={{
         visibility: bitmap && !loadFailed ? 'visible' : 'hidden',
+        imageRendering: 'pixelated',
       }}
     />
   );
@@ -82,7 +79,7 @@ export const ColorizedImage = (props: {
 }) => {
   const { icon, iconState, color, fillLevel = 1 } = props;
 
-  const iconRef = icon ? getIconFromRefMap(icon) : null;
+  const iconRef = icon ? Byond.iconRefMap?.[icon] : null;
 
   const iconSize = 64;
   const realFill = iconSize * (1 - fillLevel);

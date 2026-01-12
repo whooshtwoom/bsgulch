@@ -36,14 +36,11 @@
 		return FALSE
 	return TRUE
 
-/obj/item/instrument/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(!user.IsAdvancedToolUser())
+/obj/item/instrument/attack_self(mob/M)
+	if(!M.IsAdvancedToolUser())
 		return
 
-	tgui_interact(user)
+	tgui_interact(M)
 
 /obj/item/instrument/tgui_interact(mob/user, datum/tgui/ui)
 	return song.tgui_interact(user)
