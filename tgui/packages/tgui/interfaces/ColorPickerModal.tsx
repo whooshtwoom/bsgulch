@@ -96,11 +96,7 @@ export const ColorPickerModal: React.FC<ColorPickerModalProps> = () => {
   });
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      syncColorPreset();
-    }, 100);
-
-    return () => clearTimeout(timeoutId);
+    syncColorPreset();
   }, [selectedColor]);
 
   if (!title) {
@@ -305,6 +301,7 @@ export const ColorSelector: React.FC<ColorSelectorProps> = React.memo(
     );
 
     const [showPresets, setShowPresets] = useState<boolean>(false);
+    const rgb = hsvaToRgba(color);
     const hexColor = hsvaToHex(color);
 
     return (
@@ -337,14 +334,14 @@ export const ColorSelector: React.FC<ColorSelectorProps> = React.memo(
                   backgroundColor={hexColor}
                 />
               </Tooltip>
-              <Button
-                tooltip={defaultColor}
-                tooltipPosition="bottom"
-                width="100px"
-                height="30px"
-                backgroundColor={defaultColor}
-                onClick={() => setColor(hexToHsva(defaultColor))}
-              />
+              <Tooltip content={defaultColor} position="bottom">
+                <Box
+                  inline
+                  width="100px"
+                  height="30px"
+                  backgroundColor={defaultColor}
+                />
+              </Tooltip>
             </Stack.Item>
           </Stack>
         </Stack.Item>

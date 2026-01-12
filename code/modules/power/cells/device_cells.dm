@@ -151,10 +151,7 @@
 /obj/item/cell/device/weapon/recharge/alien/update_icon()
 	return // No overlays please.
 
-/obj/item/cell/device/weapon/recharge/alien/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/cell/device/weapon/recharge/alien/attack_self(var/mob/user)
 	if(!swaps_to)
 		return
 	user.remove_from_mob(src)

@@ -47,9 +47,6 @@ export const ControlAdmin = (props) => {
       <Button fluid onClick={() => act('cloaking')}>
         Force Cloaking or Uncloaking
       </Button>
-      <Button fluid onClick={() => act('give_quest')}>
-        Give Quest
-      </Button>
     </Section>
   );
 };

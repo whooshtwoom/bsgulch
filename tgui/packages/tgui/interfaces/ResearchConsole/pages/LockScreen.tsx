@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { useBackend } from 'tgui/backend';
-import { getIconFromRefMap } from 'tgui/events/handlers/assets';
 import { Box, Button, Section, Stack } from 'tgui-core/components';
 
 export const LockScreen = (props) => {
@@ -9,10 +8,7 @@ export const LockScreen = (props) => {
   const image = useRef<HTMLImageElement>(document.createElement('img'));
 
   useEffect(() => {
-    const iconRef = getIconFromRefMap('icons/obj/machines/research.dmi');
-    if (iconRef) {
-      image.current.src = `${iconRef}?state=protolathe`;
-    }
+    image.current.src = `${Byond.iconRefMap['icons/obj/machines/research.dmi']}?state=protolathe`;
   }, [image]);
 
   let randomSizeDiff = 0;

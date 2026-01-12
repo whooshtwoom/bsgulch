@@ -32,16 +32,21 @@ import './styles/themes/abstract.scss';
 import './styles/themes/bingle.scss';
 import './styles/themes/algae.scss';
 
+import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
-import { captureExternalLinks } from 'tgui-core/links';
 import { setupHotReloading } from 'tgui-dev-server/link/client';
 
 import { App } from './App';
-import { setDebugHotKeys } from './debug/use-debug';
-import { bus } from './events/listeners';
+import { setGlobalStore } from './backend';
 import { setupHotKeys } from './hotkeys';
+import { captureExternalLinks } from './links';
 import { render } from './renderer';
-import { createStackAugmentor } from './stack';
+import { configureStore } from './store';
+
+perf.mark('inception', window.performance?.timeOrigin);
+perf.mark('init');
+
+const store = configureStore();
 
 function setupApp() {
   // Delay setup
@@ -50,28 +55,25 @@ function setupApp() {
     return;
   }
 
-  window.__augmentStack__ = createStackAugmentor();
+  setGlobalStore(store);
 
   setupGlobalEvents();
-  setupHotKeys({
-    keyUpVerb: 'KeyUp',
-    keyDownVerb: 'KeyDown',
-    // In the future you could send a winget here to get mousepos/size from the map here if it's necessary
-    verbParamsFn: (verb, key) => `${verb} "${key}" 0 0 0 0`,
-  });
+  setupHotKeys();
   captureExternalLinks();
 
-  Byond.subscribe((type, payload) => bus.dispatch({ type, payload }));
+  store.subscribe(() => render(<App />));
 
   // Dispatch incoming messages as store actions
-  render(<App />);
+  Byond.subscribe((type, payload) => store.dispatch({ type, payload }));
 
   // Enable hot module reloading
   if (import.meta.webpackHot) {
-    setDebugHotKeys();
     setupHotReloading();
-    import.meta.webpackHot.accept(['./layouts', './routes', './App'], () =>
-      render(<App />),
+    import.meta.webpackHot.accept(
+      ['./debug', './layouts', './routes', './App'],
+      () => {
+        render(<App />);
+      },
     );
   }
 }

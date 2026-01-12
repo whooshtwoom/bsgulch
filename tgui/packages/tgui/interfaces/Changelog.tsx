@@ -14,7 +14,6 @@ import {
   Table,
 } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
-import { sendAct as act } from '../events/act';
 
 const icons = {
   add: { icon: 'check-circle', color: 'green' },
@@ -78,6 +77,7 @@ export class Changelog extends Component<ChangelogProps, ChangelogState> {
   }
 
   getData = (date, attemptNumber = 1) => {
+    const { act } = useBackend();
     const self = this;
     const maxAttempts = 6;
 

@@ -8,12 +8,8 @@
 	w_class = ITEMSIZE_TINY
 	slot = ACCESSORY_SLOT_MEDAL
 	var/owner = 0	//To prevent people from just renaming the thing if they steal it
-	special_handling = TRUE
 
-/obj/item/clothing/accessory/permit/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/accessory/permit/attack_self(mob/user as mob)
 	if(isliving(user))
 		if(!owner)
 			set_name(user.name)

@@ -26,10 +26,7 @@
 	. = ..()
 	. += "[uses] uses remaining."
 
-/obj/item/disposable_teleporter/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/disposable_teleporter/attack_self(mob/user as mob)
 	if(!uses)
 		to_chat(user, span_danger("\The [src] has ran out of uses, and is now useless to you!"))
 		return

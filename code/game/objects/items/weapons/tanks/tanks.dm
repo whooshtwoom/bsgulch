@@ -209,10 +209,7 @@ var/list/global/tank_gauge_cache = list()
 
 
 
-/obj/item/tank/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return
+/obj/item/tank/attack_self(mob/user as mob)
 	add_fingerprint(user)
 	if (!(src.air_contents))
 		return

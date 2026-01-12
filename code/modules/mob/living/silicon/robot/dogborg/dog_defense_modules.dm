@@ -26,9 +26,6 @@
 	flags = NOBLUDGEON
 
 /obj/item/self_repair_system/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(repairing)
 		return
 	var/mob/living/silicon/robot/R = user

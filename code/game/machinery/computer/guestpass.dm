@@ -12,7 +12,6 @@
 	var/expiration_time = 0
 	var/expired = 0
 	var/reason = "NOT SPECIFIED"
-	special_handling = TRUE
 
 /obj/item/card/id/guest/update_icon()
 	return
@@ -45,9 +44,6 @@
 	return
 
 /obj/item/card/id/guest/attack_self(mob/living/user as mob)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(user.a_intent == I_HURT)
 		if(icon_state == "guest-invalid")
 			to_chat(user, span_warning("This guest pass is already deactivated!"))
@@ -61,11 +57,7 @@
 			update_icon()
 			expiration_time = world.time
 			expired = 1
-	else
-		user.visible_message("\The [user] shows you: [icon2html(src,viewers(src))] [src.name]. The assignment on the card: [src.assignment]",\
-			"You flash your ID card: [icon2html(src, user.client)] [src.name]. The assignment on the card: [src.assignment]")
-
-		src.add_fingerprint(user)
+	return ..()
 
 /obj/item/card/id/guest/Initialize(mapload)
 	. = ..()

@@ -90,9 +90,7 @@
 		)
 
 /obj/item/clothing/glasses/sunglasses/sechud/tactical_sec_vis/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+	. = ..()
 	if(!istype(user) || user.incapacitated())
 		return
 
@@ -105,6 +103,7 @@
 		user.update_inv_glasses()
 		user.update_mob_action_buttons()
 		to_chat(user, span_notice("Your [src] now displays [choice] ."))
+		return 1
 
 /*---Tajaran-specific Eyewear---*/
 

@@ -36,10 +36,8 @@
 	pickup_sound = 'sound/items/pickup/cardboardbox.ogg'
 
 // BubbleWrap - A box can be folded up to make card
-/obj/item/storage/box/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/storage/box/attack_self(mob/user as mob)
+	if(..()) return
 
 	//try to fold it
 	if(ispath(foldable))

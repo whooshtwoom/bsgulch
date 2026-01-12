@@ -135,9 +135,6 @@
 	overlays = W.overlays
 
 /obj/item/ducttape/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(!stuck)
 		return
 

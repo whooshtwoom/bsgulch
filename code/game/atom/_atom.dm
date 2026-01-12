@@ -298,8 +298,10 @@
 	return
 
 
-/atom/proc/hitby(atom/movable/source, datum/thrownthing/throwingdatum)
+/atom/proc/hitby(atom/movable/source)
 	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, source)
+	if (density)
+		source.throwing = 0
 	return
 
 //returns 1 if made bloody, returns 0 otherwise

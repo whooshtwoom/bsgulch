@@ -21,9 +21,6 @@
 	return welder
 
 /obj/item/tool/transforming/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(!possible_tooltypes.len || possible_tooltypes.len < 2)
 		return
 	if(current_tooltype == possible_tooltypes.len)

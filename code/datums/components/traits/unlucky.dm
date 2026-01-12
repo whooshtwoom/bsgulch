@@ -146,8 +146,7 @@
 			if(darth_airlock.locked || !darth_airlock.arePowerSystemsOn())
 				continue
 			to_chat(living_guy, span_warning("The airlock suddenly closes on you!"))
-			living_guy.Paralyse(5)
-			living_guy.Sleeping(5)
+			living_guy.Paralyse(1 SECONDS)
 			slam_airlock(darth_airlock)
 			consume_omen()
 			return

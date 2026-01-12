@@ -75,7 +75,6 @@
 
 		//Target is handled in ..(), so we handle the caster here
 		caster.Paralyse(amt_paralysis)
-		caster.Sleeping(amt_paralysis)
 
 		//After a certain amount of time the victim gets a message about being in a different body.
 		spawn(msg_wait)

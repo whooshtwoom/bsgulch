@@ -131,10 +131,7 @@
 	icon_state = "face"
 	var/mob/living/homunculus = 0
 
-/obj/item/glamour_face/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/glamour_face/attack_self(var/mob/user)
 	if(!homunculus)
 		var/list/targets = list()
 		for(var/mob/living/carbon/human/M in GLOB.mob_list)
@@ -361,9 +358,6 @@
 		)
 
 /obj/item/glamour_unstable/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	var/mob/living/M = user
 	if(!istype(M))
 		return

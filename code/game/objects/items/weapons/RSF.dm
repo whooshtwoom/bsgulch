@@ -65,10 +65,7 @@ GLOBAL_LIST_INIT(robot_glass_options, list(
 		balloon_alert(user, "container chosen: [glass_choice]")
 		glasstype_name = glass_choice
 
-/obj/item/rsf/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/rsf/attack_self(mob/user as mob)
 	var/options = list(
 		"card deck" = image(icon = 'icons/obj/playing_cards.dmi', icon_state = "deck"),
 		"card deck (big)" = image(icon = 'icons/obj/playing_cards.dmi', icon_state = "deck"),

@@ -5,7 +5,6 @@
 	origin_tech = list(TECH_COMBAT = 1)
 	matter = list(MAT_STEEL = 100)
 	var/armed = 0
-	special_handling = TRUE
 
 
 /obj/item/assembly/mousetrap/examine(var/mob/user)
@@ -57,10 +56,7 @@
 	update_icon()
 	pulse(0)
 
-/obj/item/assembly/mousetrap/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/assembly/mousetrap/attack_self(var/mob/living/user)
 	if(!armed)
 		to_chat(user, span_notice("You arm [src]."))
 	else
@@ -112,7 +108,7 @@
 		return 1	//end the search!
 	return 0
 
-/obj/item/assembly/mousetrap/hitby(var/atom/movable/source, datum/thrownthing/throwingdatum)
+/obj/item/assembly/mousetrap/hitby(var/atom/movable/source)
 	if(!armed)
 		return ..()
 	visible_message(span_warning("[src] is triggered by [source]."))

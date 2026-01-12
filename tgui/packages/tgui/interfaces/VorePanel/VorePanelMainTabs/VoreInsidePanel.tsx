@@ -4,9 +4,9 @@ import {
   digestModeToPreyMode,
   reagentToColor,
 } from '../constants';
-import type { InsideData } from '../types';
+import type { insideData } from '../types';
 
-export const VoreInsidePanel = (props: { inside: InsideData }) => {
+export const VoreInsidePanel = (props: { inside: insideData }) => {
   const { inside } = props;
 
   const {

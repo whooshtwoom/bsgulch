@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ag" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "aj" = (
 /obj/structure/sign/warning/fire,
@@ -27,7 +27,9 @@
 "bh" = (
 /obj/structure/simple_door,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "bw" = (
 /obj/structure/flora/tree/sif,
@@ -35,15 +37,19 @@
 /area/template_noop)
 "cn" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "de" = (
 /obj/fire,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "dG" = (
 /obj/structure/simple_door,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "es" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -53,7 +59,7 @@
 "eM" = (
 /obj/structure/table/woodentable,
 /obj/item/book,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "eR" = (
 /turf/simulated/wall/cult,
@@ -69,21 +75,32 @@
 "fW" = (
 /obj/structure/grille/cult,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "gt" = (
 /obj/effect/landmark/loot_spawn/low,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
+"gF" = (
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
+/area/template_noop)
 "hr" = (
 /obj/fire,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/submap/DemonPool)
 "hF" = (
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "hO" = (
 /obj/effect/gibspawner/human/xenochimera,
@@ -91,7 +108,9 @@
 /area/submap/DemonPool)
 "hW" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "hZ" = (
 /obj/random/junk,
@@ -106,7 +125,7 @@
 /turf/simulated/floor/cult/turfpack/sif,
 /area/submap/DemonPool)
 "jv" = (
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/template_noop)
 "jG" = (
 /obj/effect/gibspawner/human,
@@ -120,7 +139,15 @@
 /area/submap/DemonPool)
 "jS" = (
 /obj/structure/grille/cult,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
+/area/submap/DemonPool)
+"jX" = (
+/obj/structure/loot_pile/maint/trash,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "lo" = (
 /obj/item/clothing/suit/cultrobes/alt,
@@ -131,11 +158,23 @@
 /turf/template_noop,
 /area/submap/DemonPool)
 "lG" = (
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
+/area/submap/DemonPool)
+"md" = (
+/mob/living/simple_mob/animal/space/bats/cult/strong{
+	faction = "demon"
+	},
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "mp" = (
 /obj/fire,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "mO" = (
 /obj/effect/gibspawner/human,
@@ -147,7 +186,9 @@
 	faction = "demon"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "oi" = (
 /turf/simulated/floor/cult/turfpack/sif,
@@ -159,7 +200,7 @@
 "pb" = (
 /obj/fire,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "pi" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -175,7 +216,7 @@
 	faction = "demon"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "qb" = (
 /obj/item/clothing/suit/cultrobes/alt,
@@ -210,7 +251,9 @@
 /area/submap/DemonPool)
 "tC" = (
 /mob/living/simple_mob/vore/demonAI/ira,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "vv" = (
 /obj/effect/gibspawner/human/xenochimera,
@@ -218,14 +261,16 @@
 /turf/simulated/floor/cult/turfpack/sif,
 /area/submap/DemonPool)
 "vw" = (
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "vJ" = (
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/submap/DemonPool)
 "vW" = (
 /obj/effect/landmark/loot_spawn/low,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "xl" = (
 /obj/random/junk,
@@ -234,7 +279,7 @@
 "yS" = (
 /obj/effect/landmark/loot_spawn/low,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "yW" = (
 /obj/structure/cult/pylon,
@@ -256,21 +301,27 @@
 "zI" = (
 /obj/structure/grille/broken/cult,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "zZ" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Ah" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/item/stool,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Ax" = (
 /obj/structure/loot_pile/surface/bones,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "AH" = (
 /obj/structure/cult/tome,
@@ -280,25 +331,35 @@
 /obj/fire,
 /obj/fire,
 /obj/fire,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "CV" = (
 /obj/random/junk,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "CY" = (
 /obj/structure/stripper_pole,
 /obj/effect/gibspawner/human,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "DZ" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "EQ" = (
 /obj/structure/loot_pile/surface/bones,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Fq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -307,30 +368,40 @@
 "Hb" = (
 /turf/template_noop,
 /area/submap/DemonPool)
+"Hl" = (
+/mob/living/simple_mob/vore/demonAI,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
+/area/submap/DemonPool)
 "HW" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/structure/grille/broken/cult,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "IP" = (
 /obj/effect/spawner/lootdrop,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "Jo" = (
 /turf/simulated/mineral/ignore_mapgen,
 /area/submap/DemonPool)
 "JK" = (
 /obj/structure/girder/cult,
-/turf/simulated/floor/outdoors/rocks/turfpack/sif,
+/turf/simulated/floor/outdoors/rocks{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "JM" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/submap/DemonPool)
 "JN" = (
 /obj/structure/flora/tree/sif,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/template_noop)
 "JP" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -339,24 +410,41 @@
 /area/submap/DemonPool)
 "JV" = (
 /obj/structure/loot_pile/maint/trash,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
+/area/submap/DemonPool)
+"KM" = (
+/obj/fire,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "KR" = (
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/cult/turfpack/sif,
 /area/submap/DemonPool)
+"Lu" = (
+/obj/fire,
+/turf/simulated/floor/outdoors/dirt,
+/area/submap/DemonPool)
 "LD" = (
 /obj/structure/bonfire/permanent,
 /obj/structure/grille/cult,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "LL" = (
 /obj/effect/landmark/loot_spawn,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "MB" = (
 /obj/effect/gateway,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "NI" = (
 /obj/effect/gibspawner/human,
@@ -367,7 +455,7 @@
 "Oo" = (
 /obj/structure/grille/broken/cult,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "OK" = (
 /obj/structure/simple_door/cult,
@@ -375,11 +463,13 @@
 /obj/fire,
 /obj/fire,
 /obj/fire,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "Pu" = (
 /obj/structure/grille/cult,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Qq" = (
 /obj/item/beartrap/hunting{
@@ -389,7 +479,9 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Qr" = (
 /obj/structure/closet/crate/secure/loot,
@@ -404,19 +496,27 @@
 /obj/effect/spawner/lootdrop,
 /turf/simulated/floor/cult/turfpack/sif,
 /area/submap/DemonPool)
+"RP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
+/area/submap/DemonPool)
 "RZ" = (
 /mob/living/simple_mob/vore/demonAI,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/submap/DemonPool)
 "Vf" = (
 /mob/living/simple_mob/animal/space/bats/cult/strong{
 	faction = "demon"
 	},
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt,
 /area/submap/DemonPool)
 "Vk" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "VK" = (
 /turf/simulated/mineral/ignore_mapgen,
@@ -431,7 +531,9 @@
 /area/submap/DemonPool)
 "Xe" = (
 /obj/structure/grille/broken/cult,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "XB" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -442,7 +544,9 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /mob/living/simple_mob/vore/demonAI/ire,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "XP" = (
 /obj/structure/constructshell/cult,
@@ -452,10 +556,15 @@
 /obj/item/clothing/shoes/cult,
 /turf/simulated/floor/cult/turfpack/sif,
 /area/submap/DemonPool)
+"YF" = (
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
+/area/submap/DemonPool)
 "YK" = (
 /obj/structure/table/woodentable,
 /obj/item/pen/fountain,
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "Zc" = (
 /obj/effect/gibspawner/human,
@@ -464,13 +573,15 @@
 	deployed = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/turf/simulated/floor/outdoors/dirt{
+	outdoors = 0
+	},
 /area/submap/DemonPool)
 "Zj" = (
 /mob/living/simple_mob/animal/space/bats/cult/strong{
 	faction = "demon"
 	},
-/turf/simulated/floor/plating/turfpack/sif,
+/turf/simulated/floor,
 /area/submap/DemonPool)
 "ZU" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -512,8 +623,8 @@ eW
 Jo
 Jo
 Jo
-vJ
-mp
+YF
+Lu
 mU
 hZ
 mp
@@ -540,9 +651,9 @@ vJ
 vJ
 Jo
 Jo
-vJ
-hr
-JM
+YF
+KM
+RP
 zZ
 Jo
 Jo
@@ -569,10 +680,10 @@ Jo
 Jo
 Jo
 Jo
-JM
+RP
 Zc
 zI
-vJ
+YF
 Jo
 Jo
 Jo
@@ -597,10 +708,10 @@ Jo
 Jo
 Jo
 Jo
-vJ
+YF
 fW
-JM
-JM
+RP
+RP
 Jo
 Jo
 Jo
@@ -616,17 +727,17 @@ eW
 (6,1,1) = {"
 eW
 JM
-JM
+RP
 dG
-vJ
-vJ
+YF
+YF
 Pu
 Jo
 Jo
 Jo
 Jo
 Jo
-JM
+RP
 zI
 bh
 lG
@@ -645,9 +756,9 @@ jv
 JM
 CV
 Jo
-vJ
+YF
 Xe
-vJ
+YF
 EQ
 Jo
 Jo
@@ -673,8 +784,8 @@ jv
 VK
 VK
 Xe
-vJ
-vJ
+YF
+YF
 oi
 Jo
 Jo
@@ -700,9 +811,9 @@ eW
 VK
 VK
 VK
-vJ
+YF
 oi
-vJ
+YF
 qc
 Jo
 eR
@@ -728,7 +839,7 @@ VK
 VK
 VK
 gt
-vJ
+YF
 oi
 yW
 Jo
@@ -755,7 +866,7 @@ VK
 VK
 VK
 VK
-vJ
+YF
 oi
 MB
 Jo
@@ -782,7 +893,7 @@ VK
 VK
 VK
 VK
-vJ
+YF
 oi
 yW
 Jo
@@ -835,8 +946,8 @@ eW
 VK
 VK
 Xe
-vJ
-vJ
+YF
+YF
 oi
 Jo
 Jo
@@ -861,9 +972,9 @@ eW
 jv
 VK
 VK
-vJ
+YF
 Pu
-vJ
+YF
 LL
 Jo
 Jo
@@ -886,10 +997,10 @@ eW
 (16,1,1) = {"
 bw
 jv
-JM
+RP
 Jo
-vJ
-vJ
+YF
+YF
 Xe
 Jo
 Jo
@@ -915,8 +1026,8 @@ jv
 JM
 JM
 dG
-vJ
-vJ
+YF
+YF
 Jo
 Jo
 eR
@@ -940,7 +1051,7 @@ eW
 (18,1,1) = {"
 eW
 vJ
-JM
+RP
 Jo
 Jo
 Jo
@@ -967,8 +1078,8 @@ eW
 (19,1,1) = {"
 eW
 JM
-Vf
-vJ
+md
+YF
 Jo
 Jo
 Jo
@@ -1024,8 +1135,8 @@ jv
 xl
 Jo
 Jo
-JV
-RZ
+jX
+Hl
 Jo
 Jo
 Jo
@@ -1050,12 +1161,12 @@ jv
 jv
 VK
 gt
-vJ
-vJ
-vJ
+YF
+YF
+YF
 Jo
 Jo
-vJ
+YF
 hF
 zZ
 Qq
@@ -1075,16 +1186,16 @@ eW
 (23,1,1) = {"
 eW
 eW
-jv
+gF
 eW
-vJ
+YF
 Hb
 CV
 Jo
 Jo
 hr
-JM
-JM
+RP
+RP
 VK
 VK
 VK
@@ -1108,9 +1219,9 @@ eW
 eW
 eW
 VK
-mp
-vJ
-Vf
+Lu
+YF
+md
 mp
 VK
 jv
@@ -1137,7 +1248,7 @@ eW
 eW
 eW
 eW
-jv
+gF
 eW
 jv
 eW

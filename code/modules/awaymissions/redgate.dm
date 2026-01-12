@@ -1759,7 +1759,7 @@
 		ball.item_state = "[initial(ball.item_state)]"
 		ball.update_icon()
 
-/obj/structure/hyperball_goal/hitby(atom/movable/source, datum/thrownthing/throwingdatum)
+/obj/structure/hyperball_goal/hitby(atom/movable/source)
 	. = ..()
 	if(!istype(source, /obj/item/laserdome_hyperball))
 		return

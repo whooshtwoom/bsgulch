@@ -223,13 +223,9 @@
 	icon_state = "joanbadge"
 	registered_name = "Joan Risu"
 	assignment = "Centcom Officer"
-	special_handling = TRUE
 
 
-/obj/item/card/id/centcom/station/fluff/joanbadge/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/card/id/centcom/station/fluff/joanbadge/attack_self(mob/user as mob)
 	if(isliving(user))
 		user.visible_message(span_warning("[user] flashes their golden security badge.\nIt reads:NT Security."),span_warning("You display the faded badge.\nIt reads: NT Security."))
 
@@ -297,10 +293,7 @@
 	icon_override = 'icons/vore/custom_items_vr.dmi'
 	item_state = "Flag_Nanotrasen_mob"
 
-/obj/item/flag/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/flag/attack_self(mob/user as mob)
 	if(isliving(user))
 		user.visible_message(span_warning("[user] waves their Banner around!"),span_warning("You wave your Banner around."))
 
@@ -421,19 +414,16 @@
 /obj/item/card/id/centcom/station/fluff/aronai
 	registered_name = "CONFIGURE ME"
 	assignment = "CC Medical"
-	can_configure = TRUE
+	var/configured = 0
 
-/obj/item/card/id/centcom/station/fluff/aronai/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/card/id/centcom/station/fluff/aronai/attack_self(mob/user as mob)
 	if(configured)
-		return
+		return ..()
 
 	user.set_id_info(src)
 	if(user.mind && user.mind.initial_account)
 		associated_account_number = user.mind.initial_account.account_number
-	configured = TRUE
+	configured = 1
 	to_chat(user, span_notice("Card settings set."))
 
 //Swat43:Fortune Bloise
@@ -556,7 +546,6 @@
 	var/mob/owner = null
 	var/client/owner_c = null //They'll be dead when we message them probably.
 	var/state = 0 //0 - New, 1 - Paired, 2 - Breaking, 3 - Broken (same as iconstates)
-	special_collar = TRUE
 
 /obj/item/clothing/accessory/collar/khcrystal/Initialize(mapload)
 	. = ..()
@@ -572,10 +561,7 @@
 	if((state > 1) || !owner)
 		STOP_PROCESSING(SSobj, src)
 
-/obj/item/clothing/accessory/collar/khcrystal/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/accessory/collar/khcrystal/attack_self(mob/user as mob)
 	if(state > 0) //Can't re-pair, one time only, for security reasons.
 		to_chat(user, span_notice("The [name] doesn't do anything."))
 		return 0
@@ -783,10 +769,7 @@
 	icon_state = "dragor_dot"
 	w_class = ITEMSIZE_SMALL
 
-/obj/item/fluff/dragor_dot/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/fluff/dragor_dot/attack_self(mob/user as mob)
 	if(user.ckey == "pontifexminimus")
 		add_verb(user, /mob/living/carbon/human/proc/shapeshifter_select_gender)
 	else
@@ -866,7 +849,6 @@
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "hisstective_badge"
 	//slot_flags = SLOT_TIE | SLOT_BELT
-	fluff_badge = TRUE
 
 /obj/item/clothing/accessory/badge/holo/detective/ruda/attack(mob/living/carbon/human/M, mob/living/user)
 	if(isliving(user))
@@ -874,10 +856,8 @@
 		user.do_attack_animation(M)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //to prevent spam
 
-/obj/item/clothing/accessory/badge/holo/detective/ruda/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/accessory/badge/holo/detective/ruda/attack_self(mob/user as mob)
+
 	if(!stored_name)
 		to_chat(user, "You huff along the front of your badge, then rub your sleeve on it to polish it up.")
 		set_name(user.real_name)
@@ -948,6 +928,7 @@
 	. = ..(mapload," ") //See materials_vr_dmi for more information as to why this is a blank space.
 
 //jacknoir413:Areax Third
+/* Outpost 21 edit - Disable original to avoid confusion
 /obj/item/melee/baton/fluff/stunstaff
 	name = "Electrostaff"
 	desc = "Six-foot long staff from dull, rugged metal, with two thin spikes protruding from each end. Small etching near to the middle of it reads 'Children Of Nyx Facilities: Product No. 12'."
@@ -967,7 +948,6 @@
 	//Two Handed
 	var/wielded = 0
 	var/base_name = "stunstaff"
-	special_handling = TRUE
 
 /obj/item/melee/baton/fluff/stunstaff/Initialize(mapload)
 	. = ..()
@@ -989,7 +969,7 @@
 	..()
 
 /obj/item/melee/baton/fluff/stunstaff/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
-	if(wielded && default_parry_check(user, attacker, damage_source) && prob(40)) // Outpost 21 edit - buffing to 40, from 30
+	if(wielded && default_parry_check(user, attacker, damage_source) && prob(30))
 		user.visible_message(span_danger("\The [user] parries [attack_text] with \the [src]!"))
 		playsound(src, 'sound/weapons/punchmiss.ogg', 50, 1)
 		return 1
@@ -1011,9 +991,6 @@
 			update_held_icon()
 
 /obj/item/melee/baton/fluff/stunstaff/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(bcell && bcell.charge > hitcost)
 		status = !status
 		to_chat(user, span_notice("[src] is now [status ? "on" : "off"]."))
@@ -1044,6 +1021,7 @@
 /obj/item/storage/backpack/fluff/stunstaff/Initialize(mapload)
 	. = ..()
 	new /obj/item/melee/baton/fluff/stunstaff(src)
+*/
 
 /*
  * Awoo Sword
@@ -1081,10 +1059,7 @@
 	edge = initial(edge)
 	w_class = initial(w_class)
 
-/obj/item/melee/fluffstuff/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/melee/fluffstuff/attack_self(mob/living/user as mob)
 	if (active)
 		if ((CLUMSY in user.mutations) && prob(20)) // Outpost 21 edit - Made clumsy less obnoxious
 			user.visible_message(span_danger("\The [user] accidentally cuts \himself with \the [src]."),\
@@ -1337,9 +1312,6 @@
 	var/owner = "vitoras"
 
 /obj/item/fluff/verie/attack_self(mob/living/carbon/human/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if (istype(user))
 		// It's only made for Verie's chassis silly!
 		if (user.ckey != owner)
@@ -1563,12 +1535,8 @@ End CHOMP Removal*/
 	icon_state = "pandorba"
 	pokephrase = "Gecker!"
 	attack_verb = list("fluffed", "fwomped", "fuwa'd", "squirmshed")
-	special_handling = TRUE
 
-/obj/item/toy/plushie/fluff/seona_mofuorb/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/toy/plushie/fluff/seona_mofuorb/attack_self(mob/user as mob)
 	if(stored_item && opened && !searching)
 		searching = TRUE
 		if(do_after(user, 1 SECOND, target = src))

@@ -38,14 +38,8 @@
 /mob/living/simple_mob/mechanical/hivebot/tyr/meteor
 	maxHealth = 2 LASERS_TO_KILL // 80 hp
 	health = 2 LASERS_TO_KILL
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/dodge
+	ai_holder_type = /datum/ai_holder/hostile/ranged/robust
 	projectiletype = /obj/item/projectile/energy/agate_lighting/fast
-
-/datum/ai_holder/simple_mob/ranged/kiting/dodge
-
-/datum/ai_holder/simple_mob/ranged/kiting/dodge/post_ranged_attack(atom/A)
-	holder.IMove(get_step(holder, pick(GLOB.alldirs)))
-	holder.face_atom(A)
 
 /obj/item/projectile/energy/spikeenergy_ball/boss
 	damage = 40

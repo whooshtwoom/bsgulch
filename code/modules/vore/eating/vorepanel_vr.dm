@@ -49,7 +49,6 @@
 	var/sc_message_subtab // our soulcatcher message subtab
 	var/aset_message_subtab
 	var/selected_message
-	var/list/preset_colors
 
 /datum/vore_look/New(mob/new_host)
 	if(istype(new_host))
@@ -58,11 +57,6 @@
 
 /datum/vore_look/Destroy()
 	host = null
-	. = ..()
-
-/datum/vore_look/tgui_close(mob/user)
-	if(user)
-		user.write_preference_directly(/datum/preference/text/preset_colors, preset_colors)
 	. = ..()
 
 /datum/vore_look/tgui_interact(mob/user, datum/tgui/ui)
@@ -119,7 +113,6 @@
 	)
 	data["min_belly_name"] = BELLIES_NAME_MIN
 	data["max_belly_name"] = BELLIES_NAME_MAX
-	preset_colors = user.read_preference(/datum/preference/text/preset_colors)
 
 	return data
 
@@ -133,14 +126,12 @@
 	data["unsaved_changes"] = unsaved_changes
 	data["active_tab"] = active_tab
 	data["persist_edit_mode"] = host.persistend_edit_mode
-	data["presets"] = preset_colors
 
 	// Inisde Data
 	data["inside"] = get_inside_data(host)
 	data["host_mobtype"] = null
 	data["show_pictures"] = null
 	data["icon_overflow"] = null
-	data["prey_abilities"] = null
 	data["our_bellies"] = null
 	data["selected"] = null
 	data["soulcatcher"] = null
@@ -167,8 +158,7 @@
 			// Content Data
 			data["show_pictures"] = show_pictures
 			data["icon_overflow"] = icon_overflow
-			data["prey_abilities"] = get_prey_abilities(host)
-
+		
 		/* Outpost 21 edit - Disable soulgems
 		if(SOULCATCHER_TAB)
 			// Soulcatcher and abilities
@@ -247,11 +237,6 @@
 		if("toggle_editmode_persistence")
 			host.persistend_edit_mode = !host.persistend_edit_mode
 			return TRUE
-
-		if("prey_ability")
-			if(!isliving(ui.user))
-				return FALSE
-			return perform_prey_ability(ui.user, params)
 
 		// Host is inside someone else, and is trying to interact with something else inside that person.
 		if("pick_from_inside")
@@ -630,8 +615,6 @@
 				host.client.prefs_vr.food_vore = host.food_vore
 			unsaved_changes = TRUE
 			return TRUE
-		if("set_spont_belly")
-			return set_spont_belly(params)
 		if("toggle_consume_liquid_belly")
 			host.consume_liquid_belly = !host.consume_liquid_belly
 			if(host.client.prefs_vr)
@@ -662,7 +645,7 @@
 			var/belly_choice = params["attribute"]
 			if(!(belly_choice in host.vore_icon_bellies))
 				return FALSE
-			var/newcolor = sanitize_hexcolor(lowertext(params["val"]))
+			var/newcolor = tgui_color_picker(ui.user, "Choose a color.", "", host.vore_sprite_color[belly_choice])
 			if(!newcolor)
 				return FALSE
 			host.vore_sprite_color[belly_choice] = newcolor
@@ -901,20 +884,6 @@
 			return TRUE
 		*/
 		*/
-		if("preset")
-			var/raw_data = lowertext(params["color"])
-			var/index = lowertext(params["index"])
-			var/list/entries = splittext(preset_colors, ";")
-			while(LAZYLEN(entries) < 20)
-				entries += "#FFFFFF"
-			if(LAZYLEN(entries) > 20)
-				entries.Cut(21)
-			var/hex = sanitize_hexcolor(raw_data)
-			if (!hex || !isnum(index) || entries[index] == hex)
-				return
-			entries[index] = hex
-			preset_colors = entries.Join(";")
-			return FALSE
 
 /datum/vore_look/proc/pick_from_inside(mob/user, params)
 	var/atom/movable/target = locate(params["pick"])
@@ -1005,7 +974,7 @@
 				if(M.absorbed)
 					M.absorbed = FALSE
 					OB.handle_absorb_langs(M, OB.owner)
-				TB.nom_atom(M)
+				TB.nom_mob(M)
 
 /datum/vore_look/proc/pick_from_outside(mob/user, params)
 	var/intent
@@ -1035,8 +1004,7 @@
 					to_chat(target,span_vwarning("You're squished from [host]'s [lowertext(host.vore_selected)] to their [lowertext(choice.name)]!"))
 					// Send the transfer message to indirect targets as well. Slightly different message because why not.
 					to_chat(host.vore_selected.get_belly_surrounding(target.contents),span_warning("You're squished along with [target] from [host]'s [lowertext(host.vore_selected)] to their [lowertext(choice.name)]!"))
-					host.vore_selected.transfer_contents(target, choice, TRUE)
-				host.vore_selected.handle_visual_update()
+					host.vore_selected.transfer_contents(target, choice, 1)
 				return TRUE
 		return FALSE
 
@@ -1102,6 +1070,7 @@
 			// Send the transfer message to indirect targets as well. Slightly different message because why not.
 			to_chat(host.vore_selected.get_belly_surrounding(target.contents),span_warning("You're squished along with [target] from [host]'s [lowertext(host.vore_selected)] to their [lowertext(choice.name)]!"))
 			host.vore_selected.transfer_contents(target, choice)
+
 
 		if("Transfer")
 			if(host.stat)
@@ -1398,68 +1367,6 @@
 			if(condition)
 				to_chat(user, span_vwarning("\The [target] is currently [condition], they will not be able to [condition_consequences]."))
 			return FALSE
-
-/datum/vore_look/proc/perform_prey_ability(mob/living/user, params)
-	var/obj/belly/OB = locate(params["belly"])
-
-	if(!(user in OB))
-		return TRUE // Aren't here anymore, need to update menu
-
-	var/ability = params["ability"]
-	if(!(ability in list("devour_as_absorbed")))
-		return FALSE
-
-	switch(ability)
-		if("devour_as_absorbed")
-			if(!(OB.mode_flags & DM_FLAG_ABSORBEDVORE))
-				return FALSE
-			user.absorb_devour()
-
-	return TRUE
-
-/datum/vore_look/proc/set_spont_belly(params)
-	switch(params["attribute"])
-		if("rear")
-			var/spont_target = html_encode(params["val"])
-			if(spont_target == "Current Selected")
-				host.spont_belly_rear = null
-			else
-				host.spont_belly_rear = spont_target
-			if(host.client.prefs_vr)
-				host.client.prefs_vr.spont_belly_rear = host.spont_belly_rear
-			unsaved_changes = TRUE
-			return TRUE
-		if("front")
-			var/spont_target = html_encode(params["val"])
-			if(spont_target == "Current Selected")
-				host.spont_belly_front = null
-			else
-				host.spont_belly_front = spont_target
-			if(host.client.prefs_vr)
-				host.client.prefs_vr.spont_belly_front = host.spont_belly_front
-			unsaved_changes = TRUE
-			return TRUE
-		if("left")
-			var/spont_target = html_encode(params["val"])
-			if(spont_target == "Current Selected")
-				host.spont_belly_left = null
-			else
-				host.spont_belly_left = spont_target
-			if(host.client.prefs_vr)
-				host.client.prefs_vr.spont_belly_left = host.spont_belly_left
-			unsaved_changes = TRUE
-			return TRUE
-		if("right")
-			var/spont_target = html_encode(params["val"])
-			if(spont_target == "Current Selected")
-				host.spont_belly_right = null
-			else
-				host.spont_belly_right = spont_target
-			if(host.client.prefs_vr)
-				host.client.prefs_vr.spont_belly_right = host.spont_belly_right
-			unsaved_changes = TRUE
-			return TRUE
-	return FALSE
 
 /datum/vore_look/proc/sanitize_fixed_list(var/list/messages, type, delim = "\n\n", limit)
 	if(!limit)

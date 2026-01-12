@@ -40,10 +40,7 @@
 	value = 20
 
 
-/obj/item/aliencoin/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/aliencoin/attack_self(mob/user as mob)
 	var/result = rand(1, sides)
 	var/comment = ""
 	if(result == 1)

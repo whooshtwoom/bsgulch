@@ -111,10 +111,8 @@
 	icon_state = "orange"
 	chained = null
 
-/obj/item/clothing/shoes/orange/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/shoes/orange/attack_self(mob/user as mob)
+	..()
 	remove_cuffs(user)
 
 /obj/item/clothing/shoes/orange/attackby(H as obj, mob/user as mob)

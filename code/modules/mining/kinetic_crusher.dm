@@ -139,13 +139,13 @@
 		else
 			L.apply_damage(detonation_damage + thrown_bonus, BRUTE, blocked = def_check)
 
-/obj/item/kinetic_crusher/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatumd)
+/obj/item/kinetic_crusher/throw_impact(atom/hit_atom, speed)
 	. = ..()
 	if(!isliving(hit_atom))
 		return
 	var/mob/living/L = hit_atom
 	if(L.has_modifier_of_type(/datum/modifier/crusher_mark))
-		detonate(L, throwingdatumd?.get_thrower(), TRUE)
+		detonate(L, thrower, TRUE)
 
 /obj/item/kinetic_crusher/proc/Recharge()
 	if(!charged)
@@ -249,9 +249,6 @@
 	STOP_PROCESSING(SSprocessing, src)
 
 /obj/item/kinetic_crusher/machete/gauntlets/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	ready_toggle()
 
 /obj/item/kinetic_crusher/machete/gauntlets/process()

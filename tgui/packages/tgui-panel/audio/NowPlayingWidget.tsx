@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { useAtomValue } from 'jotai';
+import { useDispatch, useSelector } from 'tgui/backend';
 import {
   Button,
   Collapsible,
@@ -13,35 +13,31 @@ import {
   Stack,
 } from 'tgui-core/components';
 
-import { useSettings } from '../settings/use-settings';
-import { metaAtom, playingAtom } from './atoms';
-import { player } from './handlers';
+import { useSettings } from '../settings';
+import { selectAudio } from './selectors';
+import type { AudioState } from './types';
 
-export function NowPlayingWidget(props) {
-  const { settings, updateSettings } = useSettings();
-  const meta = useAtomValue(metaAtom);
-  const {
-    album = 'Unknown Album',
-    artist = 'Unknown Artist',
-    duration,
-    link,
-    title,
-    upload_date = 'Unknown Data',
-  } = meta || {};
-
-  const playing = useAtomValue(playingAtom);
-
-  const date = !Number.isNaN(upload_date)
-    ? upload_date?.substring(0, 4) +
-      '-' +
-      upload_date?.substring(4, 6) +
-      '-' +
-      upload_date?.substring(6, 8)
-    : upload_date;
+export const NowPlayingWidget = (props) => {
+  const audio: AudioState = useSelector(selectAudio),
+    dispatch = useDispatch(),
+    settings = useSettings(),
+    title = audio.meta?.title,
+    URL = audio.meta?.link,
+    Artist = audio.meta?.artist || 'Unknown Artist',
+    upload_date = audio.meta?.upload_date || 'Unknown Date',
+    album = audio.meta?.album || 'Unknown Album',
+    duration = audio.meta?.duration,
+    date = !Number.isNaN(Number(upload_date))
+      ? upload_date?.substring(0, 4) +
+        '-' +
+        upload_date?.substring(4, 6) +
+        '-' +
+        upload_date?.substring(6, 8)
+      : upload_date;
 
   return (
     <Stack align="center">
-      {playing ? (
+      {(audio.playing && (
         <Stack.Item
           mx={0.5}
           grow
@@ -52,20 +48,20 @@ export function NowPlayingWidget(props) {
           }}
         >
           {
-            <Collapsible title={title || 'Unknown Track'} color="blue">
+            <Collapsible title={title || 'Unknown Track'} color={'blue'}>
               <Section>
-                {link !== 'Song Link Hidden' && (
+                {URL !== 'Song Link Hidden' && (
                   <Stack.Item grow color="label">
-                    URL: <a href={link}>{link}</a>
+                    URL: {URL}
                   </Stack.Item>
                 )}
                 <Stack.Item grow color="label">
                   Duration: {duration}
                 </Stack.Item>
-                {artist !== 'Song Artist Hidden' &&
-                  artist !== 'Unknown Artist' && (
+                {Artist !== 'Song Artist Hidden' &&
+                  Artist !== 'Unknown Artist' && (
                     <Stack.Item grow color="label">
-                      Artist: {artist}
+                      Artist: {Artist}
                     </Stack.Item>
                   )}
                 {album !== 'Song Album Hidden' && album !== 'Unknown Album' && (
@@ -83,14 +79,22 @@ export function NowPlayingWidget(props) {
             </Collapsible>
           }
         </Stack.Item>
-      ) : (
+      )) || (
         <Stack.Item grow color="label">
           Nothing to play.
         </Stack.Item>
       )}
-      {playing && (
+      {audio.playing && (
         <Stack.Item mx={0.5} fontSize="0.9em">
-          <Button tooltip="Stop" icon="stop" onClick={() => player.stop()} />
+          <Button
+            tooltip="Stop"
+            icon="stop"
+            onClick={() =>
+              dispatch({
+                type: 'audio/stopMusic',
+              })
+            }
+          />
         </Stack.Item>
       )}
       <Stack.Item mx={0.5} fontSize="0.9em">
@@ -102,14 +106,13 @@ export function NowPlayingWidget(props) {
           step={0.0025}
           stepPixelSize={1}
           format={(value) => `${(value * 100).toFixed()}%`}
-          onChange={(e, value) => {
-            updateSettings({
+          onChange={(e, value) =>
+            settings.update({
               adminMusicVolume: value,
-            });
-            player.setVolume(value);
-          }}
+            })
+          }
         />
       </Stack.Item>
     </Stack>
   );
-}
+};

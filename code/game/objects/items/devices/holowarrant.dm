@@ -23,10 +23,7 @@
 		. += span_notice("You have to go closer if you want to read it.")
 
 //hit yourself with it
-/obj/item/holowarrant/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/holowarrant/attack_self(mob/living/user as mob)
 	active = null
 	var/list/warrants = list()
 	if(!isnull(GLOB.data_core.general))

@@ -504,15 +504,12 @@
 	icon_state = "cmoemergency"
 	item_state = "card-id"
 
-/obj/item/cmo_disk_holder/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/cmo_disk_holder/attack_self(var/mob/attacker)
 	playsound(src, 'sound/items/poster_ripped.ogg', 50)
-	to_chat(user, span_warning("You tear open \the [name]."))
-	user.unEquip(src)
+	to_chat(attacker, span_warning("You tear open \the [name]."))
+	attacker.unEquip(src)
 	var/obj/item/disk/transcore/newdisk = new(get_turf(src))
-	user.put_in_any_hand_if_possible(newdisk)
+	attacker.put_in_any_hand_if_possible(newdisk)
 	qdel(src)
 
 /obj/item/disk/transcore

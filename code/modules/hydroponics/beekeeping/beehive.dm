@@ -290,10 +290,7 @@
 	icon = 'icons/obj/apiary_bees_etc.dmi'
 	icon_state = "apiary"
 
-/obj/item/beehive_assembly/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/beehive_assembly/attack_self(var/mob/user)
 	to_chat(user, span_notice("You start assembling \the [src]..."))
 	if(do_after(user, 3 SECONDS, target = src))
 		user.visible_message(span_notice("[user] constructs a beehive."), span_notice("You construct a beehive."))

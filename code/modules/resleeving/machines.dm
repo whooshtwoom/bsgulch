@@ -51,7 +51,6 @@
 	set_occupant(H)
 	H.adjustCloneLoss((H.getMaxHealth() - (H.getMaxHealth()))*-0.75)
 	H.Paralyse(4)
-	H.Sleeping(4)
 	H.updatehealth()
 
 	//Machine specific stuff at the end

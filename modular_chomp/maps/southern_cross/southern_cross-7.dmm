@@ -32,7 +32,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/milspec/raised,
-/area/expoutpost/reactorroom)
+/area/expoutpost/reactorcr)
 "aag" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/wall/r_wall,
@@ -339,15 +339,6 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaV" = (
-/obj/effect/wingrille_spawn/reinforced_phoron,
-/obj/machinery/door/blast/radproof{
-	dir = 4;
-	id = "Aeg_EngineShroud"
-	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/reinforced,
-/area/expoutpost/reactorroom)
 "aaW" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -2078,7 +2069,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/milspec/raised,
-/area/expoutpost/reactorroom)
+/area/expoutpost/reactorcr)
 "bfK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
@@ -7811,7 +7802,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/milspec/raised,
-/area/expoutpost/reactorroom)
+/area/expoutpost/reactorcr)
 "ggi" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -9478,7 +9469,7 @@
 	pixel_y = 34;
 	name = "Emergency Armoury";
 	id = "aeg_bridge_armory";
-	req_one_access = list(19,62)
+	req_one_access = list(19,62,67)
 	},
 /obj/machinery/button/remote/blast_door{
 	id = "aeg_bridge_saferoom";
@@ -9752,7 +9743,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/milspec/raised,
-/area/expoutpost/reactorroom)
+/area/expoutpost/reactorcr)
 "hLp" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -11906,7 +11897,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/milspec/raised,
-/area/expoutpost/reactorroom)
+/area/expoutpost/reactorcr)
 "jEQ" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -62930,7 +62921,7 @@ sey
 cpa
 tzB
 hKH
-aaV
+cLB
 ofu
 fbZ
 vEk
@@ -63188,7 +63179,7 @@ sey
 xgb
 tzB
 jEM
-aaV
+cLB
 uap
 pMu
 mdP
@@ -63446,7 +63437,7 @@ tno
 mZx
 cWX
 ggg
-aaV
+cLB
 mfN
 haF
 tpv
@@ -63704,7 +63695,7 @@ sey
 lsn
 tHf
 bfx
-aaV
+cLB
 mfN
 cyf
 rJq
@@ -63962,7 +63953,7 @@ sey
 wIt
 tHf
 aaf
-aaV
+cLB
 dMe
 vfb
 qQa

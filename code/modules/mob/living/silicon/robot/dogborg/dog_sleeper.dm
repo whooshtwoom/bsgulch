@@ -185,7 +185,7 @@
 
 /obj/item/dogborg/sleeper/proc/ingest_living(var/mob/living/victim, var/obj/belly/belly)
 	if (victim.devourable && is_vore_predator(hound))
-		belly.nom_atom(victim, hound)
+		belly.nom_mob(victim, hound)
 		add_attack_logs(hound, victim, "Eaten via [belly.name]")
 		return TRUE
 	return FALSE
@@ -223,9 +223,8 @@
 	hound.cell.charge = hound.cell.charge - amt
 
 /obj/item/dogborg/sleeper/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+	if(..())
+		return
 	tgui_interact(user)
 
 /obj/item/dogborg/sleeper/tgui_state(mob/user)

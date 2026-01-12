@@ -537,7 +537,7 @@
 	update()	// update icon
 	return
 
-/obj/machinery/disposal/hitby(atom/movable/source, datum/thrownthing/throwingdatum)
+/obj/machinery/disposal/hitby(atom/movable/source)
 	. = ..()
 	if(isitem(source) && !istype(source, /obj/item/projectile))
 		if(prob(75))

@@ -8,10 +8,7 @@ Slime cube lives here.
 	icon_state = "slime cube"
 	var/searching = 0
 
-/obj/item/slime_cube/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/slime_cube/attack_self(mob/user as mob)
 	if(!searching)
 		to_chat(user, span_warning("You stare at the slimy cube, watching as some activity occurs."))
 		request_player()

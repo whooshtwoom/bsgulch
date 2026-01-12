@@ -12,22 +12,19 @@ import {
   useLayoutEffect,
   useState,
 } from 'react';
+import { backendSuspendStart, globalStore, useBackend } from 'tgui/backend';
 import { UI_DISABLED, UI_INTERACTIVE } from 'tgui/constants';
-import { type Box, KeyListener } from 'tgui-core/components';
-import type { KeyEvent } from 'tgui-core/events';
-import { KEY_ALT } from 'tgui-core/keycodes';
+import { useDebug } from 'tgui/debug';
+import type { Box } from 'tgui-core/components';
 import { type BooleanLike, classes } from 'tgui-core/react';
 import { decodeHtmlEntities } from 'tgui-core/string';
-import { useBackend } from '../backend';
+
 import {
   dragStartHandler,
   recallWindowGeometry,
   resizeStartHandler,
   setWindowKey,
-  setWindowPosition,
-  storeWindowGeometry,
 } from '../drag';
-import { suspendStart } from '../events/handlers/suspense';
 import { createLogger } from '../logging';
 import { Layout } from './Layout';
 import { TitleBar } from './TitleBar';
@@ -47,7 +44,7 @@ type Props = Partial<{
 }> &
   PropsWithChildren;
 
-export function Window(props: Props) {
+export const Window = (props: Props) => {
   const {
     canClose = true,
     theme,
@@ -60,8 +57,8 @@ export function Window(props: Props) {
     scrollbars = true,
   } = props;
 
-  const { config, suspended, debug } = useBackend();
-
+  const { config, suspended } = useBackend();
+  const { debugLayout = false } = useDebug();
   const [isReadyToRender, setIsReadyToRender] = useState(false);
 
   // We need to set the window to be invisible before we can set its geometry
@@ -73,7 +70,7 @@ export function Window(props: Props) {
     setIsReadyToRender(true);
   }, []);
 
-  const { scale } = config?.window || false;
+  const { scale } = config.window;
 
   useEffect(() => {
     if (!suspended && isReadyToRender) {
@@ -104,12 +101,14 @@ export function Window(props: Props) {
       logger.log('mounting');
 
       updateGeometry();
+
+      return () => {
+        logger.log('unmounting');
+      };
     }
-    return () => {
-      logger.log('unmounting');
-    };
   }, [isReadyToRender, width, height, scale]);
 
+  const dispatch = globalStore.dispatch;
   const fancy = config.window?.fancy;
 
   // Determine when to show dimmer
@@ -128,7 +127,10 @@ export function Window(props: Props) {
           status={config.status}
           fancy={fancy}
           onDragStart={dragStartHandler}
-          onClose={suspendStart}
+          onClose={() => {
+            logger.log('pressed close');
+            dispatch(backendSuspendStart());
+          }}
           canClose={canClose}
         >
           {buttons}
@@ -138,7 +140,7 @@ export function Window(props: Props) {
         className={classes([
           'Window__rest',
           !fitted && 'Window__restwithTitlebar',
-          debug.debugLayout && 'debug-layout',
+          debugLayout && 'debug-layout',
         ])}
       >
         {!suspended && children}
@@ -162,7 +164,7 @@ export function Window(props: Props) {
       )}
     </Layout>
   );
-}
+};
 
 type ContentProps = Partial<{
   className: string;
@@ -173,46 +175,19 @@ type ContentProps = Partial<{
   ComponentProps<typeof Box> &
   PropsWithChildren;
 
-function WindowContent(props: ContentProps) {
+const WindowContent = (props: ContentProps) => {
   const { className, fitted, children, ...rest } = props;
-  const [altDown, setAltDown] = useState(false);
 
-  const dragStartIfAltHeld = (event) => {
-    if (altDown) {
-      dragStartHandler(event);
-    }
-  };
-
-  Byond.subscribeTo('resetposition', (payload) => {
-    setWindowPosition([0, 0]);
-    storeWindowGeometry();
-  });
   return (
     <Layout.Content
-      onMouseDown={dragStartIfAltHeld}
       className={classes(['Window__content', className])}
       {...rest}
     >
-      <KeyListener
-        onKeyDown={(e: KeyEvent) => {
-          if (KEY_ALT === e.code) {
-            setAltDown(true);
-            logger.log(`alt on ${altDown}`);
-          }
-        }}
-        onKeyUp={(e: KeyEvent) => {
-          if (KEY_ALT === e.code) {
-            setAltDown(false);
-            logger.log(`alt off ${altDown}`);
-          }
-        }}
-      />
-
       {(fitted && children) || (
         <div className="Window__contentPadding">{children}</div>
       )}
     </Layout.Content>
   );
-}
+};
 
 Window.Content = WindowContent;

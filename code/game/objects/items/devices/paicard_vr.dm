@@ -216,12 +216,7 @@ GLOBAL_LIST_EMPTY(paikeys)
 		else
 			to_chat(user, span_warning("You would need to remove the installed [I] first!"))
 
-/obj/item/paicard/attack_self(mob/user, callback)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling && !callback)
-		return FALSE
+/obj/item/paicard/attack_self(mob/user)
 	if(!panel_open)
 		access_screen(user)
 		return

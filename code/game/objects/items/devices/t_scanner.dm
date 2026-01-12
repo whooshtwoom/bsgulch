@@ -25,9 +25,6 @@
 	icon_state = "t-ray[on]"
 
 /obj/item/t_scanner/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	set_active(!on)
 
 /obj/item/t_scanner/proc/set_active(var/active)

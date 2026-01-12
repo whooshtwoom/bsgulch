@@ -1,7 +1,7 @@
 import { LabeledList } from 'tgui-core/components';
 
 import { nutriTimeToText } from '../../constants';
-import type { LiqInteractData } from '../../types';
+import type { liqInteractData } from '../../types';
 import { VorePanelEditDropdown } from '../../VorePanelElements/VorePanelEditDropdown';
 import { VorePanelEditNumber } from '../../VorePanelElements/VorePanelEditNumber';
 import { VorePanelEditSwitch } from '../../VorePanelElements/VorePanelEditSwitch';
@@ -9,7 +9,7 @@ import { VorePanelEditText } from '../../VorePanelElements/VorePanelEditText';
 
 export const LiquidOptionsRight = (props: {
   editMode: boolean;
-  liquidInteract: LiqInteractData;
+  liquidInteract: liqInteractData;
 }) => {
   const { editMode, liquidInteract } = props;
   const {

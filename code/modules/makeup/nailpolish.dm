@@ -25,10 +25,7 @@
 	desc = "<font color='[colour]'>Nail polish,</font> " + initial(desc)
 	update_icon()
 
-/obj/item/nailpolish/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/nailpolish/attack_self(var/mob/user)
 	open = !open
 	to_chat(user, span_notice("You [open ? "open" : "close"] \the [src]."))
 	update_icon()
@@ -103,10 +100,7 @@
 	icon_state = "nailpolishremover"
 	var/open = FALSE
 
-/obj/item/nailpolish_remover/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/nailpolish_remover/attack_self(var/mob/user)
 	open = !open
 	to_chat(user, span_notice("You [open ? "open" : "close"] \the [src]."))
 	update_icon()

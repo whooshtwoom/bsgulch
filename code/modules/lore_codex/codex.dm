@@ -11,8 +11,6 @@
 
 	var/static/list/codex_tree_keys = list() // static list linking codexes to the correct codex_tree.
 
-	special_handling = TRUE
-
 /obj/item/book/codex/Initialize(mapload)
 	tree = codex_tree_keys["[root_type]"]
 	if(!tree)
@@ -21,9 +19,6 @@
 	. = ..()
 
 /obj/item/book/codex/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	if(!tree)
 		tree = codex_tree_keys["[root_type]"]
 		if(!tree)

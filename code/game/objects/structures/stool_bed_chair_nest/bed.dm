@@ -271,9 +271,6 @@
 	pickup_sound = 'sound/items/pickup/axe.ogg'
 
 /obj/item/roller/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	var/obj/structure/bed/roller/R = new bedtype(user.loc)
 	R.add_fingerprint(user)
 	qdel(src)
@@ -309,10 +306,8 @@
 	. = ..()
 	held = new /obj/item/roller(src)
 
-/obj/item/roller_holder/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/roller_holder/attack_self(mob/user as mob)
+
 	if(!held)
 		to_chat(user, span_notice("The rack is empty."))
 		return

@@ -1,12 +1,12 @@
 import { Section, Stack } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
-import type { LocalPrefs } from '../types';
+import type { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VorePanelElements/VoreUserPreferenceItem';
 
 export const VoreUserPreferencesSoulcatcher = (props: {
   soulcatcher_allow_capture: BooleanLike;
-  preferences: LocalPrefs;
+  preferences: localPrefs;
 }) => {
   const { soulcatcher_allow_capture, preferences } = props;
 

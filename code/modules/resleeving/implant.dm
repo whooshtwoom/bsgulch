@@ -78,10 +78,7 @@
 	icon_state = "[initial(icon_state)][imps.len]"
 	germ_level = 0
 
-/obj/item/backup_implanter/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/backup_implanter/attack_self(mob/user as mob)
 	if(!istype(user))
 		return
 

@@ -18,8 +18,6 @@ LINEN BINS
 	w_class = ITEMSIZE_SMALL
 	drop_sound = 'sound/items/drop/clothing.ogg'
 	pickup_sound = 'sound/items/pickup/clothing.ogg'
-	///var used for attack_self chain
-	var/special_handling = FALSE
 
 	/// Custom nouns to act as the subject of dreams  //CHOMPEdit - Dreaming
 	var/list/dream_messages = list("white") //CHOMPEdit - Dreaming
@@ -28,12 +26,7 @@ LINEN BINS
 	. = ..()
 	AddElement(/datum/element/rotatable/onlyflip)
 
-/obj/item/bedsheet/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	if(special_handling)
-		return FALSE
+/obj/item/bedsheet/attack_self(mob/user as mob)
 	user.drop_item()
 	if(layer == initial(layer))
 		layer = ABOVE_MOB_LAYER

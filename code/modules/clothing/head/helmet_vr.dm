@@ -40,12 +40,8 @@
 
 	var/base_state
 	var/up = FALSE
-	special_handling = TRUE
 
-/obj/item/clothing/head/helmet/combat/bedevere/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/head/helmet/combat/bedevere/attack_self()
 	toggle()
 
 /obj/item/clothing/head/helmet/combat/bedevere/verb/toggle()
@@ -97,12 +93,8 @@
 
 	var/base_state
 	var/up = FALSE
-	special_handling = TRUE
 
-/obj/item/clothing/head/helmet/combat/bedevere_costume/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/clothing/head/helmet/combat/bedevere_costume/attack_self()
 	toggle()
 
 /obj/item/clothing/head/helmet/combat/bedevere_costume/verb/toggle()

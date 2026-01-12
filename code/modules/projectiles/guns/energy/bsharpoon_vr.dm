@@ -200,13 +200,10 @@
 						to_chat(M, span_vnotice("You materialize around [living_user] as they end up in your [belly_dest]!"))
 
 
-/obj/item/bluespace_harpoon/attack_self(mob/living/user)
-	. = ..(user)
-	if(.)
-		return TRUE
-	return change_fire_mode(user)
+/obj/item/bluespace_harpoon/attack_self(mob/living/user as mob)
+	return chande_fire_mode(user)
 
-/obj/item/bluespace_harpoon/verb/change_fire_mode(mob/user)
+/obj/item/bluespace_harpoon/verb/chande_fire_mode(mob/user as mob)
 	set name = "Change Fire Mode"
 	set category = "Object"
 	set src in range(0)

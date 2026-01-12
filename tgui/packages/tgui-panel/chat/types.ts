@@ -1,20 +1,13 @@
-import * as z from 'zod';
-
-export type ChatPages = {
-  chatPages: Record<string, Page>;
-};
-
-export type SerializedMessage = {
+export type message = {
+  node?: HTMLElement | string;
   type: string;
+  text?: string;
+  html?: string;
+  times?: number;
   createdAt: number;
   roundId: number | null;
-} & Partial<{
-  text: string;
-  html: string;
-  times: number;
-  node?: HTMLElement | string;
-  avoidHighlighting: boolean;
-}>;
+  avoidHighlighting?: boolean;
+};
 
 export type Page = {
   isMain: boolean;
@@ -26,12 +19,8 @@ export type Page = {
   createdAt: number;
 };
 
-export const storedSettingsSchema = z.object({
-  version: z.number(),
-  scrollTracking: z.boolean(),
-  currentPageId: z.string(),
-  pages: z.array(z.string()),
-  pageById: z.record(z.string(), z.any()),
-});
-
-export type StoredChatSettings = z.infer<typeof storedSettingsSchema>;
+export type NewPageData = {
+  isMain: boolean;
+  name: string;
+  acceptedTypes: Record<string, boolean>;
+};

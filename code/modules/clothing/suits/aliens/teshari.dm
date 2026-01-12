@@ -133,7 +133,7 @@
 //Engineering
 
 /obj/item/clothing/suit/storage/teshari/cloak/jobs/ce
-	name = "chief engineer cloak"
+	name = "cheif engineer cloak"
 	desc = "A soft Teshari cloak made for the "+ JOB_CHIEF_ENGINEER
 	icon_state = "tesh_cloak_ce"
 
@@ -151,7 +151,7 @@
 
 /obj/item/clothing/suit/storage/teshari/cloak/jobs/cmo
 	name = "chief medical officer cloak"
-	desc = "A soft Teshari cloak made the Chief Medical Officer"
+	desc = "A soft Teshari cloak made the Cheif Medical Officer"
 	icon_state = "tesh_cloak_cmo"
 
 /obj/item/clothing/suit/storage/teshari/cloak/jobs/medical

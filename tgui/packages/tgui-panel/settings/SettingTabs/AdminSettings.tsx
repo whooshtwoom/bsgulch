@@ -1,21 +1,26 @@
+import { useDispatch, useSelector } from 'tgui/backend';
 import { Button, LabeledList, Section } from 'tgui-core/components';
 
-import { useSettings } from '../use-settings';
+import { updateSettings } from '../actions';
+import { selectSettings } from '../selectors';
 
 export const AdminSettings = (props) => {
-  const { settings, updateSettings } = useSettings();
+  const dispatch = useDispatch();
+  const { hideImportantInAdminTab } = useSelector(selectSettings);
   return (
     <Section>
       <LabeledList>
         <LabeledList.Item label="Hide Important messages in admin only tabs">
           <Button.Checkbox
-            checked={settings.hideImportantInAdminTab}
+            checked={hideImportantInAdminTab}
             tooltip="Enabling this will hide all important messages in admin filter exclusive tabs."
             mr="5px"
             onClick={() =>
-              updateSettings({
-                hideImportantInAdminTab: !settings.hideImportantInAdminTab,
-              })
+              dispatch(
+                updateSettings({
+                  hideImportantInAdminTab: !hideImportantInAdminTab,
+                }),
+              )
             }
           />
         </LabeledList.Item>

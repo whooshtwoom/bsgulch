@@ -22,7 +22,6 @@
 	scoped_accuracy = 75
 	one_handed_penalty = 90
 	bolt_open = 0 //CHOMP Edit
-	special_weapon_handling = TRUE
 
 /obj/item/gun/projectile/heavysniper/update_icon()
 	if(bolt_open)
@@ -30,10 +29,7 @@
 	else
 		icon_state = "heavysniper"
 
-/obj/item/gun/projectile/heavysniper/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
+/obj/item/gun/projectile/heavysniper/attack_self(mob/user as mob)
 	playsound(src, 'sound/weapons/flipblade.ogg', 50, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)

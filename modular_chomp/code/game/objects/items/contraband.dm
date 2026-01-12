@@ -7,9 +7,6 @@
 	w_class = ITEMSIZE_HUGE
 
 /obj/item/contraband/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	var/contraband = pick(
 		/obj/item/reagent_containers/glass/beaker/vial/macrocillin,
 		/obj/item/reagent_containers/glass/beaker/vial/microcillin,

@@ -159,9 +159,6 @@
 	. = ..()
 
 /obj/item/hookah_pipe/attack_self(mob/user)
-	. = ..(user)
-	if(.)
-		return TRUE
 	smoke(user,user)
 
 /obj/item/hookah_pipe/proc/check_retract()
