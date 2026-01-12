@@ -582,6 +582,7 @@
 // *************
 // Foxicide
 // *************
+/* BLUESremove - custom items
 /obj/item/material/knife/tacknife/survival/fluff/kaith
 	name = "Trusty Survival Knife"
 	desc = "An old looking knife with an outdated wooden handle. Still looks robust, though."
@@ -599,7 +600,7 @@
 
 	from_suit = /obj/item/material/knife/tacknife/survival
 	to_suit = /obj/item/material/knife/tacknife/survival/fluff/kaith
-
+*/
 // *************
 // Coda_Vanistok
 // *************
